@@ -1,0 +1,11 @@
+.container {
+    background-color: rgb(255, 235, 239);
+    margin: 2em 0em 0em 0em;
+    padding: 2em 1.5em 4em 1.4em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
