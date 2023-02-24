@@ -1,25 +1,134 @@
-import React from 'react';
+import React, { useState } from "react";
 
-import { Nav } from '../../components/globalTemplates/Nav/Nav';
+import { Nav } from "../../components/globalTemplates/Nav/Nav";
+import { Box, Grid, Accordion, AccordionSummary, AccordionDetails, Button } from "@mui/material";
+import { ExpandMore } from "@mui/icons-material";
 
-import css from "./PatientInfoContainer.module.css"
+import css from "./PatientInfoContainer.module.css";
 
-export interface PatientInfoContainerProps {
-
+export interface IMultiplePhoneNum {
+  [key: string]: string;
 }
 
-export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props) => {
+export interface IMultipleOpenAndCloseTimes {
+  weekday: string;
+  weekend: string;
+}
 
+export interface ISingleResource {
+  clinicName: string;
+  street: string;
+  city: string;
+  state: string;
+  zipcode: string;
+  phone: string | IMultiplePhoneNum;
+  openTime?: string | IMultipleOpenAndCloseTimes;
+  closeTime?: string | IMultipleOpenAndCloseTimes;
+}
+
+export interface IMppedSingleResource {
+  [key: number]: ISingleResource;
+}
+
+export interface ICategoryResource {
+  [key: string]: IMppedSingleResource;
+}
+
+export interface PatientInfoContainerProps {}
+
+export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props) => {
+  const [isResourceListOpen, setIsResourceListOpen] = useState<boolean>(false);
+
+  const handleClose = () => {
+    setIsResourceListOpen(false);
+  };
+
+  const handleResourceSwtich = () => {
+    if (isResourceListOpen) setIsResourceListOpen(false);
+    else setIsResourceListOpen(true);
+  };
 
   return (
     <div className={"global-font"}>
-        <Nav></Nav>
-        PATIENT INFO
+      <Nav></Nav>
+      <Box id="main-container" className={css["patient-info-container"]}>
+        <Accordion className={css["recommended-resources-container"]} expanded={isResourceListOpen}>
+          <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1a-content" id="panel1a-header">
+            Recommended Resource List
+          </AccordionSummary>
+          <AccordionDetails className={css["resource-list"]}>
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                Allergy And Asthma
+              </Grid>
+              <Grid item xs={6}>
+                Cardiology
+              </Grid>
+              <Grid item xs={6}>
+                Colon And Rectal
+              </Grid>
+              <Grid item xs={6}>
+                Dermatology
+              </Grid>
+              <Grid item xs={6}>
+                Dental
+              </Grid>
+              <Grid item xs={6}>
+                Endocrinology
+              </Grid>
+              <Grid item xs={6}>
+                Ears, Nose, and Throat
+              </Grid>
+              <Grid item xs={6}>
+                Foot Pediatry
+              </Grid>
+              <Grid item xs={6}>
+                Gastroenterology
+              </Grid>
+              <Grid item xs={6}>
+                Infectious Disease
+              </Grid>
+              <Grid item xs={6}>
+                Kidney Renal
+              </Grid>
+              <Grid item xs={6}>
+                Opthmaologist
+              </Grid>
+              <Grid item xs={6}>
+                Optometrist
+              </Grid>
+              <Grid item xs={6}>
+                Orthopedics
+              </Grid>
+              <Grid item xs={6}>
+                Pain Clinic
+              </Grid>
+              <Grid item xs={6}>
+                Psychology and Psychiatry
+              </Grid>
+              <Grid item xs={6}>
+                Sleep
+              </Grid>
+              <Grid item xs={6}>
+                Urgent Care Clinic
+              </Grid>
+              <Grid item xs={6}>
+                Urology
+              </Grid>
+              <Grid item xs={6}>
+                Home Health Care Agency
+              </Grid>
+            </Grid>
+          </AccordionDetails>
+        </Accordion>
+
+        <Box>Information</Box>
+      </Box>
     </div>
   );
-}
+};
 
-const data = [
+const resourceData: ICategoryResource[] = [
   {
     allergyAsthma: {
       0: {

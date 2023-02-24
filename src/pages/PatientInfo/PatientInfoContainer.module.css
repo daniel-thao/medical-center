@@ -1,0 +1,17 @@
+.patient-info-container {
+  background-color: aqua;
+}
+
+.recommended-resources-container {
+}
+
+.resource-list {
+  border-top: solid 1px black;
+}
+
+.list-button {
+  /* font-size: 1em;
+  font-weight: 400;
+  text-align: start; */
+  /* padding: 0em; */
+}
