@@ -43,7 +43,7 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props)
     setIsResourceListOpen(false);
   };
 
-  const handleResourceSwtich = () => {
+  const handleResourceList = () => {
     if (isResourceListOpen) setIsResourceListOpen(false);
     else setIsResourceListOpen(true);
   };
@@ -52,71 +52,71 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props)
     <div className={"global-font"}>
       <Nav></Nav>
       <Box id="main-container" className={css["patient-info-container"]}>
-        <Accordion className={css["recommended-resources-container"]} expanded={isResourceListOpen}>
+        <Accordion className={css["recommended-resources-container"]} expanded={isResourceListOpen} onClick={handleResourceList}>
           <AccordionSummary expandIcon={<ExpandMore />} aria-controls="panel1a-content" id="panel1a-header">
             Recommended Resource List
           </AccordionSummary>
           <AccordionDetails className={css["resource-list"]}>
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                Allergy And Asthma
+            <Grid container>
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Allergy And Asthma</Button>
               </Grid>
-              <Grid item xs={6}>
-                Cardiology
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Cardiology</Button>
               </Grid>
-              <Grid item xs={6}>
-                Colon And Rectal
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Colon And Rectal</Button>
               </Grid>
-              <Grid item xs={6}>
-                Dermatology
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Dermatology</Button>
               </Grid>
-              <Grid item xs={6}>
-                Dental
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Dental</Button>
               </Grid>
-              <Grid item xs={6}>
-                Endocrinology
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Endocrinology</Button>
               </Grid>
-              <Grid item xs={6}>
-                Ears, Nose, and Throat
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Ears, Nose, and Throat</Button>
               </Grid>
-              <Grid item xs={6}>
-                Foot Pediatry
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Foot Pediatry</Button>
               </Grid>
-              <Grid item xs={6}>
-                Gastroenterology
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Gastroenterology</Button>
               </Grid>
-              <Grid item xs={6}>
-                Infectious Disease
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Infectious Disease</Button>
               </Grid>
-              <Grid item xs={6}>
-                Kidney Renal
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Kidney Renal</Button>
               </Grid>
-              <Grid item xs={6}>
-                Opthmaologist
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Opthmaologist</Button>
               </Grid>
-              <Grid item xs={6}>
-                Optometrist
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Optometrist</Button>
               </Grid>
-              <Grid item xs={6}>
-                Orthopedics
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Orthopedics</Button>
               </Grid>
-              <Grid item xs={6}>
-                Pain Clinic
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Pain Clinic</Button>
               </Grid>
-              <Grid item xs={6}>
-                Psychology and Psychiatry
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Psychology and Psychiatry</Button>
               </Grid>
-              <Grid item xs={6}>
-                Sleep
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Sleep</Button>
               </Grid>
-              <Grid item xs={6}>
-                Urgent Care Clinic
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Urgent Care Clinic</Button>
               </Grid>
-              <Grid item xs={6}>
-                Urology
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Urology</Button>
               </Grid>
-              <Grid item xs={6}>
-                Home Health Care Agency
+              <Grid className={css['list-item']} item xs={6}>
+                <Button className={css["list-button"]} onClick={handleResourceList}>Home Health Care Agency</Button>
               </Grid>
             </Grid>
           </AccordionDetails>

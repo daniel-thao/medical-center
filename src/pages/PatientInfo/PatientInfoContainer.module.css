@@ -9,9 +9,21 @@
   border-top: solid 1px black;
 }
 
+.list-item {
+    padding: .5em 1em;
+    cursor: pointer;
+}
+
+.list-item:hover {
+  background-color: rgb(236, 236, 236);
+}
+
 .list-button {
-  /* font-size: 1em;
-  font-weight: 400;
-  text-align: start; */
-  /* padding: 0em; */
+  color: black !important;
+  font-size: 0.9em !important;
+  font-weight: 400 !important;
+  text-align: start;
+  padding: 0em !important;
+  margin: 0em !important;
+  justify-content: start !important;
 }
