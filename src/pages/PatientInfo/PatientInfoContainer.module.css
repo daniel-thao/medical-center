@@ -1,5 +1,5 @@
 .patient-info-container {
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .recommended-resources-container {
@@ -10,8 +10,8 @@
 }
 
 .list-item {
-    padding: .5em 1em;
-    cursor: pointer;
+  padding: 0.5em 1em;
+  cursor: pointer;
 }
 
 .list-item:hover {
@@ -26,4 +26,24 @@
   padding: 0em !important;
   margin: 0em !important;
   justify-content: start !important;
+}
+
+.resource-category-container {
+  padding: 0.5em;
+}
+
+.resource-category-title {
+  font-size: 1.5em;
+  border-bottom: solid 1px black;
+  padding: 0.4em;
+}
+
+.resource-info-container {
+  background: rgb(255, 235, 239, .7);
+  margin: .5em 0em !important;
+  border-radius: .3em;
+}
+
+.resource-info {
+
 }

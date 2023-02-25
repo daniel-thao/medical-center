@@ -93,9 +93,9 @@ export const Main: React.FC<MainProps> = (props) => {
       />
 
       <Grid container spacing={2} className={css["resource-container"]}>
-        {photoHyperLinks.map((data) => {
+        {photoHyperLinks.map((data, index) => {
           return (
-            <Grid container item xs={12} sm={6} md={6} className={css["resource"]}>
+            <Grid container item xs={12} sm={6} md={6} key={photoHyperLinks[index].alt} className={css["resource"]}>
               <img className={css["resource-image"]} alt={data.alt} src={data.src} />
               <Link to={data.link} className={`${font["text-m"]}`}>
                 {data.displayText}
