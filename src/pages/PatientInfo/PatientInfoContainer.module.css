@@ -2,23 +2,31 @@
   /* background-color: aqua; */
 }
 
-.recommended-resources-container {
+/* 
+
+
+****************************** Mobile - Tablet Resource Container ******************************
+
+
+*/
+
+.recommended-resources-container-mobile-tablet {
 }
 
-.resource-list {
+.resource-list-mobile-tablet {
   border-top: solid 1px black;
 }
 
-.list-item {
+.list-item-mobile-tablet {
   padding: 0.5em 1em;
   cursor: pointer;
 }
 
-.list-item:hover {
+.list-item-mobile-tablet:hover {
   background-color: rgb(236, 236, 236);
 }
 
-.list-button {
+.list-button-mobile-tablet {
   color: black !important;
   font-size: 0.9em !important;
   font-weight: 400 !important;
@@ -28,17 +36,86 @@
   justify-content: start !important;
 }
 
-.resource-category-container {
+.resource-category-container-mobile-tablet {
   padding: 0.5em;
 }
 
-.resource-category-title {
+.resource-category-title-mobile-tablet {
   font-size: 1.5em;
   border-bottom: solid 1px black;
   padding: 0.4em;
 }
 
-.resource-info-container {
+.resource-info-container-mobile-tablet {
+  background: rgb(255, 235, 239, .7);
+  margin: .5em 0em !important;
+  border-radius: .3em;
+}
+
+.resource-info {
+
+}
+
+/* 
+
+
+****************************** laptop - monitor Resource Container ******************************
+
+
+*/
+
+.recommended-resources-container-laptop-monitor {
+}
+
+.resource-list-laptop-monitor {
+  border-top: solid 1px black;
+}
+
+.list-laptop-monitor {
+  border-right: solid 1px black;
+  padding: 1em 1em 0em 1em;
+}
+
+.list-item-laptop-monitor {
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.list-item-laptop-monitor:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+.list-item-title-laptop-monitor {
+  padding: 0.5em 1em .6em 1em;
+  border-bottom: solid 1px black;
+}
+
+.list-item-title-laptop-monitor:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+
+.list-button-laptop-monitor {
+  color: black !important;
+  font-size: 0.9em !important;
+  font-weight: 400 !important;
+  text-align: start;
+  padding: 0em !important;
+  margin: 0em !important;
+  justify-content: start !important;
+}
+
+.resource-category-container-laptop-monitor {
+  padding: 0.5em;
+}
+
+.resource-category-title-laptop-monitor {
+  font-size: 1.5em;
+  border-bottom: solid 1px black;
+  padding: 0.4em;
+}
+
+.resource-info-container-laptop-monitor {
   background: rgb(255, 235, 239, .7);
   margin: .5em 0em !important;
   border-radius: .3em;

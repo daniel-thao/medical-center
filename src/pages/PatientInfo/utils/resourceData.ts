@@ -2,6 +2,18 @@ import { ICategoryResource } from "./interfacesTypes";
 
 export const resourceData: ICategoryResource[] = [
   {
+    "None": {
+      0: {
+        clinicName: "",
+        street: "",
+        city: "",
+        state: "",
+        zipcode: "",
+        phone: "",
+      },
+    } 
+  },
+  {
     "Allergy-and-Asthma": {
       0: {
         clinicName: "Allergy & Asthma Allina Clinic - Woodbury",
