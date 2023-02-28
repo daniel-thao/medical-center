@@ -17,7 +17,7 @@ import {
   FormControl,
   Input,
 } from "@mui/material";
-import { Menu, Search } from "@mui/icons-material";
+import { Menu, Search, ArrowCircleRight } from "@mui/icons-material";
 import { Cancel } from "@mui/icons-material";
 
 import css from "./NavBase.module.css";
@@ -60,9 +60,10 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.href} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton>
               <Link className={css["links"]} to={item.href}>
                 <ListItemText primary={item.display} />
+                <ArrowCircleRight onClick={handleDrawerToggle}></ArrowCircleRight>
               </Link>
             </ListItemButton>
           </ListItem>
@@ -122,7 +123,7 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
         </Toolbar>
       </AppBar>
 
-      <Box component="nav">
+      <Box>
         <Drawer
           container={container}
           variant="temporary"
