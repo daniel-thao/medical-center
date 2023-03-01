@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Toolbar } from "@mui/material";
 
 import { NavBase } from "./organisms/NavBase";
+import { AthenaLinks } from "./molecules/AthenaLinks";
 
 import css from "./Nav.module.css";
 
@@ -13,6 +14,7 @@ export const Nav: React.FC<NavProps> = (props) => {
       <NavBase></NavBase>
       {/* This is here to add teh correct spacing to all the children components underneath the Nav */}
     <Toolbar/>
+    <AthenaLinks></AthenaLinks>
     </Box>
   );
 };

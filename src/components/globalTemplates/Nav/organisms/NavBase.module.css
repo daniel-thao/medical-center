@@ -49,6 +49,30 @@
   text-decoration: none;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex-grow: 2;
   padding: 0em 2em;
+}
+
+
+.athena-item {
+  display: flex;
+  align-items: center;
+}
+
+.athena-item > span {
+  font-size: calc(100vw / 25);
+  margin-top: calc(100vw / 800);
+  color:#4c2c84;
+  /* font-size: 1em; */
+}
+
+.athena-logo {
+  width: calc(100vw / 3.5);
+  object-fit: contain;
+  padding: 0.5em 0em 0.5em 0.5em;
+  padding-left: calc(100vw / 150);
+  padding-right: calc(100vw / 65);
+  background-color: white;
+  border-radius: 0.3em;
 }

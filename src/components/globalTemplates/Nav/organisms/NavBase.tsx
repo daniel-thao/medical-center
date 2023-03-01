@@ -31,13 +31,34 @@ interface NavBaseProps {
 }
 
 export interface NavItemLinks {
-  display: string;
+  display: React.ReactNode;
   href: string;
+  newWindow?: string;
 }
 
 const navItems: NavItemLinks[] = [
-  { display: "Home", href: "/" },
-  { display: "Patient Information", href: "/patient-info" },
+  {
+    display: (
+      <Box className={css["athena-item"]}>
+        <img className={css["athena-logo"]} src="./athenaHealthLogo.png" />{" "}
+        <span>Login</span>
+      </Box>
+    ),
+    href: "https://athenanet.athenahealth.com/1/47/login.esp",
+    newWindow: "_blank",
+  },
+  {
+    display: (
+      <Box className={css["athena-item"]}>
+        <img className={css["athena-logo"]} src="./athenaHealthLogo.png" />{" "}
+        <span>Pay</span>
+      </Box>
+    ),
+    href: "https://payment.patient.athenahealth.com/statement/?src=statement",
+    newWindow: "_blank",
+  },
+  { display: "Home", href: "/", newWindow: "" },
+  { display: "Patient Information", href: "/patient-info", newWindow: "" },
 ];
 
 export const NavBase: React.FC<NavBaseProps> = (props) => {
@@ -49,7 +70,10 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
   };
 
   const drawer: React.ReactNode = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", width: "100%" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", width: "100%" }}
+    >
       <Box className={css["nav-hamburger-menu-title"]}>
         <Typography variant="h6">St. Paul Family Center</Typography>
         <Cancel></Cancel>
@@ -61,9 +85,15 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
         {navItems.map((item) => (
           <ListItem key={item.href} disablePadding>
             <ListItemButton>
-              <Link className={css["links"]} to={item.href}>
+              <Link
+                className={css["links"]}
+                to={item.href}
+                target={item.newWindow}
+              >
                 <ListItemText primary={item.display} />
-                <ArrowCircleRight onClick={handleDrawerToggle}></ArrowCircleRight>
+                <ArrowCircleRight
+                  onClick={handleDrawerToggle}
+                ></ArrowCircleRight>
               </Link>
             </ListItemButton>
           </ListItem>
@@ -72,7 +102,8 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -90,7 +121,11 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
 
           <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             <Link to="/">
-              <img className={`${css["logo"]}`} src="./ClinicLogoDarker.png" alt="Logo"></img>
+              <img
+                className={`${css["logo"]}`}
+                src="./ClinicLogoDarker.png"
+                alt="Logo"
+              ></img>
             </Link>
           </Box>
 

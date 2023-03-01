@@ -3,6 +3,7 @@ import React from "react";
 import { Quote } from "../../globalAtoms/Quote/Quote";
 import { Paragraph } from "../../globalAtoms/Paragraph/Paragraph";
 import { Box } from "@mui/material";
+import { Word } from "../../globalAtoms/Word/Word";
 
 export interface TextBlockProps {
   classification: string;
