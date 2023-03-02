@@ -1,25 +1,24 @@
-import React, { useState, useEffect, SetStateAction } from "react";
+import React, { useState, SetStateAction } from "react";
+import { Link } from "react-router-dom";
 
 import { Nav } from "../../components/globalTemplates/Nav/Nav";
 import { ResourceDataDrawer } from "./subComponents/ResourceDataDrawer";
 import { TextBlock } from "../../components/globalMolecules/TextBlock/TextBlock";
+import { Footer } from "../../components/globalTemplates/Footer/Footer";
 import {
   Box,
   Grid,
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Typography,
 } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 
 import { IResourceCategoryRender } from "./utils/interfacesTypes";
 import { resourceData } from "./utils/resourceData";
 import { vaccineData } from "./utils/vaccineData";
-import { renderRecommendedResources } from "./utils/functionsUtil";
 
 import css from "./PatientInfoContainer.module.css";
-import { Link } from "react-router-dom";
 
 export interface PatientInfoContainerProps {}
 
@@ -72,6 +71,7 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (
   return (
     <div className={"global-font"}>
       <Nav></Nav>
+
       <Box id="main-container" className={css["patient-info-container"]}>
         <Box
           id="mobile-tablet-recommended-resources-container"
@@ -82,6 +82,7 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (
             classification="quote"
             className={css["quote-one"]}
           />
+
           <Accordion
             className={css["recommended-resources-container-mobile-tablet"]}
             expanded={isResourceListOpen}
@@ -122,31 +123,6 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (
             isResourceChosen={isResourceChosen}
             setIsResourceChosen={setIsResourceChosen}
           ></ResourceDataDrawer>
-
-          {/* {whichResourceToShow.resourceCategory === "None" && (
-            <Box className={css["resource-category-container-mobile-tablet"]}>
-              <Box className={css["resource-category-title-mobile-tablet"]}>
-                Resources
-              </Box>
-              <TextBlock
-                body={`Choose from multiple recommended clinics and practices that have
-                a great response and turn around time.`}
-                classification="paragraph"
-              />
-              <br></br>
-              <TextBlock
-                body={`Before choosing to go to one of our recommended resources, make
-                sure that they are in-network with your insurance and if they
-                will accept your insurance.`}
-                classification="paragraph"
-              />
-            </Box>
-          )}
-          {renderRecommendedResources(
-            whichResourceToShow,
-            "mobile-tablet",
-            setWhichResourceToShow
-          )} */}
         </Box>
 
         {/* <Grid
@@ -226,7 +202,7 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (
         <Grid container id="mobile-tablet-vaccine-list-container">
           <Grid item xs={12} md={6} xl={3}>
             <Accordion
-              className={css["recommended-resources-container"]}
+              className={css["recommended-vaccines-container"]}
               expanded={vaccineInfoList}
               onClick={() =>
                 handleVaccineList(vaccineInfoList, setVaccineInfoList)
@@ -239,13 +215,13 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (
               >
                 Vaccine Information
               </AccordionSummary>
-              <AccordionDetails className={css["resource-list"]}>
+              <AccordionDetails className={css["vaccines-list"]}>
                 <Grid container>
                   {vaccineData.map((eachVaccine, index) => {
                     const { title, keyLink, extraLink } = eachVaccine;
                     return (
                       <Grid
-                        className={css["list-item"]}
+                        className={css["vaccines-list-item"]}
                         item
                         key={`${title}-${keyLink}-${extraLink}`}
                         onClick={() =>
@@ -265,6 +241,8 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (
           </Grid>
         </Grid>
       </Box>
+
+      <Footer></Footer>
     </div>
   );
 };

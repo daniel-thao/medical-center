@@ -17,6 +17,7 @@
 }
 
 .recommended-resources-container-mobile-tablet {
+  margin: 0.5em 0em;
 }
 
 .resource-list-mobile-tablet {
@@ -53,13 +54,33 @@
 }
 
 .resource-info-container-mobile-tablet {
-  background: rgb(255, 235, 239, .7);
-  margin: .5em 0em !important;
-  border-radius: .3em;
+  background: rgb(255, 235, 239, 0.7);
+  margin: 0.5em 0em !important;
+  border-radius: 0.3em;
 }
 
 .resource-info {
+}
 
+/* 
+*************** Vaccine Container ***************
+*/
+.recommended-vaccines-container {
+
+}
+
+.vaccines-list {
+  border-top: solid 1px black;
+ /* padding: 0em !important; */
+}
+
+.vaccines-list-item {
+  padding: .5em 1em;
+}
+
+.vaccines-list-item > a {
+  text-decoration: none;
+  color: black;
 }
 
 /* 
@@ -92,14 +113,13 @@
 }
 
 .list-item-title-laptop-monitor {
-  padding: 0.5em 1em .6em 1em;
+  padding: 0.5em 1em 0.6em 1em;
   border-bottom: solid 1px black;
 }
 
 .list-item-title-laptop-monitor:hover {
   background-color: rgb(236, 236, 236);
 }
-
 
 .list-button-laptop-monitor {
   color: black !important;
@@ -122,11 +142,10 @@
 }
 
 .resource-info-container-laptop-monitor {
-  background: rgb(255, 235, 239, .7);
-  margin: .5em 0em !important;
-  border-radius: .3em;
+  background: rgb(255, 235, 239, 0.7);
+  margin: 0.5em 0em !important;
+  border-radius: 0.3em;
 }
 
 .resource-info {
-
 }
