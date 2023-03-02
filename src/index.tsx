@@ -6,19 +6,29 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { LandingPage } from "./pages/LandingPage/LandingPage";
 import { PatientInfoContainer } from "./pages/PatientInfo/PatientInfoContainer";
+import { ImmigrationInfoContainer } from "./pages/ImmigrationInfo/ImmigrationInfoContainer";
+import { ProviderInfoContainer } from "./pages/ProviderInfo/ProviderInfoContainer";
 
 import "./index.css";
 
 const router: any = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage/>
+    element: <LandingPage />,
   },
   {
     path: "/patient-info",
-    element: <PatientInfoContainer/>
+    element: <PatientInfoContainer />,
   },
-])
+  {
+    path: "/immigration-info",
+    element: <ImmigrationInfoContainer />,
+  },
+  {
+    path: "/provider-info",
+    element: <ProviderInfoContainer />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(

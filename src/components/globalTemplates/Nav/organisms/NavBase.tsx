@@ -59,6 +59,8 @@ const navItems: NavItemLinks[] = [
   },
   { display: "Home", href: "/", newWindow: "" },
   { display: "Patient Information", href: "/patient-info", newWindow: "" },
+  { display: "Immigration Exams", href: "/immigration-info", newWindow: "" },
+  { display: "Providers Information", href: "/provider-info", newWindow: "" }
 ];
 
 export const NavBase: React.FC<NavBaseProps> = (props) => {
