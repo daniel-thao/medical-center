@@ -123,7 +123,7 @@ export const Main: React.FC<MainProps> = (props) => {
                 alt={data.alt}
                 src={data.src}
               />
-              <Link to={data.link} className={`${font["text-m"]}`}>
+              <Link to={data.link} className={`${font["text-m"]}`} onClick={() => window.scrollTo(0,0)}>
                 {data.displayText}
               </Link>
             </Grid>

@@ -23,11 +23,6 @@ import { Cancel } from "@mui/icons-material";
 import css from "./NavBase.module.css";
 
 interface NavBaseProps {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
 }
 
 export interface NavItemLinks {
@@ -60,11 +55,10 @@ const navItems: NavItemLinks[] = [
   { display: "Home", href: "/", newWindow: "" },
   { display: "Patient Information", href: "/patient-info", newWindow: "" },
   { display: "Immigration Exams", href: "/immigration-info", newWindow: "" },
-  { display: "Providers Information", href: "/provider-info", newWindow: "" }
+  { display: "Providers Information", href: "/providers-info", newWindow: "" }
 ];
 
 export const NavBase: React.FC<NavBaseProps> = (props) => {
-  const { window } = props;
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
 
   const handleDrawerToggle = () => {
@@ -91,6 +85,7 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
                 className={css["links"]}
                 to={item.href}
                 target={item.newWindow}
+                onClick={() => window.scrollTo(0,0)}
               >
                 <ListItemText primary={item.display} />
                 <ArrowCircleRight
@@ -103,9 +98,6 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
       </List>
     </Box>
   );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -162,7 +154,6 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
 
       <Box>
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
