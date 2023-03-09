@@ -25,7 +25,7 @@ const router: any = createBrowserRouter([
     element: <ImmigrationInfoContainer />,
   },
   {
-    path: "/provider-info",
+    path: "/providers-info",
     element: <ProviderInfoContainer />,
   },
 ]);

@@ -28,13 +28,25 @@
   margin: 2.5em 2em;
 }
 
-.image-general-formmat {
+.image-general-format {
   object-fit: contain;
   width: 100vw;
 }
 
 .image-one {
   margin: 0em 0em 2.5em 0em;
+}
+
+.landing-page-certification-one {
+  font-size: 1.75em;
+  text-align: center;
+  margin: 1em 0em .5em 0em;
+}
+
+.landing-page-certification-two {
+  /* font-size: 1.75em; */
+  /* text-align: center; */
+  margin: 0em 3em;
 }
 
 .resource-container {

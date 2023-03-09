@@ -1,0 +1,24 @@
+.photo-container-one {
+}
+
+.image-general-format {
+  object-fit: contain;
+  width: 100vw;
+}
+
+.tab-panel-container-formatting {
+  padding: 0em !important;
+}
+
+.tab-panel-text-formatting {
+  padding: 1em 2em !important;
+}
+
+.provider-one {
+  font-size: 1.75em;
+  padding: 0.5em 0em 1em 0em !important;
+}
+
+.provider-one-paragraph {
+  padding: 0.5em 0em;
+}

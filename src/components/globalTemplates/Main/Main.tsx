@@ -29,7 +29,7 @@ export const Main: React.FC<MainProps> = (props) => {
       alt: "provider-information",
       src: "https://plus.unsplash.com/premium_photo-1661746101294-0b53eaaacc61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
       displayText: "Providers",
-      link: "/providers",
+      link: "/providers-info",
     },
     {
       alt: "immigration-exam-information",
@@ -50,13 +50,15 @@ export const Main: React.FC<MainProps> = (props) => {
       <Box className={css["image-one"]}>
         <img
           alt="clinic-interior-01"
-          className={css["image-general-formmat"]}
+          className={css["image-general-format"]}
           src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80"
         ></img>
       </Box>
 
       <TextBlock
-        body={"Serving our patients with a compassionate heart and caring hands"}
+        body={
+          "Serving our patients with a compassionate heart and caring hands"
+        }
         classification="quote"
         className={css["landing-page-quote-one"]}
       />
@@ -74,10 +76,22 @@ export const Main: React.FC<MainProps> = (props) => {
       <Box className={css["hero-container"]}>
         <img
           alt="clinic-person-01"
-          className={css["image-general-formmat"]}
+          className={css["image-general-format"]}
           src="https://plus.unsplash.com/premium_photo-1661418051911-54992d992b30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80"
         ></img>
       </Box>
+
+      <TextBlock
+        body={"Certified HealthCare Home"}
+        classification="quote"
+        className={css["landing-page-certification-one"]}
+      />
+
+      <TextBlock
+        body={"SPFMC is certified by the state of MN as a HealthCare Home."}
+        classification="paragraph"
+        className={css["landing-page-certification-two"]}
+      />
 
       <TextBlock
         body={`St. Paul Family Medical Center (SPFMC) was founded in June 2002 by one of the first 
@@ -95,8 +109,20 @@ export const Main: React.FC<MainProps> = (props) => {
       <Grid container spacing={2} className={css["resource-container"]}>
         {photoHyperLinks.map((data, index) => {
           return (
-            <Grid container item xs={12} sm={6} md={6} key={photoHyperLinks[index].alt} className={css["resource"]}>
-              <img className={css["resource-image"]} alt={data.alt} src={data.src} />
+            <Grid
+              container
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              key={photoHyperLinks[index].alt}
+              className={css["resource"]}
+            >
+              <img
+                className={css["resource-image"]}
+                alt={data.alt}
+                src={data.src}
+              />
               <Link to={data.link} className={`${font["text-m"]}`}>
                 {data.displayText}
               </Link>
