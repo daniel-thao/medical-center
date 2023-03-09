@@ -1,7 +1,7 @@
 .athena-link-container {
   /* background-color: rgb(100, 60, 169);
   background: rgb(255, 235, 239); */
-  background: linear-gradient(rgb(255, 235, 239), rgb(255, 255, 255));
+  background: linear-gradient(rgb(255, 235, 239), rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
 .athena-link-grid-container {
@@ -28,7 +28,7 @@
 .athena-item > span {
   font-size: calc(100vw / 25);
   margin-top: calc(100vw / 800);
-  color:#4c2c84;
+  color: #4c2c84;
   /* font-size: 1em; */
 }
 
@@ -40,4 +40,36 @@
   padding-right: calc(100vw / 65);
   background-color: white;
   border-radius: 0.3em;
+}
+
+.SPFMC-container {
+  padding: 3em 0em 0em 0em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.SPFMC-title {
+  font-size: 3em;
+  font-weight: 400;
+  /* text-align: center; */
+  /* padding: 1em 0em 0em 0em; */
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0em;
+}
+
+.logo {
+  /* border: solid 1px rgb(140, 100, 108); */
+  /* border-radius: 10em; */
+  /* padding: 0.1em; */
+  /* margin: 0em 1em 0em 0em; */
+  width: 15em;
+  height: 15em;
 }

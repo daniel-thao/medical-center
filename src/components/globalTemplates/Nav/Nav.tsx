@@ -9,6 +9,7 @@ import css from "./Nav.module.css";
 export interface NavProps {}
 
 export const Nav: React.FC<NavProps> = (props) => {
+
   return (
     <Box className={css.navContainer}>
       <NavBase></NavBase>
