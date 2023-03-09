@@ -5,7 +5,13 @@ import { Nav } from "../../components/globalTemplates/Nav/Nav";
 import { ResourceDataDrawer } from "./subComponents/ResourceDataDrawer";
 import { TextBlock } from "../../components/globalMolecules/TextBlock/TextBlock";
 import { Footer } from "../../components/globalTemplates/Footer/Footer";
-import { Box, Grid, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 
 import { IResourceCategoryRender } from "./utils/interfacesTypes";
@@ -16,15 +22,18 @@ import css from "./PatientInfoContainer.module.css";
 
 export interface PatientInfoContainerProps {}
 
-export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props) => {
+export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (
+  props
+) => {
   const [isResourceListOpen, setIsResourceListOpen] = useState<boolean>(false);
   const [isResourceChosen, setIsResourceChosen] = useState<boolean>(false);
   const [vaccineInfoList, setVaccineInfoList] = useState<boolean>(false);
 
-  const [whichResourceToShow, setWhichResourceToShow] = useState<IResourceCategoryRender>({
-    resourceCategory: "Allergy-and-Asthma",
-    resourceIndex: 0,
-  });
+  const [whichResourceToShow, setWhichResourceToShow] =
+    useState<IResourceCategoryRender>({
+      resourceCategory: "Allergy-and-Asthma",
+      resourceIndex: 0,
+    });
 
   const handleResourceList = (
     resourceListCategory?: string,
@@ -50,7 +59,10 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props)
     }, 375);
   };
 
-  const handleVaccineList = (state: boolean, setChosenState: React.Dispatch<SetStateAction<boolean>>) => {
+  const handleVaccineList = (
+    state: boolean,
+    setChosenState: React.Dispatch<SetStateAction<boolean>>
+  ) => {
     if (!state) {
       setChosenState(true);
     } else setChosenState(false);
@@ -59,8 +71,12 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props)
   return (
     <div className={`global-font ${css["overall-container"]}`}>
       <Nav></Nav>
+      
       <Box id="main-container" className={css["patient-info-container"]}>
-        <Box id="mobile-tablet-recommended-resources-container" sx={{ display: { xs: "block", md: "none" } }}>
+        <Box
+          id="mobile-tablet-recommended-resources-container"
+          sx={{ display: { xs: "block", md: "none" } }}
+        >
           <TextBlock
             body="Serving our patients with a compassionate heart and caring hands"
             classification="quote"
@@ -73,7 +89,11 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props)
             onClick={() => handleResourceList()}
           >
             <AccordionSummary
-              className={`${isResourceListOpen ? css["resource-list-active"] : css["resource-list-inactive"]}`}
+              className={`${
+                isResourceListOpen
+                  ? css["resource-list-active"]
+                  : css["resource-list-inactive"]
+              }`}
               expandIcon={<ExpandMore />}
               aria-controls="panel1a-content"
             >
@@ -188,10 +208,16 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props)
             <Accordion
               className={css["recommended-vaccines-container"]}
               expanded={vaccineInfoList}
-              onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)}
+              onClick={() =>
+                handleVaccineList(vaccineInfoList, setVaccineInfoList)
+              }
             >
               <AccordionSummary
-                className={`${vaccineInfoList ? css["resource-list-active"] : css["resource-list-inactive"]}`}
+                className={`${
+                  vaccineInfoList
+                    ? css["resource-list-active"]
+                    : css["resource-list-inactive"]
+                }`}
                 expandIcon={<ExpandMore />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
@@ -207,7 +233,9 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props)
                         className={css["vaccines-list-item"]}
                         item
                         key={`${title}-${keyLink}-${extraLink}`}
-                        onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)}
+                        onClick={() =>
+                          handleVaccineList(vaccineInfoList, setVaccineInfoList)
+                        }
                         xs={12}
                       >
                         <Link to={`${keyLink}`} target="_blank">

@@ -2,16 +2,21 @@ import React, { Dispatch, SetStateAction } from "react";
 
 import { Cancel } from "@mui/icons-material";
 import {
+  AppBar,
   Box,
   Drawer,
   List,
   ListItem,
   ListItemButton,
   Divider,
+  Toolbar,
+  Typography,
 } from "@mui/material";
 
 import { IResourceCategoryRender } from "../utils/interfacesTypes";
 import { ResourceItem } from "./ResourceItem";
+
+import css from "../PatientInfoContainer.module.css";
 
 export interface ResourceDataDrawerProps {
   whichResourceToShow: IResourceCategoryRender;
@@ -38,13 +43,15 @@ export const ResourceDataDrawer: React.FC<ResourceDataDrawerProps> = (
       onClick={toggleDrawer}
       onKeyDown={toggleDrawer}
     >
-      <ListItem>
-        <ListItemButton>
-          {title} <Cancel onClick={toggleDrawer} />
-        </ListItemButton>
-      </ListItem>
-      <Divider />
-      <List>
+      <AppBar>
+        <Toolbar className={css["resource-drawer-title"]}>
+          <Typography variant="h1">{title}</Typography>
+          <Cancel onClick={toggleDrawer} />
+        </Toolbar>
+      </AppBar>
+
+      <Toolbar/>
+      <List className={css["resource-drawer-list-container"]}>
         <ResourceItem whichResourceToShow={whichResourceToShow}></ResourceItem>
       </List>
     </Box>

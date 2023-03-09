@@ -49,13 +49,18 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
 
     const test = (
       <Box>
-        <Typography>Name: {value.clinicName}</Typography>
         <Typography>
-          Address: {value.street} {value.city} {value.state} {value.zipcode}
+          <span className={css["resource-info-prefix"]}>Name:</span>{" "}
+          {value.clinicName}
+        </Typography>
+        <Typography>
+          <span className={css["resource-info-prefix"]}>Address:</span>{" "}
+          {value.street} {value.city} {value.state} {value.zipcode}
         </Typography>
         <Box>
           <Typography>
-            Phone: {phoneNumArr.length > 0 ? "" : value.phone}
+            <span className={css["resource-info-prefix"]}>Phone:</span>{" "}
+            {phoneNumArr.length > 0 ? "" : value.phone}
           </Typography>
           {phoneNumArr.map((element) => {
             return element;
@@ -64,14 +69,16 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
         <Box>
           {typeof value.openTime === "string" ? (
             <Typography>
-              Open Times:{" "}
+              <span className={css["resource-info-prefix"]}>Open Times:</span>{" "}
               {12 % parseInt(value.openTime) <= 11
                 ? `${parseInt(value.openTime)}am`
                 : `${parseInt(value.openTime) - 12}pm`}
             </Typography>
           ) : (
             <Typography>
-              {typeof value.closeTime === "undefined" ? "" : "Open Times: "}
+              <span className={css["resource-info-prefix"]}>
+                {typeof value.closeTime === "undefined" ? "" : "Open Times: "}
+              </span>
             </Typography>
           )}
           {openTimeDataArr.map((element) => {
@@ -81,14 +88,16 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
         <Box>
           {typeof value.closeTime === "string" ? (
             <Typography>
-              Close Times:{" "}
+              <span className={css["resource-info-prefix"]}>Close Times:</span>{" "}
               {12 % parseInt(value.closeTime) <= 11
                 ? `${parseInt(value.closeTime)}am`
                 : `${parseInt(value.closeTime) - 12}pm`}
             </Typography>
           ) : (
             <Typography>
-              {typeof value.closeTime === "undefined" ? "" : "Close Times: "}
+              <span className={css["resource-info-prefix"]}>
+                {typeof value.closeTime === "undefined" ? "" : "Close Times: "}
+              </span>
             </Typography>
           )}
           {closeTimeDataArr.map((element) => {
@@ -106,7 +115,7 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
         <ListItem
           className={css[`resource-info-container-mobile-tablet`]}
           key={`${allResources[index].clinicName}-${allResources[index].zipcode}`}
-          sx={{ margin: { xs: ".5em .5em" } }}
+          // sx={{ margin: { xs: ".5em .5em" } }}
         >
           {element}
         </ListItem>
