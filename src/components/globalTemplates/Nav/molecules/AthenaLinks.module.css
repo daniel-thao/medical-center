@@ -5,7 +5,12 @@
 }
 
 .athena-link-grid-container {
-  padding: 0.5em 0em 5em 0em;
+  padding: 0.5em 0em 1em 0em;
+}
+
+.extra-padding {
+  padding: 0em 0em 5em 0em;
+
 }
 
 .athena-link-grid-item {
@@ -70,6 +75,6 @@
   /* border-radius: 10em; */
   /* padding: 0.1em; */
   /* margin: 0em 1em 0em 0em; */
-  width: 10em;
-  height: 10em;
+  width: 15em;
+  height: 15em;
 }

@@ -13,7 +13,7 @@ export const AthenaLinks: React.FC<AthenaLinksProps> = () => {
 
   return (
     <Toolbar className={css["athena-link-container"]}>
-      <Grid container className={css["athena-link-grid-container"]}>
+      <Grid container className={`${css["athena-link-grid-container"]} ${location.pathname === "/" && css['extra-padding']}`}>
         {location.pathname === "/" ? (
           <>
             <Grid item xs={12} className={css["SPFMC-container"]}>
@@ -24,7 +24,7 @@ export const AthenaLinks: React.FC<AthenaLinksProps> = () => {
                 <Typography variant={"h1"} className={css["SPFMC-title"]}>
                   Medical Center
                 </Typography>
-              </Box>
+              </Box>        
             </Grid>
 
             <Grid item xs={12} className={css["logo-container"]}>
