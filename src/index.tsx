@@ -2,32 +2,40 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import { LandingPage } from "./pages/LandingPage/LandingPage";
 import { PatientInfoContainer } from "./pages/PatientInfo/PatientInfoContainer";
 import { ImmigrationInfoContainer } from "./pages/ImmigrationInfo/ImmigrationInfoContainer";
 import { ProviderInfoContainer } from "./pages/ProviderInfo/ProviderInfoContainer";
+import { Nav } from "./components/globalTemplates/Nav/Nav";
+import { Main } from "./components/globalTemplates/Main/Main";
 
 import "./index.css";
 
 const router: any = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
+    element: <LandingPage> <Outlet/> </LandingPage>,
+    children: [
+      {
+        path:"/",
+        element: <Main></Main>
+      },
+      {
+        path: "/patient-info",
+        element: <PatientInfoContainer />,
+      },
+    ]
   },
-  {
-    path: "/patient-info",
-    element: <PatientInfoContainer />,
-  },
-  {
-    path: "/immigration-info",
-    element: <ImmigrationInfoContainer />,
-  },
-  {
-    path: "/providers-info",
-    element: <ProviderInfoContainer />,
-  },
+  // {
+  //   path: "/immigration-info",
+  //   element: <ImmigrationInfoContainer />,
+  // },
+  // {
+  //   path: "/providers-info",
+  //   element: <ProviderInfoContainer />,
+  // },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);

@@ -12,8 +12,7 @@ import css from "./ProviderInfoContainer.module.css";
 export interface ProviderInfoProps {}
 
 export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
-  const [whichProviderIDNumber, setWhichProviderIDNumber] =
-    useState<string>("1");
+  const [whichProviderIDNumber, setWhichProviderIDNumber] = useState<string>("1");
 
   const handleChange = (e: React.SyntheticEvent, newValue: string) => {
     setWhichProviderIDNumber(newValue);
@@ -31,13 +30,13 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
 
   return (
     <div className={`global-font ${css["landing-container"]}`}>
-      <Nav></Nav>
+      {/* <Nav></Nav> */}
 
       <Box>
         <TabContext value={whichProviderIDNumber}>
           <Box>
             <TabList
-              value={whichProviderIDNumber}
+              // value={whichProviderIDNumber}
               onChange={handleChange}
               aria-label="provider-tab-selection"
             >

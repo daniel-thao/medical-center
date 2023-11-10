@@ -1,0 +1,139 @@
+/* 
+
+
+****************************** Mobile - Tablet Resource Container ******************************
+
+
+*/
+
+.quote-one {
+  font-size: 1.75em;
+  text-align: center;
+  margin: 1em 1em;
+}
+
+.recommended-resources-container-mobile-tablet {
+  margin: 0.5em 0em;
+}
+
+.resource-list-inactive {
+  background-color: rgb(255, 249, 250) !important;
+  /* background: linear-gradient(rgb(255, 235, 239), rgb(255, 255, 255)) !important; */
+  /* background: aqua !important; */
+  transition: all ease 1s;
+}
+
+.resource-list-active {
+  background: linear-gradient(
+    0.25turn,
+    rgb(255, 235, 239),
+    rgb(255, 249, 250)
+  ) !important;
+  box-shadow: 0px 0 0.1em black, -0em 0em 0.1em black;
+  transition: all ease 1s;
+}
+
+.resource-list-mobile-tablet {
+  /* border-top: solid 1px black; */
+}
+
+.list-item-mobile-tablet {
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.list-item-mobile-tablet:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+.list-button-mobile-tablet {
+  color: black !important;
+  font-size: 0.9em !important;
+  font-weight: 400 !important;
+  text-align: start;
+  padding: 0em !important;
+  margin: 0em !important;
+  justify-content: start !important;
+}
+
+.resource-drawer-title {
+  /* background: linear-gradient(0.75turn, rgb(255, 235, 239), rgb(255, 255, 255)); */
+  background-color: white;
+  color: black;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0em 1.5em;
+}
+
+.resource-drawer-title > h1 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.resource-drawer-list-container {
+  background: linear-gradient(
+    rgb(255, 235, 239),
+    rgb(255, 255, 255)
+  ) !important;
+}
+
+.resource-category-container-mobile-tablet {
+  padding: 0.5em;
+}
+
+.resource-category-title-mobile-tablet {
+  font-size: 1.5em;
+  border-bottom: solid 1px black;
+  padding: 0.4em;
+}
+
+.resource-info-container-mobile-tablet {
+  background-color: white;
+  margin: 0.5em 1em !important;
+  border: solid black 1px;
+  border-radius: 0.3em;
+  width: fit-content !important;
+}
+
+.resource-info-container-mobile-tablet > div {
+  display: flex !important;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.resource-info-prefix {
+  font-weight:bold;
+}
+
+.resource-info {
+}
+
+/* 
+*************** Vaccine Container ***************
+*/
+.recommended-vaccines-container {
+}
+
+.vaccines-list {
+  /* border-top: solid 1px black; */
+  /* padding: 0em !important; */
+}
+
+.vaccines-list-item {
+  padding: 0.5em 1em;
+}
+
+.vaccines-list-item > a {
+  text-decoration: none;
+  color: black;
+}
+
+.hero-container {
+  margin: 2em 0em 0em 0em;
+}
+
+.image-general-formmat {
+  object-fit: contain;
+  width: 100vw;
+}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, generatePath } from "react-router-dom";
 
 import {
   Box,
@@ -86,7 +86,7 @@ export const NavDrawer: React.FC<NavDrawerProps> = (props) => {
                 <ListItemButton>
                   <Link
                     className={css["links"]}
-                    to={item.href}
+                    to={generatePath(item.href)}
                     target={item.newWindow}
                     onClick={() => window.scrollTo(0, 0)}
                   >

@@ -6,16 +6,17 @@ import { AthenaLinks } from "./molecules/AthenaLinks";
 
 import css from "./Nav.module.css";
 
-export interface NavProps {}
+export interface NavProps { children?: React.ReactNode }
 
-export const Nav: React.FC<NavProps> = (props) => {
+export const Nav: React.FC<NavProps> = ({ children }) => {
 
   return (
     <Box className={css.navContainer}>
       <NavBase></NavBase>
       {/* This is here to add teh correct spacing to all the children components underneath the Nav */}
-    <Toolbar/>
-    <AthenaLinks></AthenaLinks>
+      <Toolbar />
+      <AthenaLinks></AthenaLinks>
+      {/* {children} */}
     </Box>
   );
 };

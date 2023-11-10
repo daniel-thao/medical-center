@@ -35,7 +35,7 @@ export const Main: React.FC<MainProps> = (props) => {
       alt: "immigration-exam-information",
       src: "https://images.unsplash.com/photo-1564041549956-3ad6fa9f5517?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
       displayText: "Immigration Exams",
-      link: "/immigration-exams",
+      link: "/immigration-info",
     },
     {
       alt: "services-information",

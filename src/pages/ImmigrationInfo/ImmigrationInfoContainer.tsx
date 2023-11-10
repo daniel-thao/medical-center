@@ -10,7 +10,7 @@ export interface ImmigrationInfoProps {}
 export const ImmigrationInfoContainer: React.FC<ImmigrationInfoProps> = () => {
   return (
     <div className={`global-font ${css["landing-container"]}`}>
-      <Nav></Nav>
+      {/* <Nav></Nav> */}
       IMMIGRATIONS
       <Footer></Footer>
     </div>
