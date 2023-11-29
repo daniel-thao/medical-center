@@ -13,9 +13,9 @@ export const Nav: React.FC<NavProps> = ({ children }) => {
   return (
     <Box className={css.navContainer}>
       <NavBase></NavBase>
-      {/* This is here to add teh correct spacing to all the children components underneath the Nav */}
+      {/* This is here to add the correct spacing to all the children components underneath the Nav */}
       <Toolbar />
-      <AthenaLinks></AthenaLinks>
+      {/* <AthenaLinks></AthenaLinks> */}
       {/* {children} */}
     </Box>
   );

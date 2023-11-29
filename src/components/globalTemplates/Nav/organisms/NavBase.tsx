@@ -15,7 +15,7 @@ import { NavDrawer } from "../molecules/NavDrawer";
 
 import css from "./NavBase.module.css";
 
-interface NavBaseProps {}
+interface NavBaseProps { }
 
 export const NavBase: React.FC<NavBaseProps> = (props) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);

@@ -10,22 +10,31 @@ import { ImmigrationInfoContainer } from "./pages/ImmigrationInfo/ImmigrationInf
 import { ProviderInfoContainer } from "./pages/ProviderInfo/ProviderInfoContainer";
 import { Nav } from "./components/globalTemplates/Nav/Nav";
 import { Main } from "./components/globalTemplates/Main/Main";
+import { TitleAndLogo } from "./components/globalMolecules/title-and-logo/title-and-logo";
 
 import "./index.css";
+
+import { GeneralPageHeader } from "./components/globalMolecules/general-page-header/general-page-header";
 
 const router: any = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage> <Outlet/> </LandingPage>,
-    children: [
-      {
-        path:"/",
-        element: <Main></Main>
-      },
-      {
-        path: "/patient-info",
-        element: <PatientInfoContainer />,
-      },
+    element: <LandingPage> <Outlet /> </LandingPage>,
+    children: [{
+      path: "/",
+      element: <>
+        <Outlet />
+        <Main></Main>
+      </>,
+      children: [{
+        path: '/',
+        element: <GeneralPageHeader></GeneralPageHeader>
+      }]
+    },
+    {
+      path: "/patient-info",
+      element: <PatientInfoContainer />,
+    },
     ]
   },
   // {

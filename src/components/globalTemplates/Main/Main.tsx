@@ -7,7 +7,7 @@ import { Box, Grid } from "@mui/material";
 import css from "./Main.module.css";
 import font from "../../../styles/fonts.module.css";
 
-export interface MainProps {}
+export interface MainProps { }
 
 export interface IPhotoAndInfo {
   alt: string;
@@ -123,7 +123,7 @@ export const Main: React.FC<MainProps> = (props) => {
                 alt={data.alt}
                 src={data.src}
               />
-              <Link to={data.link} className={`${font["text-m"]}`} onClick={() => window.scrollTo(0,0)}>
+              <Link to={data.link} className={`${font["text-m"]}`} onClick={() => window.scrollTo(0, 0)}>
                 {data.displayText}
               </Link>
             </Grid>

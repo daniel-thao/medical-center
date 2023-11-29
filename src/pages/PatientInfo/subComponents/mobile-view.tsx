@@ -67,63 +67,64 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
   };
 
   return (
-    <><Box id="main-container" className={css["patient-info-container"]}>
-      <Box
-        id="mobile-tablet-recommended-resources-container"
-        sx={{ display: { xs: "block", md: "none" } }}
-      >
-        <TextBlock
-          body="Serving our patients with a compassionate heart and caring hands"
-          classification="quote"
-          className={css["quote-one"]}
-        />
-
-        <Accordion
-          className={`${css["recommended-resources-container-mobile-tablet"]}`}
-          expanded={isResourceListOpen}
-          onClick={() => handleResourceList()}
+    <>
+      <Box id="main-container" className={css["patient-info-container"]}>
+        <Box
+          id="mobile-tablet-recommended-resources-container"
+          sx={{ display: { xs: "block", md: "none" } }}
         >
-          <AccordionSummary
-            className={`${isResourceListOpen
+          <TextBlock
+            body="Serving our patients with a compassionate heart and caring hands"
+            classification="quote"
+            className={css["quote-one"]}
+          />
+
+          <Accordion
+            className={`${css["recommended-resources-container-mobile-tablet"]}`}
+            expanded={isResourceListOpen}
+            onClick={() => handleResourceList()}
+          >
+            <AccordionSummary
+              className={`${isResourceListOpen
                 ? css["resource-list-active"]
                 : css["resource-list-inactive"]
-              }`}
-            expandIcon={<ExpandMore />}
-            aria-controls="panel1a-content"
-          >
-            Recommended Resource List
-          </AccordionSummary>
+                }`}
+              expandIcon={<ExpandMore />}
+              aria-controls="panel1a-content"
+            >
+              Recommended Resource List
+            </AccordionSummary>
 
-          <AccordionDetails className={css["resource-list-mobile-tablet"]}>
-            <Grid container>
-              {resourceData.map((resource, index) => {
-                const objKey = Object.keys(resource)[0];
-                const resourceCategory = objKey.replaceAll("-", " ");
+            <AccordionDetails className={css["resource-list-mobile-tablet"]}>
+              <Grid container>
+                {resourceData.map((resource, index) => {
+                  const objKey = Object.keys(resource)[0];
+                  const resourceCategory = objKey.replaceAll("-", " ");
 
-                return (
-                  <Grid
-                    className={css["list-item-mobile-tablet"]}
-                    item
-                    key={`${resource}-${index}`}
-                    onClick={(e) => handleResourceList(objKey, index, true)}
-                    xs={6}
-                  >
-                    {resourceCategory}
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </AccordionDetails>
-        </Accordion>
+                  return (
+                    <Grid
+                      className={css["list-item-mobile-tablet"]}
+                      item
+                      key={`${resource}-${index}`}
+                      onClick={(e) => handleResourceList(objKey, index, true)}
+                      xs={6}
+                    >
+                      {resourceCategory}
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </AccordionDetails>
+          </Accordion>
 
-        <ResourceDataDrawer
-          whichResourceToShow={whichResourceToShow}
-          isResourceChosen={isResourceChosen}
-          setIsResourceChosen={setIsResourceChosen}
-        ></ResourceDataDrawer>
-      </Box>
+          <ResourceDataDrawer
+            whichResourceToShow={whichResourceToShow}
+            isResourceChosen={isResourceChosen}
+            setIsResourceChosen={setIsResourceChosen}
+          ></ResourceDataDrawer>
+        </Box>
 
-      {/* <Grid
+        {/* <Grid
           container
           id="laptop-monitor-recommended-resources-container"
           sx={{ display: { xs: "none", md: "flex" } }}
@@ -197,52 +198,52 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
           </Grid>
         </Grid> */}
 
-      <Grid container id="mobile-tablet-vaccine-list-container">
-        <Grid item xs={12} md={6} xl={3}>
-          <Accordion
-            className={css["recommended-vaccines-container"]}
-            expanded={vaccineInfoList}
-            onClick={() =>
-              handleVaccineList(vaccineInfoList, setVaccineInfoList)
-            }
-          >
-            <AccordionSummary
-              className={`${vaccineInfoList
+        <Grid container id="mobile-tablet-vaccine-list-container">
+          <Grid item xs={12} md={6} xl={3}>
+            <Accordion
+              className={css["recommended-vaccines-container"]}
+              expanded={vaccineInfoList}
+              onClick={() =>
+                handleVaccineList(vaccineInfoList, setVaccineInfoList)
+              }
+            >
+              <AccordionSummary
+                className={`${vaccineInfoList
                   ? css["resource-list-active"]
                   : css["resource-list-inactive"]
-                }`}
-              expandIcon={<ExpandMore />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              Vaccine Information
-            </AccordionSummary>
-            <AccordionDetails className={css["vaccines-list"]}>
-              <Grid container>
-                {vaccineData.map((eachVaccine, index) => {
-                  const { title, keyLink, extraLink } = eachVaccine;
-                  return (
-                    <Grid
-                      className={css["vaccines-list-item"]}
-                      item
-                      key={`${title}-${keyLink}-${extraLink}`}
-                      onClick={() =>
-                        handleVaccineList(vaccineInfoList, setVaccineInfoList)
-                      }
-                      xs={12}
-                    >
-                      <Link to={`${keyLink}`} target="_blank">
-                        {title}
-                      </Link>
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            </AccordionDetails>
-          </Accordion>
+                  }`}
+                expandIcon={<ExpandMore />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                Vaccine Information
+              </AccordionSummary>
+              <AccordionDetails className={css["vaccines-list"]}>
+                <Grid container>
+                  {vaccineData.map((eachVaccine, index) => {
+                    const { title, keyLink, extraLink } = eachVaccine;
+                    return (
+                      <Grid
+                        className={css["vaccines-list-item"]}
+                        item
+                        key={`${title}-${keyLink}-${extraLink}`}
+                        onClick={() =>
+                          handleVaccineList(vaccineInfoList, setVaccineInfoList)
+                        }
+                        xs={12}
+                      >
+                        <Link to={`${keyLink}`} target="_blank">
+                          {title}
+                        </Link>
+                      </Grid>
+                    );
+                  })}
+                </Grid>
+              </AccordionDetails>
+            </Accordion>
+          </Grid>
         </Grid>
-      </Grid>
-    </Box>
+      </Box>
 
       <Box className={css["hero-container"]}>
         <img
@@ -250,6 +251,7 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
           className={css["image-general-formmat"]}
           src="https://plus.unsplash.com/premium_photo-1661418051911-54992d992b30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80"
         ></img>
-      </Box></>
+      </Box>
+    </>
   )
 }
