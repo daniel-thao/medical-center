@@ -1,0 +1,76 @@
+.athena-link-container {
+  /* background-color: rgb(100, 60, 169);
+  background: rgb(255, 235, 239); */
+  background: linear-gradient(rgb(255, 235, 239), rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+.athena-link-grid-container {
+  padding: 0.5em 0em 1em 0em;
+}
+
+.extra-padding {
+  padding: 0em 0em 5em 0em;
+
+}
+
+.athena-link-grid-item {
+  background-color: white;
+  border: solid #4c2c84 1.5px;
+  border-radius: 0.5em;
+  margin: 0.5em 0em !important;
+  padding: 0.5em;
+}
+
+.athena-link {
+  text-decoration: none;
+}
+
+.athena-item {
+  display: flex;
+  align-items: center;
+}
+
+.athena-item > span {
+  font-size: calc(100vw / 25);
+  margin-top: calc(100vw / 800);
+  color: #4c2c84;
+  /* font-size: 1em; */
+}
+
+.athena-logo {
+  width: calc(100vw / 3.5);
+  object-fit: contain;
+  padding: 0.5em 0em 0.5em 0.5em;
+  padding-left: calc(100vw / 150);
+  padding-right: calc(100vw / 65);
+  background-color: white;
+  border-radius: 0.3em;
+}
+
+.SPFMC-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: end !important;
+  justify-content: center;
+}
+
+.SPFMC-title {
+  font-size: 3em !important;
+  font-weight: 400;
+  justify-content: end !important;
+align-items: end !important;
+  /* text-align: center; */
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-around;
+  padding: 4em 0em;
+}
+
+.logo {
+  width: 10em;
+  height: 10em;
+}

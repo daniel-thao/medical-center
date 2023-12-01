@@ -13,6 +13,7 @@ export const TitleAndLogo: React.FC<TitleAndLogoLinksProps> = () => {
     const phoneWidth = useMediaQuery('(max-width:450px)')
     const tabletWidth = useMediaQuery('(max-width:1060px)')
 
+
     const display = () => {
         if (phoneWidth) return <TitleAndLogoMobileView></TitleAndLogoMobileView>
         if (tabletWidth && !phoneWidth) return <TitleAndLogoTabletView></TitleAndLogoTabletView>

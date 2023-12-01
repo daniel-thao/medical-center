@@ -1,0 +1,21 @@
+:root {
+    /* Colors */
+    /* pink */
+    --color-brand-darkpink-100: rgb(255, 235, 239);
+    --color-brand-darkpink-400: #D4A5B1;
+    --color-brand-darkpink-500: #BF848C;
+    --color-brand-darkpink-600: #C48494;
+    --color-brand-darkpink-900: #9D5C6C;
+
+    /* Pink again */
+    --color-brand-pink-50: rgb(255, 235, 239);
+    --color-brand-pink-100: #ffdee6;
+    --color-brand-pink-200: #ffcdda;
+    --color-brand-pink-300: #f8c0ce;
+
+
+    /* brown */
+    --color-brand-brown-700: #6D4B4D;
+    --color-brand-brown-800: #592A36;
+
+}
