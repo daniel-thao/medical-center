@@ -132,6 +132,12 @@ Section three
     height: min(calc(100vw/5), 20em);
     width: min(calc(100vw/5), 20em);
     color: white;
+    font-size: var(--font-size-m);
+}
+
+.resource:hover a {
+    font-size: 2rem;
+    transition: all .1s;
 }
 
 .resource:nth-of-type(1) {
@@ -163,7 +169,7 @@ Section three
 .resource > a {
     z-index: 10;
     background-color: rgb(42, 42, 42, 0.3);
-    border-radius: 0.5em;
+    border-radius: 0.9em;
     height: 100%;
     width: 100%;
     display: flex;
@@ -176,5 +182,5 @@ Section three
     text-decoration: none;
     text-align: center;
     position: relative;
-    top: -100%;
+    top: -101%;
 }

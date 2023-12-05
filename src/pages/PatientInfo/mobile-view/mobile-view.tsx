@@ -1,7 +1,7 @@
 import React, { useState, SetStateAction } from "react";
 import { Link } from "react-router-dom";
 
-import { ResourceDataDrawer } from "./ResourceDataDrawer";
+import { ResourceDataDrawer } from "../subComponents/resource-data-drawer/ResourceDataDrawer";
 import { TextBlock } from "../../../components/globalMolecules/TextBlock/TextBlock";
 import {
   Box,
@@ -16,12 +16,12 @@ import { IResourceCategoryRender } from "../utils/interfacesTypes";
 import { resourceData } from "../utils/resourceData";
 import { vaccineData } from "../utils/vaccineData";
 
-import css from "../PatientInfoContainer.module.css";
+import css from "./mobile-view.module.css";
 
 export interface PatientInfoMobileViewProps { }
 
 
-export const TabletView: React.FC<PatientInfoMobileViewProps> = () => {
+export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
 
   const [isResourceListOpen, setIsResourceListOpen] = useState<boolean>(false);
   const [isResourceChosen, setIsResourceChosen] = useState<boolean>(false);

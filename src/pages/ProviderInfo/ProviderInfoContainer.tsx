@@ -9,7 +9,7 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 
 import css from "./ProviderInfoContainer.module.css";
 
-export interface ProviderInfoProps {}
+export interface ProviderInfoProps { }
 
 export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   const [whichProviderIDNumber, setWhichProviderIDNumber] = useState<string>("1");
@@ -41,8 +41,8 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
               aria-label="provider-tab-selection"
             >
               <Tab {...tabAttrGenerator("Dr. Phua Xiong", 1)} />
-              <Tab {...tabAttrGenerator("May Mua", 2)} />
-              <Tab {...tabAttrGenerator("PaaHoua Vang", 3)} />
+              <Tab {...tabAttrGenerator("PaaHoua Vang", 2)} />
+              <Tab {...tabAttrGenerator("Sheng Vang", 3)} />
             </TabList>
           </Box>
 

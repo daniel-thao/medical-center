@@ -37,14 +37,14 @@ const router: any = createBrowserRouter([
     },
     ]
   },
-  // {
-  //   path: "/immigration-info",
-  //   element: <ImmigrationInfoContainer />,
-  // },
-  // {
-  //   path: "/providers-info",
-  //   element: <ProviderInfoContainer />,
-  // },
+  {
+    path: "/immigration-info",
+    element: <ImmigrationInfoContainer />,
+  },
+  {
+    path: "/providers-info",
+    element: <ProviderInfoContainer />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);

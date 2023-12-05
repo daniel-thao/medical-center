@@ -13,10 +13,10 @@ import {
   Typography,
 } from "@mui/material";
 
-import { IResourceCategoryRender } from "../utils/interfacesTypes";
-import { ResourceItem } from "./ResourceItem";
+import { IResourceCategoryRender } from "../../utils/interfacesTypes";
+import { ResourceItem } from "../resource-item/ResourceItem";
 
-import css from "../PatientInfoContainer.module.css";
+import css from "../../PatientInfoContainer.module.css";
 
 export interface ResourceDataDrawerProps {
   whichResourceToShow: IResourceCategoryRender;
@@ -50,7 +50,7 @@ export const ResourceDataDrawer: React.FC<ResourceDataDrawerProps> = (
         </Toolbar>
       </AppBar>
 
-      <Toolbar/>
+      <Toolbar />
       <List className={css["resource-drawer-list-container"]}>
         <ResourceItem whichResourceToShow={whichResourceToShow}></ResourceItem>
       </List>

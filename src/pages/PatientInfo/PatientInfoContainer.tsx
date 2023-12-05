@@ -1,8 +1,8 @@
 import React from "react";
 import json2mq from "json2mq"
 
-import { MobileView } from "./subComponents/mobile-view";
-import { TabletView } from "./subComponents/tablet-view";
+import { MobileView } from "./mobile-view/mobile-view";
+import { TabletView } from "./tablet-view/tablet-view";
 
 import {
   useMediaQuery,
@@ -11,7 +11,7 @@ import {
 import css from "./PatientInfoContainer.module.css";
 
 
-export interface PatientInfoContainerProps {}
+export interface PatientInfoContainerProps { }
 
 export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (
   props

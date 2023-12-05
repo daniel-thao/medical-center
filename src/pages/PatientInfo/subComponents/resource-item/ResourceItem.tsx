@@ -5,12 +5,12 @@ import {
   IResourceMultipleOpenAndCloseTimes,
   IResourceCategoryRender,
   ISingleResource,
-} from "../utils/interfacesTypes";
-import { resourceData } from "../utils/resourceData";
+} from "../../utils/interfacesTypes";
+import { resourceData } from "../../utils/resourceData";
 
 import { Box, Typography, Grid, ListItem } from "@mui/material";
 
-import css from "../PatientInfoContainer.module.css";
+import css from "../../PatientInfoContainer.module.css";
 
 export interface ResourceItemProps {
   whichResourceToShow: IResourceCategoryRender;
@@ -23,7 +23,7 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
 
   const allResources: IMappedSingleResource =
     resourceData[whichResourceToShow.resourceIndex][
-      whichResourceToShow.resourceCategory
+    whichResourceToShow.resourceCategory
     ];
 
   for (const [key, value] of Object.entries(allResources)) {
@@ -115,7 +115,7 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
         <ListItem
           className={css[`resource-info-container-mobile-tablet`]}
           key={`${allResources[index].clinicName}-${allResources[index].zipcode}`}
-          // sx={{ margin: { xs: ".5em .5em" } }}
+        // sx={{ margin: { xs: ".5em .5em" } }}
         >
           {element}
         </ListItem>
@@ -138,11 +138,10 @@ export const openCloseTimeGenerator = (
         <Typography
           key={`${originalData.clinicName}-close-time-${originalData.zipcode}-${timeKey}`}
         >
-          {`${timeKey}: ${
-            beforeNoonClose <= 11
-              ? parseInt(timeValue)
-              : parseInt(timeValue) - 12
-          }${beforeNoonClose <= 11 ? "am" : "pm"}`}
+          {`${timeKey}: ${beforeNoonClose <= 11
+            ? parseInt(timeValue)
+            : parseInt(timeValue) - 12
+            }${beforeNoonClose <= 11 ? "am" : "pm"}`}
         </Typography>
       );
     }
