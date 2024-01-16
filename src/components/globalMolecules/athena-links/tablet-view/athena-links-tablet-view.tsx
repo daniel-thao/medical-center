@@ -26,7 +26,7 @@ export const AthenaLinksTabletView: React.FC<AthenaLinksTabletViewProps> = () =>
 
             <Grid item xs={breakPointChooser()} className={css["athena-link-grid-item"]}>
                 <Link
-                    to="https://athenanet.athenahealth.com/1/47/login.esp"
+                    to="https://12803.portal.athenahealth.com/"
                     target="_blank"
                     className={css["athena-link"]}
                 >
@@ -35,7 +35,7 @@ export const AthenaLinksTabletView: React.FC<AthenaLinksTabletViewProps> = () =>
                             className={css["athena-logo"]}
                             src="./athenaHealthLogo.png"
                         />{" "}
-                        <span>Login</span>
+                        <span>Patient Portal Login</span>
                     </Box>
                 </Link>
             </Grid>

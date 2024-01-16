@@ -15,8 +15,8 @@ import { ArrowCircleRight, Cancel } from "@mui/icons-material";
 import css from "./NavDrawer.module.css";
 
 export interface NavDrawerProps {
-    handleDrawerToggle: () => void
-    isDrawerOpen: boolean
+  handleDrawerToggle: () => void
+  isDrawerOpen: boolean
 }
 
 export interface NavItemLinks {
@@ -29,18 +29,20 @@ const navItems: NavItemLinks[] = [
   {
     display: (
       <Box className={css["athena-item"]}>
-        <img className={css["athena-logo"]} src="./athenaHealthLogo.png" />{" "}
-        <span>Login</span>
+        Patient Portal Login
+        {/* <img className={css["athena-logo"]} src="./athenaHealthLogo.png" />{" "} */}
+        {/* <span>Patient Portal</span> */}
       </Box>
     ),
-    href: "https://athenanet.athenahealth.com/1/47/login.esp",
+    href: "https://12803.portal.athenahealth.com/",
     newWindow: "_blank",
   },
   {
     display: (
       <Box className={css["athena-item"]}>
-        <img className={css["athena-logo"]} src="./athenaHealthLogo.png" />{" "}
-        <span>Pay</span>
+        Pay Bill
+        {/* <img className={css["athena-logo"]} src="./athenaHealthLogo.png" />{" "} */}
+        {/* <span>Pay</span> */}
       </Box>
     ),
     href: "https://payment.patient.athenahealth.com/statement/?src=statement",
@@ -66,12 +68,12 @@ export const NavDrawer: React.FC<NavDrawerProps> = (props) => {
         }}
         sx={{
           display: { xs: "block" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: {xs: "390px"} },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: { xs: "390px" } },
         }}
       >
         <Box
           onClick={handleDrawerToggle}
-          sx={{ textAlign: "center", width: "100%"}}
+          sx={{ textAlign: "center", width: "100%" }}
         >
           <Box className={css["nav-hamburger-menu-title"]}>
             <Typography variant="h6">St. Paul Family Center</Typography>

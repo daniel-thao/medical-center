@@ -21,7 +21,7 @@ export const AthenaLinksMobileView: React.FC<AthenaLinksMobileViewProps> = () =>
 
             <Grid item xs={6} className={css["athena-link-grid-item"]}>
                 <Link
-                    to="https://athenanet.athenahealth.com/1/47/login.esp"
+                    to="https://12803.portal.athenahealth.com/"
                     target="_blank"
                     className={css["athena-link"]}
                 >
@@ -30,7 +30,7 @@ export const AthenaLinksMobileView: React.FC<AthenaLinksMobileViewProps> = () =>
                             className={css["athena-logo"]}
                             src="./athenaHealthLogo.png"
                         />{" "}
-                        <span>Login</span>
+                        <span>Patient Portal Login</span>
                     </Box>
                 </Link>
             </Grid>

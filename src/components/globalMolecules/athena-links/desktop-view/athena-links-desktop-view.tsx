@@ -20,7 +20,7 @@ export const AthenaLinksDesktopView: React.FC<AthenaLinksDesktopViewProps> = () 
             <Grid xs={4}></Grid>
             <Grid item className={css["athena-link-grid-item"]} sx={{ mr: "10px" }}>
                 <Link
-                    to="https://athenanet.athenahealth.com/1/47/login.esp"
+                    to="https://12803.portal.athenahealth.com/"
                     target="_blank"
                     className={css["athena-link"]}
                 >
@@ -29,7 +29,7 @@ export const AthenaLinksDesktopView: React.FC<AthenaLinksDesktopViewProps> = () 
                             className={css["athena-logo"]}
                             src="./athenaHealthLogo.png"
                         />{" "}
-                        <span>Login</span>
+                        <span>Patient Portal Login</span>
                     </Box>
                 </Link>
             </Grid>
