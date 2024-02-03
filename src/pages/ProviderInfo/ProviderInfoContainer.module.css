@@ -22,20 +22,21 @@
   max-width: 100%;
 }
 
-.tab-list {
-  margin: 0em 0em 3em 0em;
+.provider-container {
+  position: relative;
+  height: 1450px;
 }
 
-.tabs {
-  font-size: var(--font-size-xs) !important;
-}
-
-.tab-panel {
-  padding: 0em !important;
-}
-
-.tab-panel-container {
+.provider {
   display: flex;
+  transition: all 1s ease;
+  position: absolute;
+}
+
+.provider::after {
+  display: block;
+  height: 100%;
+  content: '';
 }
 
 .tab-panel-text-formatting {
@@ -50,6 +51,31 @@
 
 .provider-one-paragraph {
   padding: 0.5em 0em;
+}
+
+/* Animation Classes */
+
+.active {
+  opacity: 1;
+  transform: translate(0%);
+}
+
+.inactive-right {
+  opacity: 0;
+  transform: translate(100%);
+}
+
+.inactive-left {
+  opacity: 0;
+  transform: translate(-100%);
+}
+
+.show {
+  display: inherit;
+}
+
+.hide {
+  display: none;
 }
 
 @media only screen and (max-width: 1675px) {
