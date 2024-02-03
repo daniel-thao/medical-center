@@ -45,7 +45,7 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
         </Box>
 
         <TabPanel value={'1'} className={css['tab-panel']}>
-          <Grid container columnSpacing={6} className={css['tab-panel-container']}>
+          <Grid container columnSpacing={6} rowGap={12} className={css['tab-panel-container']}>
             <Grid item xs={6} className={css['photo-container-one']}>
               <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
             </Grid>

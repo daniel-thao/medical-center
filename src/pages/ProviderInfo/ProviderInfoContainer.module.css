@@ -52,12 +52,12 @@
   padding: 0.5em 0em;
 }
 
-/* @media only screen and (max-width: 1675px) {
+@media only screen and (max-width: 1675px) {
   .container {
     margin: 0em calc(100vw / 10);
   }
 
-  .tab-panel-container {
+  /* .tab-panel-container {
     display: flex;
     flex-direction: column;
   }
@@ -65,5 +65,5 @@
   .tab-panel-text-formatting {
     padding: 1em 0em !important;
     width: 100%;
-  }
-} */
+  } */
+}
