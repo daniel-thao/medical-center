@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import { Box, Container, Tab } from '@mui/material';
+import { Box, Container, Tab, Grid } from '@mui/material';
 import { TextBlock } from '../../../components/globalMolecules/TextBlock/TextBlock';
 
 import css from '../ProviderInfoContainer.module.css';
@@ -29,6 +29,7 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
 
   return (
     <Box className={css['container']}>
+      <TextBlock classification='title' body="Meet Our Care Team" className={css['title']}></TextBlock>
       <TabContext value={whichProviderIDNumber}>
         <Box>
           <TabList
@@ -44,12 +45,12 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
         </Box>
 
         <TabPanel value={'1'} className={css['tab-panel']}>
-          <Box className={css['tab-panel-container']}>
-            <Box className={css['photo-container-one']}>
+          <Grid container columnSpacing={6} className={css['tab-panel-container']}>
+            <Grid item xs={6} className={css['photo-container-one']}>
               <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
-            </Box>
+            </Grid>
 
-            <Box className={css['tab-panel-text-formatting']}>
+            <Grid item xs={6} className={css['tab-panel-text-formatting']}>
               <TextBlock body={'Dr. Phua Xiong'} classification={'title'} className={css['provider-one']} />
 
               <TextBlock
@@ -74,6 +75,10 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
                 classification={'paragraph'}
                 className={css['provider-one-paragraph']}
               />
+            </Grid>
+
+            <Grid item xs={6} className={css['tab-panel-text-formatting']}>
+              <TextBlock body={'A Servant Leader'} classification={'title'} className={css['provider-one']} />
 
               <TextBlock
                 body={`In her 25 years of serving the Hmong community she continues to be a strong presence in
@@ -93,6 +98,18 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
                 classification={'paragraph'}
                 className={css['provider-one-paragraph']}
               />
+            </Grid>
+
+            <Grid item xs={6} className={css['photo-container-one']}>
+              <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
+            </Grid>
+
+            <Grid item xs={6} className={css['photo-container-one']}>
+              <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
+            </Grid>
+
+            <Grid item xs={6} className={css['tab-panel-text-formatting']}>
+              <TextBlock body={'A Giver'} classification={'title'} className={css['provider-one']} />
 
               <TextBlock
                 body={`She is a co-author of the book “Healing by Heart: : Clinical and Ethical Case Stories of Hmong
@@ -109,8 +126,8 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
                 classification={'paragraph'}
                 className={css['provider-one-paragraph']}
               />
-            </Box>
-          </Box>
+            </Grid>
+          </Grid>
         </TabPanel>
 
         <TabPanel value={'2'} className={css['tab-panel']}>
@@ -249,6 +266,8 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
           </Box>
         </TabPanel>
       </TabContext>
+
+      {/* <div className={""}></div> */}
     </Box>
   );
 };

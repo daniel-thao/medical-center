@@ -1,5 +1,10 @@
 .container {
-  margin: 0em calc(100vw / 20);
+  margin: 0em calc(100vw / 4);
+}
+
+.title {
+  font-size: var(--font-size-lg) !important;
+  text-align: center;
 }
 
 .photo-container-one {
@@ -22,7 +27,7 @@
 }
 
 .tabs {
-  font-size: var(--font-size-sm) !important;
+  font-size: var(--font-size-xs) !important;
 }
 
 .tab-panel {
@@ -34,8 +39,8 @@
 }
 
 .tab-panel-text-formatting {
-  padding: 1em 2em !important;
-  width: 75%;
+  /* padding: 1em 2em !important; */
+  /* width: 75%; */
 }
 
 .provider-one {
@@ -47,7 +52,7 @@
   padding: 0.5em 0em;
 }
 
-@media only screen and (max-width: 1675px) {
+/* @media only screen and (max-width: 1675px) {
   .container {
     margin: 0em calc(100vw / 10);
   }
@@ -61,4 +66,4 @@
     padding: 1em 0em !important;
     width: 100%;
   }
-}
+} */
