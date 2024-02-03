@@ -20,43 +20,21 @@ export const AthenaLinksTabletView: React.FC<AthenaLinksTabletViewProps> = () =>
   };
 
   return (
-    <Grid
-      container
-      className={`${css['athena-link-grid-container']}`}>
+    <Grid container className={`${css['athena-link-grid-container']}`}>
       <Grid xs={1}></Grid>
 
-      <Grid
-        item
-        xs={breakPointChooser()}
-        className={css['athena-link-grid-item']}>
-        <Link
-          to="https://12803.portal.athenahealth.com/"
-          target="_blank"
-          className={css['athena-link']}>
+      <Grid item xs={breakPointChooser()} className={css['athena-link-grid-item']}>
+        <Link to="https://12803.portal.athenahealth.com/" target="_blank" className={css['athena-link']}>
           <Box className={css['athena-item']}>
-            <img
-              className={css['athena-logo']}
-              src="./athenaHealthLogo.png"
-            />{' '}
-            <span>Patient Portal Login</span>
+            <img className={css['athena-logo']} src="./athenaHealthLogo.png" /> <span>Patient Portal Login</span>
           </Box>
         </Link>
       </Grid>
 
-      <Grid
-        item
-        xs={breakPointChooser()}
-        className={css['athena-link-grid-item']}>
-        <Link
-          to="https://payment.patient.athenahealth.com/statement/?src=statement"
-          target="_blank"
-          className={css['athena-link']}>
+      <Grid item xs={breakPointChooser()} className={css['athena-link-grid-item']}>
+        <Link to="https://payment.patient.athenahealth.com/statement/?src=statement" target="_blank" className={css['athena-link']}>
           <Box className={css['athena-item']}>
-            <img
-              className={css['athena-logo']}
-              src="./athenaHealthLogo.png"
-            />{' '}
-            <span>Pay</span>
+            <img className={css['athena-logo']} src="./athenaHealthLogo.png" /> <span>Pay</span>
           </Box>
         </Link>
       </Grid>

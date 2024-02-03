@@ -18,9 +18,7 @@ export const GeneralPageHeader: React.FC<GeneralPageHeaderProps> = () => {
 
   return (
     <Toolbar className={css['athena-link-container']}>
-      <Grid
-        container
-        className={`${css['athena-link-grid-container']}`}>
+      <Grid container className={`${css['athena-link-grid-container']}`}>
         {location.pathname === '/' ? <TitleAndLogo></TitleAndLogo> : <></>}
         <AthenaLinks></AthenaLinks>
       </Grid>

@@ -52,26 +52,12 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
 
   return (
     <>
-      <Box
-        id="main-container"
-        className={css['patient-info-container']}>
-        <Box
-          id="mobile-tablet-recommended-resources-container"
-          sx={{ display: { xs: 'block', md: 'none' } }}>
-          <TextBlock
-            body="Serving our patients with a compassionate heart and caring hands"
-            classification="quote"
-            className={css['quote-one']}
-          />
+      <Box id="main-container" className={css['patient-info-container']}>
+        <Box id="mobile-tablet-recommended-resources-container" sx={{ display: { xs: 'block', md: 'none' } }}>
+          <TextBlock body="Serving our patients with a compassionate heart and caring hands" classification="quote" className={css['quote-one']} />
 
-          <Accordion
-            className={`${css['recommended-resources-container-mobile-tablet']}`}
-            expanded={isResourceListOpen}
-            onClick={() => handleResourceList()}>
-            <AccordionSummary
-              className={`${isResourceListOpen ? css['resource-list-active'] : css['resource-list-inactive']}`}
-              expandIcon={<ExpandMore />}
-              aria-controls="panel1a-content">
+          <Accordion className={`${css['recommended-resources-container-mobile-tablet']}`} expanded={isResourceListOpen} onClick={() => handleResourceList()}>
+            <AccordionSummary className={`${isResourceListOpen ? css['resource-list-active'] : css['resource-list-inactive']}`} expandIcon={<ExpandMore />} aria-controls="panel1a-content">
               Recommended Resource List
             </AccordionSummary>
 
@@ -82,12 +68,7 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
                   const resourceCategory = objKey.replaceAll('-', ' ');
 
                   return (
-                    <Grid
-                      className={css['list-item-mobile-tablet']}
-                      item
-                      key={`${resource}-${index}`}
-                      onClick={(e) => handleResourceList(objKey, index, true)}
-                      xs={6}>
+                    <Grid className={css['list-item-mobile-tablet']} item key={`${resource}-${index}`} onClick={(e) => handleResourceList(objKey, index, true)} xs={6}>
                       {resourceCategory}
                     </Grid>
                   );
@@ -96,10 +77,7 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
             </AccordionDetails>
           </Accordion>
 
-          <ResourceDataDrawer
-            whichResourceToShow={whichResourceToShow}
-            isResourceChosen={isResourceChosen}
-            setIsResourceChosen={setIsResourceChosen}></ResourceDataDrawer>
+          <ResourceDataDrawer whichResourceToShow={whichResourceToShow} isResourceChosen={isResourceChosen} setIsResourceChosen={setIsResourceChosen}></ResourceDataDrawer>
         </Box>
 
         {/* <Grid
@@ -176,18 +154,9 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
           </Grid>
         </Grid> */}
 
-        <Grid
-          container
-          id="mobile-tablet-vaccine-list-container">
-          <Grid
-            item
-            xs={12}
-            md={6}
-            xl={3}>
-            <Accordion
-              className={css['recommended-vaccines-container']}
-              expanded={vaccineInfoList}
-              onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)}>
+        <Grid container id="mobile-tablet-vaccine-list-container">
+          <Grid item xs={12} md={6} xl={3}>
+            <Accordion className={css['recommended-vaccines-container']} expanded={vaccineInfoList} onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)}>
               <AccordionSummary
                 className={`${vaccineInfoList ? css['resource-list-active'] : css['resource-list-inactive']}`}
                 expandIcon={<ExpandMore />}
@@ -200,15 +169,8 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
                   {vaccineData.map((eachVaccine, index) => {
                     const { title, keyLink, extraLink } = eachVaccine;
                     return (
-                      <Grid
-                        className={css['vaccines-list-item']}
-                        item
-                        key={`${title}-${keyLink}-${extraLink}`}
-                        onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)}
-                        xs={12}>
-                        <Link
-                          to={`${keyLink}`}
-                          target="_blank">
+                      <Grid className={css['vaccines-list-item']} item key={`${title}-${keyLink}-${extraLink}`} onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)} xs={12}>
+                        <Link to={`${keyLink}`} target="_blank">
                           {title}
                         </Link>
                       </Grid>

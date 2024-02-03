@@ -17,17 +17,10 @@ export const MainTabletView: React.FC<MainTabletViewProps> = ({ photoHyperLinks,
   return (
     <Box className={css['container']}>
       <Box className={css['image-one']}>
-        <img
-          alt={photoAndInfos[0].alt}
-          src={photoAndInfos[0].src}
-          className={css['image-general-format']}></img>
+        <img alt={photoAndInfos[0].alt} src={photoAndInfos[0].src} className={css['image-general-format']}></img>
       </Box>
 
-      <TextBlock
-        body={'Serving our patients with a compassionate heart and caring hands'}
-        classification="quote"
-        className={css['landing-page-quote-one']}
-      />
+      <TextBlock body={'Serving our patients with a compassionate heart and caring hands'} classification="quote" className={css['landing-page-quote-one']} />
 
       <TextBlock
         body={`The mission of St. Paul Family Medical Center is to work in conjunction with 
@@ -40,23 +33,12 @@ export const MainTabletView: React.FC<MainTabletViewProps> = ({ photoHyperLinks,
       />
 
       <Box className={css['hero-container']}>
-        <img
-          alt={photoAndInfos[1].alt}
-          src={photoAndInfos[1].src}
-          className={css['image-general-format']}></img>
+        <img alt={photoAndInfos[1].alt} src={photoAndInfos[1].src} className={css['image-general-format']}></img>
       </Box>
 
-      <TextBlock
-        body={'Certified HealthCare Home'}
-        classification="quote"
-        className={css['landing-page-certification-one']}
-      />
+      <TextBlock body={'Certified HealthCare Home'} classification="quote" className={css['landing-page-certification-one']} />
 
-      <TextBlock
-        body={'SPFMC is certified by the state of MN as a HealthCare Home.'}
-        classification="paragraph"
-        className={css['landing-page-certification-two']}
-      />
+      <TextBlock body={'SPFMC is certified by the state of MN as a HealthCare Home.'} classification="paragraph" className={css['landing-page-certification-two']} />
 
       <TextBlock
         body={`St. Paul Family Medical Center (SPFMC) was founded in June 2002 by one of the first 
@@ -71,29 +53,12 @@ export const MainTabletView: React.FC<MainTabletViewProps> = ({ photoHyperLinks,
         className={css['landing-page-paragraph-two']}
       />
 
-      <Grid
-        container
-        spacing={2}
-        className={css['resource-container']}>
+      <Grid container spacing={2} className={css['resource-container']}>
         {photoHyperLinks.map((data, index) => {
           return (
-            <Grid
-              container
-              item
-              xs={12}
-              sm={6}
-              md={6}
-              key={photoHyperLinks[index].alt}
-              className={css['resource']}>
-              <img
-                className={css['resource-image']}
-                alt={data.alt}
-                src={data.src}
-              />
-              <Link
-                to={data.link}
-                className={`${font['text-m']}`}
-                onClick={() => window.scrollTo(0, 0)}>
+            <Grid container item xs={12} sm={6} md={6} key={photoHyperLinks[index].alt} className={css['resource']}>
+              <img className={css['resource-image']} alt={data.alt} src={data.src} />
+              <Link to={data.link} className={`${font['text-m']}`} onClick={() => window.scrollTo(0, 0)}>
                 {data.displayText}
               </Link>
             </Grid>

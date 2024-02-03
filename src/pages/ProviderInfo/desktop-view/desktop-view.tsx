@@ -37,38 +37,20 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
             aria-label="provider-tab-selection"
             className={css['tab-list']}
             centered={true}>
-            <Tab
-              className={css['tabs']}
-              {...tabAttrGenerator('Dr. Phua Xiong', 1)}
-            />
-            <Tab
-              className={css['tabs']}
-              {...tabAttrGenerator('PaaHoua Vang', 2)}
-            />
-            <Tab
-              className={css['tabs']}
-              {...tabAttrGenerator('Sheng Vang', 3)}
-            />
+            <Tab className={css['tabs']} {...tabAttrGenerator('Dr. Phua Xiong', 1)} />
+            <Tab className={css['tabs']} {...tabAttrGenerator('PaaHoua Vang', 2)} />
+            <Tab className={css['tabs']} {...tabAttrGenerator('Sheng Vang', 3)} />
           </TabList>
         </Box>
 
-        <TabPanel
-          value={'1'}
-          className={css['tab-panel']}>
+        <TabPanel value={'1'} className={css['tab-panel']}>
           <Box className={css['tab-panel-container']}>
             <Box className={css['photo-container-one']}>
-              <img
-                alt="provider-01"
-                className={imageCSSRender}
-                src="./_MG_6147.png"></img>
+              <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
             </Box>
 
             <Box className={css['tab-panel-text-formatting']}>
-              <TextBlock
-                body={'Dr. Phua Xiong'}
-                classification={'title'}
-                className={css['provider-one']}
-              />
+              <TextBlock body={'Dr. Phua Xiong'} classification={'title'} className={css['provider-one']} />
 
               <TextBlock
                 body={`Dr Phua Xiong is the medical director and owner of St Paul Family Medical Center, a Hmong
@@ -131,22 +113,13 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
           </Box>
         </TabPanel>
 
-        <TabPanel
-          value={'2'}
-          className={css['tab-panel']}>
+        <TabPanel value={'2'} className={css['tab-panel']}>
           <Box className={css['photo-container-one']}>
-            <img
-              alt="provider-02"
-              className={imageCSSRender}
-              src="./_MG_6147.png"></img>
+            <img alt="provider-02" className={imageCSSRender} src="./_MG_6147.png"></img>
           </Box>
 
           <Box className={css['tab-panel-text-formatting']}>
-            <TextBlock
-              body={'May Mua'}
-              classification={'title'}
-              className={css['provider-one']}
-            />
+            <TextBlock body={'May Mua'} classification={'title'} className={css['provider-one']} />
 
             <TextBlock
               body={`Dr Phua Xiong is the medical director and owner of St Paul Family Medical Center, a Hmong
@@ -208,22 +181,13 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
           </Box>
         </TabPanel>
 
-        <TabPanel
-          value={'3'}
-          className={css['tab-panel']}>
+        <TabPanel value={'3'} className={css['tab-panel']}>
           <Box className={css['photo-container-one']}>
-            <img
-              alt="provider-03"
-              className={imageCSSRender}
-              src="./_MG_6147.png"></img>
+            <img alt="provider-03" className={imageCSSRender} src="./_MG_6147.png"></img>
           </Box>
 
           <Box className={css['tab-panel-text-formatting']}>
-            <TextBlock
-              body={'PaaHoua Vang'}
-              classification={'title'}
-              className={css['provider-one']}
-            />
+            <TextBlock body={'PaaHoua Vang'} classification={'title'} className={css['provider-one']} />
 
             <TextBlock
               body={`Dr Phua Xiong is the medical director and owner of St Paul Family Medical Center, a Hmong

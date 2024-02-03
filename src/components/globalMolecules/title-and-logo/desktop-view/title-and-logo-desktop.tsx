@@ -13,17 +13,10 @@ export const TitleAndLogoDesktopView: React.FC<TitleAndLogoDesktopViewLinksProps
   const location = useLocation();
 
   return (
-    <Grid
-      container
-      className={`${css['athena-link-grid-container']}`}>
-      <Grid
-        item
-        xs={7}
-        className={css['SPFMC-container']}>
+    <Grid container className={`${css['athena-link-grid-container']}`}>
+      <Grid item xs={7} className={css['SPFMC-container']}>
         <Box>
-          <Typography
-            variant={'h1'}
-            className={css['SPFMC-title']}>
+          <Typography variant={'h1'} className={css['SPFMC-title']}>
             St. Paul Family Medical Center
           </Typography>
           {/* <Typography variant={"h1"} className={css["SPFMC-title"]}>
@@ -32,14 +25,8 @@ export const TitleAndLogoDesktopView: React.FC<TitleAndLogoDesktopViewLinksProps
         </Box>
       </Grid>
 
-      <Grid
-        item
-        xs={5}
-        className={css['logo-container']}>
-        <img
-          className={`${css['logo']}`}
-          src="./ClinicLogoDarker.png"
-          alt="Logo"></img>
+      <Grid item xs={5} className={css['logo-container']}>
+        <img className={`${css['logo']}`} src="./ClinicLogoDarker.png" alt="Logo"></img>
         <div></div>
       </Grid>
     </Grid>

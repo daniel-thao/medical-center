@@ -19,17 +19,11 @@ export const MainDesktopView: React.FC<MainDesktopViewProps> = ({ photoHyperLink
     <Box className={css['container']}>
       <Box className={css['rowContainer']}>
         <Box className={css['image-one']}>
-          <img
-            alt={photoAndInfos[0].alt}
-            src={photoAndInfos[0].src}></img>
+          <img alt={photoAndInfos[0].alt} src={photoAndInfos[0].src}></img>
         </Box>
 
         <Box className={css['text-section-one']}>
-          <TextBlock
-            body={'Serving our patients with a compassionate heart and caring hands'}
-            classification="quote"
-            className={css['quote']}
-          />
+          <TextBlock body={'Serving our patients with a compassionate heart and caring hands'} classification="quote" className={css['quote']} />
           <TextBlock
             body={`The mission of St. Paul Family Medical Center is to work in conjunction with 
                             the patient and family to provide the highest quality patient-centered medical 
@@ -46,17 +40,9 @@ export const MainDesktopView: React.FC<MainDesktopViewProps> = ({ photoHyperLink
 
       <Box className={css['rowContainer']}>
         <Box className={css['text-section-two']}>
-          <TextBlock
-            body={'Certified HealthCare Home'}
-            classification="quote"
-            className={css['cert-title']}
-          />
+          <TextBlock body={'Certified HealthCare Home'} classification="quote" className={css['cert-title']} />
 
-          <TextBlock
-            body={'SPFMC is certified by the state of MN as a HealthCare Home.'}
-            classification="paragraph"
-            className={css['cert']}
-          />
+          <TextBlock body={'SPFMC is certified by the state of MN as a HealthCare Home.'} classification="paragraph" className={css['cert']} />
 
           <TextBlock
             body={`St. Paul Family Medical Center (SPFMC) was founded in June 2002 by one of the first 
@@ -73,27 +59,16 @@ export const MainDesktopView: React.FC<MainDesktopViewProps> = ({ photoHyperLink
         </Box>
 
         <Box className={css['image-two']}>
-          <img
-            alt={photoAndInfos[1].alt}
-            src={photoAndInfos[1].src}></img>
+          <img alt={photoAndInfos[1].alt} src={photoAndInfos[1].src}></img>
         </Box>
       </Box>
 
       <Box className={css['rowContainer']}>
         {photoHyperLinks.map((data, index) => {
           return (
-            <Box
-              key={photoHyperLinks[index].alt}
-              className={css['resource']}>
-              <img
-                className={css['resource-image']}
-                alt={data.alt}
-                src={data.src}
-              />
-              <Link
-                to={data.link}
-                className={`${font['text-m']}`}
-                onClick={() => window.scrollTo(0, 0)}>
+            <Box key={photoHyperLinks[index].alt} className={css['resource']}>
+              <img className={css['resource-image']} alt={data.alt} src={data.src} />
+              <Link to={data.link} className={`${font['text-m']}`} onClick={() => window.scrollTo(0, 0)}>
                 {data.displayText}
               </Link>
             </Box>

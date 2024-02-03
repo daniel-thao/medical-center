@@ -25,11 +25,7 @@ export const ResourceDataDrawer: React.FC<ResourceDataDrawerProps> = (props) => 
   };
 
   const list = () => (
-    <Box
-      sx={{ width: '100%' }}
-      role="presentation"
-      onClick={toggleDrawer}
-      onKeyDown={toggleDrawer}>
+    <Box sx={{ width: '100%' }} role="presentation" onClick={toggleDrawer} onKeyDown={toggleDrawer}>
       <AppBar>
         <Toolbar className={css['resource-drawer-title']}>
           <Typography variant="h1">{title}</Typography>
