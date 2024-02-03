@@ -1,22 +1,13 @@
-import { Link, generatePath } from "react-router-dom";
+import { Link, generatePath } from 'react-router-dom';
 
-import {
-  Box,
-  Divider,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Typography,
-} from "@mui/material";
-import { ArrowCircleRight, Cancel } from "@mui/icons-material";
+import { Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
+import { ArrowCircleRight, Cancel } from '@mui/icons-material';
 
-import css from "./NavDrawer.module.css";
+import css from './NavDrawer.module.css';
 
 export interface NavDrawerProps {
-  handleDrawerToggle: () => void
-  isDrawerOpen: boolean
+  handleDrawerToggle: () => void;
+  isDrawerOpen: boolean;
 }
 
 export interface NavItemLinks {
@@ -28,30 +19,30 @@ export interface NavItemLinks {
 const navItems: NavItemLinks[] = [
   {
     display: (
-      <Box className={css["athena-item"]}>
+      <Box className={css['athena-item']}>
         Patient Portal Login
         {/* <img className={css["athena-logo"]} src="./athenaHealthLogo.png" />{" "} */}
         {/* <span>Patient Portal</span> */}
       </Box>
     ),
-    href: "https://12803.portal.athenahealth.com/",
-    newWindow: "_blank",
+    href: 'https://12803.portal.athenahealth.com/',
+    newWindow: '_blank'
   },
   {
     display: (
-      <Box className={css["athena-item"]}>
+      <Box className={css['athena-item']}>
         Pay Bill
         {/* <img className={css["athena-logo"]} src="./athenaHealthLogo.png" />{" "} */}
         {/* <span>Pay</span> */}
       </Box>
     ),
-    href: "https://payment.patient.athenahealth.com/statement/?src=statement",
-    newWindow: "_blank",
+    href: 'https://payment.patient.athenahealth.com/statement/?src=statement',
+    newWindow: '_blank'
   },
-  { display: "Home", href: "/", newWindow: "" },
-  { display: "Patient Information", href: "/patient-info", newWindow: "" },
-  { display: "Immigration Exams", href: "/immigration-info", newWindow: "" },
-  { display: "Providers Information", href: "/providers-info", newWindow: "" },
+  { display: 'Home', href: '/', newWindow: '' },
+  { display: 'Patient Information', href: '/patient-info', newWindow: '' },
+  { display: 'Immigration Exams', href: '/immigration-info', newWindow: '' },
+  { display: 'Providers Information', href: '/providers-info', newWindow: '' }
 ];
 
 export const NavDrawer: React.FC<NavDrawerProps> = (props) => {
@@ -64,18 +55,16 @@ export const NavDrawer: React.FC<NavDrawerProps> = (props) => {
         open={isDrawerOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
-          keepMounted: true, // Better open performance on mobile.
+          keepMounted: true // Better open performance on mobile.
         }}
         sx={{
-          display: { xs: "block" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: { xs: "390px" } },
-        }}
-      >
+          display: { xs: 'block' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: { xs: '390px' } }
+        }}>
         <Box
           onClick={handleDrawerToggle}
-          sx={{ textAlign: "center", width: "100%" }}
-        >
-          <Box className={css["nav-hamburger-menu-title"]}>
+          sx={{ textAlign: 'center', width: '100%' }}>
+          <Box className={css['nav-hamburger-menu-title']}>
             <Typography variant="h6">St. Paul Family Center</Typography>
             <Cancel></Cancel>
           </Box>
@@ -84,18 +73,17 @@ export const NavDrawer: React.FC<NavDrawerProps> = (props) => {
 
           <List>
             {navItems.map((item) => (
-              <ListItem key={item.href} disablePadding>
+              <ListItem
+                key={item.href}
+                disablePadding>
                 <ListItemButton>
                   <Link
-                    className={css["links"]}
+                    className={css['links']}
                     to={generatePath(item.href)}
                     target={item.newWindow}
-                    onClick={() => window.scrollTo(0, 0)}
-                  >
+                    onClick={() => window.scrollTo(0, 0)}>
                     <ListItemText primary={item.display} />
-                    <ArrowCircleRight
-                      onClick={handleDrawerToggle}
-                    ></ArrowCircleRight>
+                    <ArrowCircleRight onClick={handleDrawerToggle}></ArrowCircleRight>
                   </Link>
                 </ListItemButton>
               </ListItem>

@@ -1,47 +1,40 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Toolbar,
-  FormControl,
-  Input,
-  useMediaQuery,
-} from "@mui/material";
-import { Menu, Search } from "@mui/icons-material";
-import { NavDrawer } from "../molecules/NavDrawer";
+import { AppBar, Box, IconButton, Toolbar, FormControl, Input, useMediaQuery } from '@mui/material';
+import { Menu, Search } from '@mui/icons-material';
+import { NavDrawer } from '../molecules/NavDrawer';
 
-import css from "./NavBase.module.css";
+import css from './NavBase.module.css';
 
-interface NavBaseProps { }
+interface NavBaseProps {}
 
 export const NavBase: React.FC<NavBaseProps> = (props) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
-  const phoneWidth = useMediaQuery("(max-width:450px)");
-  const tabletWidth = useMediaQuery("(max-width:1060px)");
+  const phoneWidth = useMediaQuery('(max-width:450px)');
+  const tabletWidth = useMediaQuery('(max-width:1060px)');
 
   const handleDrawerToggle = () => {
     setIsDrawerOpen((prevState) => !prevState);
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar className={css["nav-app-bar"]} component="nav">
-        <Toolbar className={css["nav-toolbar"]}>
+    <Box sx={{ display: 'flex' }}>
+      <AppBar
+        className={css['nav-app-bar']}
+        component="nav">
+        <Toolbar className={css['nav-toolbar']}>
           <IconButton
-            className={css["nav-hamburger-menu"]}
+            className={css['nav-hamburger-menu']}
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "flex" } }}
-          >
+            sx={{ mr: 2, display: { sm: 'flex' } }}>
             <Menu />
           </IconButton>
 
-          <Box className={css["nav-searchbar"]}>
-            <Search className={css["nav-searchbar-icon"]}></Search>
+          <Box className={css['nav-searchbar']}>
+            <Search className={css['nav-searchbar-icon']}></Search>
 
             <FormControl fullWidth={true}>
               <Input
@@ -57,13 +50,12 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
             </FormControl>
           </Box>
 
-          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             <Link to="/">
               <img
-                className={`${css["logo"]}`}
+                className={`${css['logo']}`}
                 src="./ClinicLogoDarker.png"
-                alt="Logo"
-              ></img>
+                alt="Logo"></img>
             </Link>
           </Box>
         </Toolbar>
@@ -71,8 +63,7 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
 
       <NavDrawer
         handleDrawerToggle={handleDrawerToggle}
-        isDrawerOpen={isDrawerOpen}
-      ></NavDrawer>
+        isDrawerOpen={isDrawerOpen}></NavDrawer>
     </Box>
   );
 };

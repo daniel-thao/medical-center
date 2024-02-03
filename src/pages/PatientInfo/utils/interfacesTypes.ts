@@ -27,11 +27,11 @@ export interface ICategoryResource {
 }
 
 export interface IResourceCategoryRender {
-    resourceCategory: string;
-    resourceIndex: number;
+  resourceCategory: string;
+  resourceIndex: number;
 }
 
 export interface IResourceMultipleOpenAndCloseTimes {
-    weekday: string
-    weekend: string
+  weekday: string;
+  weekend: string;
 }

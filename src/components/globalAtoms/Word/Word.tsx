@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 export interface WordProps {
-    children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 export const Word: React.FC<WordProps> = (props) => {
-    const {children} = props
+  const { children } = props;
 
   return <span>{children}</span>;
 };

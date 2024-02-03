@@ -31,15 +31,15 @@
 }
 
 .nav-searchbar {
-    background: rgb(252, 252, 252);
-    color: black;
-    display: flex;
-    align-items: center;
-    padding: 0em .5em;
-    flex-grow: 2;
-    border-radius: .5em;
+  background: rgb(252, 252, 252);
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0em 0.5em;
+  flex-grow: 2;
+  border-radius: 0.5em;
 }
 
 .nav-searchbar-icon {
-    padding: 0em .5em 0em 0em;
+  padding: 0em 0.5em 0em 0em;
 }

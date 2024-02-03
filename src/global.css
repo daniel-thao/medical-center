@@ -1,30 +1,28 @@
 :root {
-    /* Colors */
-    /* pink */
-    --color-brand-darkpink-100: rgb(255, 235, 239);
-    --color-brand-darkpink-400: #D4A5B1;
-    --color-brand-darkpink-500: #BF848C;
-    --color-brand-darkpink-600: #C48494;
-    --color-brand-darkpink-900: #9D5C6C;
+  /* Colors */
+  /* pink */
+  --color-brand-darkpink-100: rgb(255, 235, 239);
+  --color-brand-darkpink-400: #d4a5b1;
+  --color-brand-darkpink-500: #bf848c;
+  --color-brand-darkpink-600: #c48494;
+  --color-brand-darkpink-900: #9d5c6c;
 
-    /* Pink again */
-    --color-brand-pink-50: rgb(255, 235, 239);
-    --color-brand-pink-100: #ffdee6;
-    --color-brand-pink-200: #ffcdda;
-    --color-brand-pink-300: #f8c0ce;
+  /* Pink again */
+  --color-brand-pink-50: rgb(255, 235, 239);
+  --color-brand-pink-100: #ffdee6;
+  --color-brand-pink-200: #ffcdda;
+  --color-brand-pink-300: #f8c0ce;
 
+  /* brown */
+  --color-brand-brown-700: #6d4b4d;
+  --color-brand-brown-800: #592a36;
 
-    /* brown */
-    --color-brand-brown-700: #6D4B4D;
-    --color-brand-brown-800: #592A36;
-
-
-    /* fonts */
-    --font-size-xs: 1rem;
-    --font-size-s: 1.15rem;
-    --font-size-sm: 1.33rem;
-    --font-size-m: 1.7rem;
-    --font-size-lg: 2.369rem;
-    --font-size-xl: 3.157rem;
-    --font-size-xxl: 4.209rem;
+  /* fonts */
+  --font-size-xs: 1rem;
+  --font-size-s: 1.15rem;
+  --font-size-sm: 1.33rem;
+  --font-size-m: 1.7rem;
+  --font-size-lg: 2.369rem;
+  --font-size-xl: 3.157rem;
+  --font-size-xxl: 4.209rem;
 }

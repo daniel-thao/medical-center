@@ -12,7 +12,6 @@
 
 .extra-padding {
   padding: 0em 0em 5em 0em;
-
 }
 
 .athena-link-grid-item {
@@ -32,7 +31,7 @@
   align-items: center;
 }
 
-.athena-item>span {
+.athena-item > span {
   font-size: calc(100vw / 50);
   margin-top: calc(100vw / 800);
   color: #4c2c84;
@@ -50,40 +49,34 @@
 }
 
 @media only screen and (max-width: 1060px) {
-
-  .athena-item>span {
+  .athena-item > span {
     font-size: calc(100vw / 50);
   }
 
   .athena-logo {
     width: calc(100vw / 7);
     padding-right: calc(100vw / 150);
-
   }
 }
 
 @media only screen and (max-width: 900px) {
-
-  .athena-item>span {
+  .athena-item > span {
     font-size: calc(100vw / 50);
   }
 
   .athena-logo {
     width: calc(100vw / 7);
     padding-right: calc(100vw / 150);
-
   }
 }
 
 @media only screen and (max-width: 768px) {
-
-  .athena-item>span {
+  .athena-item > span {
     font-size: calc(100vw / 38);
   }
 
   .athena-logo {
     width: calc(100vw / 5.2);
     padding-right: calc(100vw / 150);
-
   }
 }

@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 export interface TitleProps {
-    children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 export const Title: React.FC<TitleProps> = (props) => {
-    const {children} = props
+  const { children } = props;
 
   return <h2>{children}</h2>;
 };

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export interface WindowSizeProps {
-    width: undefined | number
-    height: undefined | number
+  width: undefined | number;
+  height: undefined | number;
 }
 
 export const useWindowSize = () => {
@@ -10,7 +10,7 @@ export const useWindowSize = () => {
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
   const [windowSize, setWindowSize] = useState<WindowSizeProps>({
     width: undefined,
-    height: undefined,
+    height: undefined
   });
   useEffect(() => {
     // Handler to call on window resize
@@ -18,15 +18,15 @@ export const useWindowSize = () => {
       // Set window width/height to state
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight,
+        height: window.innerHeight
       });
     }
     // Add event listener
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     // Call handler right away so state gets updated with initial window size
     handleResize();
     // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;
 };

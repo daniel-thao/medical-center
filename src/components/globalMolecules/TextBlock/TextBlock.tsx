@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Quote } from "../../globalAtoms/Quote/Quote";
-import { Paragraph } from "../../globalAtoms/Paragraph/Paragraph";
-import { Box } from "@mui/material";
-import { Word } from "../../globalAtoms/Word/Word";
-import { Title } from "../../globalAtoms/Title/Title";
+import { Quote } from '../../globalAtoms/Quote/Quote';
+import { Paragraph } from '../../globalAtoms/Paragraph/Paragraph';
+import { Box } from '@mui/material';
+import { Word } from '../../globalAtoms/Word/Word';
+import { Title } from '../../globalAtoms/Title/Title';
 
 export interface TextBlockProps {
   classification: string;
@@ -20,6 +20,6 @@ export const TextBlock: React.FC<TextBlockProps> = (props) => {
     quote: <Quote>{body}</Quote>,
     title: <Title>{body}</Title>
   };
-  
+
   return <Box className={className}>{test[classification]}</Box>;
 };

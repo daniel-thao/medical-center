@@ -1,78 +1,75 @@
 .athena-link-container {
-    /* background-color: rgb(100, 60, 169);
+  /* background-color: rgb(100, 60, 169);
   background: rgb(255, 235, 239); */
-    background: linear-gradient(rgb(255, 235, 239), rgb(255, 255, 255), rgb(255, 255, 255));
+  background: linear-gradient(rgb(255, 235, 239), rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
 .athena-link-grid-container {
-    padding: 0.5em 0em 1em 0em;
+  padding: 0.5em 0em 1em 0em;
 }
 
 .extra-padding {
-    /* padding: 0em 0em 5em 0em; */
+  /* padding: 0em 0em 5em 0em; */
 }
 
 .SPFMC-container {
-    padding: 4em 0em;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center;
+  padding: 4em 0em;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center;
 }
 
 .SPFMC-title {
-    font-size: 4.5em !important;
-    font-weight: 400;
+  font-size: 4.5em !important;
+  font-weight: 400;
 }
 
 .logo-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 4em 0em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 4em 0em;
 }
 
 .logo {
-    width: 25em;
-    height: 25em;
+  width: 25em;
+  height: 25em;
 }
 
 @media only screen and (max-width: 1060px) {
+  .SPFMC-title {
+    font-size: 4em !important;
+    font-weight: 400;
+  }
 
-    .SPFMC-title {
-        font-size: 4em !important;
-        font-weight: 400;
-    }
-
-    .logo {
-        width: 20em;
-        height: 20em;
-    }
+  .logo {
+    width: 20em;
+    height: 20em;
+  }
 }
 
 @media only screen and (max-width: 900px) {
+  .SPFMC-title {
+    font-size: 3.5em !important;
+    font-weight: 400;
+  }
 
-    .SPFMC-title {
-        font-size: 3.5em !important;
-        font-weight: 400;
-    }
-
-    .logo {
-        width: 17.5em;
-        height: 17.5em;
-    }
+  .logo {
+    width: 17.5em;
+    height: 17.5em;
+  }
 }
 
 @media only screen and (max-width: 768px) {
+  .SPFMC-title {
+    font-size: 3em !important;
+    font-weight: 400;
+  }
 
-    .SPFMC-title {
-        font-size: 3em !important;
-        font-weight: 400;
-    }
-
-    .logo {
-        width: 15em;
-        height: 15em;
-    }
+  .logo {
+    width: 15em;
+    height: 15em;
+  }
 }

@@ -10,7 +10,6 @@
 
 .extra-padding {
   padding: 0em 0em 5em 0em;
-
 }
 
 .athena-link-grid-item {
@@ -58,7 +57,7 @@
   font-size: 3em !important;
   font-weight: 400;
   justify-content: end !important;
-align-items: end !important;
+  align-items: end !important;
   /* text-align: center; */
 }
 

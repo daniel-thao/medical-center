@@ -1,21 +1,21 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-import { Box, Toolbar, Grid, Typography, useMediaQuery } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box, Toolbar, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-import css from "./AthenaLinks.module.css";
+import css from './AthenaLinks.module.css';
 
-export interface AthenaLinksProps { }
+export interface AthenaLinksProps {}
 
 export const AthenaLinks: React.FC<AthenaLinksProps> = () => {
   const location = useLocation();
 
-  const phoneWidth = useMediaQuery('(max-width:450px)')
-  const tabletWidth = useMediaQuery('(max-width:1060px)')
+  const phoneWidth = useMediaQuery('(max-width:450px)');
+  const tabletWidth = useMediaQuery('(max-width:1060px)');
 
   return (
-    <Toolbar className={css["athena-link-container"]}>
+    <Toolbar className={css['athena-link-container']}>
       {/* <Grid container className={`${css["athena-link-grid-container"]} ${location.pathname === "/" && css['extra-padding']}`}> */}
       {/* {location.pathname === "/" ? (
           <>

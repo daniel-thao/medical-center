@@ -1,22 +1,12 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from 'react';
 
-import { Cancel } from "@mui/icons-material";
-import {
-  AppBar,
-  Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  Divider,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { Cancel } from '@mui/icons-material';
+import { AppBar, Box, Drawer, List, ListItem, ListItemButton, Divider, Toolbar, Typography } from '@mui/material';
 
-import { IResourceCategoryRender } from "../../utils/interfacesTypes";
-import { ResourceItem } from "../resource-item/ResourceItem";
+import { IResourceCategoryRender } from '../../utils/interfacesTypes';
+import { ResourceItem } from '../resource-item/ResourceItem';
 
-import css from "../../PatientInfoContainer.module.css";
+import css from '../../PatientInfoContainer.module.css';
 
 export interface ResourceDataDrawerProps {
   whichResourceToShow: IResourceCategoryRender;
@@ -24,12 +14,10 @@ export interface ResourceDataDrawerProps {
   setIsResourceChosen: Dispatch<SetStateAction<boolean>>;
 }
 
-export const ResourceDataDrawer: React.FC<ResourceDataDrawerProps> = (
-  props
-) => {
+export const ResourceDataDrawer: React.FC<ResourceDataDrawerProps> = (props) => {
   const { whichResourceToShow, isResourceChosen, setIsResourceChosen } = props;
 
-  const title = whichResourceToShow.resourceCategory.replaceAll("-", " ");
+  const title = whichResourceToShow.resourceCategory.replaceAll('-', ' ');
 
   const toggleDrawer = () => {
     if (isResourceChosen) setIsResourceChosen(false);
@@ -38,20 +26,19 @@ export const ResourceDataDrawer: React.FC<ResourceDataDrawerProps> = (
 
   const list = () => (
     <Box
-      sx={{ width: "100%" }}
+      sx={{ width: '100%' }}
       role="presentation"
       onClick={toggleDrawer}
-      onKeyDown={toggleDrawer}
-    >
+      onKeyDown={toggleDrawer}>
       <AppBar>
-        <Toolbar className={css["resource-drawer-title"]}>
+        <Toolbar className={css['resource-drawer-title']}>
           <Typography variant="h1">{title}</Typography>
           <Cancel onClick={toggleDrawer} />
         </Toolbar>
       </AppBar>
 
       <Toolbar />
-      <List className={css["resource-drawer-list-container"]}>
+      <List className={css['resource-drawer-list-container']}>
         <ResourceItem whichResourceToShow={whichResourceToShow}></ResourceItem>
       </List>
     </Box>
@@ -60,17 +47,16 @@ export const ResourceDataDrawer: React.FC<ResourceDataDrawerProps> = (
   return (
     <>
       <Drawer
-        anchor={"right"}
+        anchor={'right'}
         open={isResourceChosen}
         onClose={toggleDrawer}
         ModalProps={{
-          keepMounted: true, // Better open performance on mobile.
+          keepMounted: true // Better open performance on mobile.
         }}
         sx={{
-          display: { xs: "block", sm: "none" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: "100vw" },
-        }}
-      >
+          display: { xs: 'block', sm: 'none' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100vw' }
+        }}>
         {list()}
       </Drawer>
     </>

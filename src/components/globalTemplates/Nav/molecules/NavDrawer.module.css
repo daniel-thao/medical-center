@@ -1,45 +1,43 @@
+.nav-hamburger-menu {
+  color: black;
+}
 
-  .nav-hamburger-menu {
-    color: black;
-  }
-  
-  .nav-hamburger-menu-title {
-    background-color: rgb(255, 235, 239);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 3em;
-  }
-  
-  .links {
-    color: black;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-grow: 2;
-    padding: 0em 2em;
-  }
-  
-  
-  .athena-item {
-    display: flex;
-    align-items: center;
-  }
-  
-  .athena-item > span {
-    font-size: calc(100% / 25);
-    margin-top: calc(100% / 800);
-    color:#4c2c84;
-  }
-  
-  .athena-logo {
-    width: calc(100% / 2.3);
-    object-fit: contain;
-    padding: 0.5em 0em 0.5em 0.5em;
-    padding-left: 0px;
-    padding-right: calc(100% / 65);
-    background-color: white;
-    border-radius: 0.3em;
-  }
+.nav-hamburger-menu-title {
+  background-color: rgb(255, 235, 239);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+}
+
+.links {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 2;
+  padding: 0em 2em;
+}
+
+.athena-item {
+  display: flex;
+  align-items: center;
+}
+
+.athena-item > span {
+  font-size: calc(100% / 25);
+  margin-top: calc(100% / 800);
+  color: #4c2c84;
+}
+
+.athena-logo {
+  width: calc(100% / 2.3);
+  object-fit: contain;
+  padding: 0.5em 0em 0.5em 0.5em;
+  padding-left: 0px;
+  padding-right: calc(100% / 65);
+  background-color: white;
+  border-radius: 0.3em;
+}
