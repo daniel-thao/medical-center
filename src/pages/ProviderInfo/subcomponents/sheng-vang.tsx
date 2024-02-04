@@ -22,7 +22,7 @@ export const ShengVang: React.FC<ShengVangProps> = (props) => {
   }, [value, pointer]);
 
   return (
-    <Grid container columnSpacing={6} rowGap={12} className={`${css['provider']} ${css[animationClass]}`}>
+    <Grid container columnSpacing={6} rowGap={12} className={`${css['provider']} ${value === pointer ? "" : css["hidden"]} ${css[animationClass]}`}>
       <Grid item xs={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>

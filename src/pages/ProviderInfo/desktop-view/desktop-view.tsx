@@ -23,16 +23,16 @@ export const ProviderInfoDesktopView: React.FC<ProviderInfoDesktopViewProps> = (
     <Box className={css['container']}>
       <TextBlock classification="title" body="Meet Our Care Team" className={css['title']}></TextBlock>
 
-      <Grid container>
+      <Grid container className={css["provider-tab-list"]}>
         <Grid item xs={3}></Grid>
-        <Grid container item xs={6} gap={6} sx={{ justifyContent: 'center' }}>
-          <Grid item xs={2} onClick={(e) => handleChange(1)}>
+        <Grid container item xs={6} sx={{ justifyContent: 'center' }}>
+          <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(1)}>
             Dr Phua Xiong
           </Grid>
-          <Grid item xs={2} onClick={(e) => handleChange(2)}>
+          <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(2)}>
             Paahoua Vang
           </Grid>
-          <Grid item xs={2} onClick={(e) => handleChange(3)}>
+          <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(3)}>
             Sheng Vang
           </Grid>
         </Grid>

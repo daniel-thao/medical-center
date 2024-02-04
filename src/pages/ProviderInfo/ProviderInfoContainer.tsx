@@ -8,7 +8,7 @@ import css from './ProviderInfoContainer.module.css';
 import { ProviderInfoDesktopView } from './desktop-view/desktop-view';
 import { ProviderInfoTabletView } from './tablet-view/tablet-view';
 
-export interface ProviderInfoProps {}
+export interface ProviderInfoProps { }
 
 export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   const phoneWidth = useMediaQuery('(max-width:450px)');
@@ -31,8 +31,8 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   console.log(tabletWidth);
 
   const display = () => {
-    if (phoneWidth) return <div>iopioiop</div>;
-    if (tabletWidth && !phoneWidth) return <div>dsjakdjasl</div>;
+    // if (phoneWidth) return <div>iopioiop</div>;
+    // if (tabletWidth && !phoneWidth) return <div>dsjakdjasl</div>;
     return <ProviderInfoDesktopView imageCSSRender={imageCSSRender}></ProviderInfoDesktopView>;
   };
 
