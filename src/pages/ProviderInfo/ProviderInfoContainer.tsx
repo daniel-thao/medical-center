@@ -11,7 +11,8 @@ export interface ProviderInfoProps { }
 
 export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   const phoneWidth = useMediaQuery('(max-width:450px)');
-  const tabletWidth = useMediaQuery('(max-width:899px)');
+  const tabletWidth = useMediaQuery('(max-width:899px)'); // used to match MUI md size on <Grid>
+  const dupTabletWidth = useMediaQuery('(max-width:1060px)'); // my actual query that I like
   const laptopWidth = useMediaQuery('(max-width:1250px)')
 
   const imageCSSRender = useMemo(() => {
@@ -53,7 +54,7 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
         return setOffsetHeight(0)
       }
     }
-  }, [providerOne, providerTwo, providerThree, whichProviderID, tabletWidth, phoneWidth, laptopWidth])
+  }, [providerOne, providerTwo, providerThree, whichProviderID, tabletWidth, phoneWidth, laptopWidth, dupTabletWidth])
 
   return (
     <div className={`global-font ${css['landing-container']}`}>
@@ -75,7 +76,7 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
           </Grid>
         </Grid>}
 
-        {(!phoneWidth && tabletWidth) && <Grid container className={css["provider-tab-list"]}>
+        {(!phoneWidth && (dupTabletWidth)) && <Grid container className={css["provider-tab-list"]}>
           <Grid container item xs={12} sx={{ justifyContent: 'center' }}>
             <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(1)}>
               Dr Phua Xiong
@@ -89,7 +90,7 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
           </Grid>
         </Grid>}
 
-        {(!phoneWidth && !tabletWidth) && <Grid container className={css["provider-tab-list"]}>
+        {(!phoneWidth && !dupTabletWidth) && <Grid container className={css["provider-tab-list"]}>
           <Grid item xs={3}></Grid>
           <Grid container item xs={6} sx={{ justifyContent: 'center' }}>
             <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(1)}>

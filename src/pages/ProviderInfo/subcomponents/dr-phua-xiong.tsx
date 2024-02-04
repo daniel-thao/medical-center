@@ -58,27 +58,30 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
         />
       </Grid>
 
-      <Grid item xs={12} sm={12} md={6} lg={6} className={css['tab-panel-text-formatting']}>
-        <TextBlock body={'A Servant Leader'} classification={'title'} className={css['provider-one']} />
+      <Grid item xs={12} sm={12} md={6} lg={6}>
+        <div className={css['tab-panel-text-formatting']}>
+          <TextBlock body={'A Servant Leader'} classification={'title'} className={css['provider-one']} />
 
-        <TextBlock
-          body={`In her 25 years of serving the Hmong community she continues to be a strong presence in
+          <TextBlock
+            body={`In her 25 years of serving the Hmong community she continues to be a strong presence in
               the MN Hmong community. She has served as cultural consultant to various agencies and
               organizations including health care organizations such as Ucare MN. She has been a part of
               many health education programs for the Hmong community since graduation from Medical
               School.`}
-          classification={'paragraph'}
-          className={css['provider-one-paragraph']}
-        />
+            classification={'paragraph'}
+            className={css['provider-one-paragraph']}
+          />
 
-        <TextBlock
-          body={`She received a grant from the John G. Fee Preventive Medicine Scholarship to develop a
+          <TextBlock
+            body={`She received a grant from the John G. Fee Preventive Medicine Scholarship to develop a
               video in Hmong and English called, “Living Healthy Lives,” promoting healthy lifestyles in
               America for the Hmong people. She is a strong advocate for culturally sensitive and
               response health care.`}
-          classification={'paragraph'}
-          className={css['provider-one-paragraph']}
-        />
+            classification={'paragraph'}
+            className={css['provider-one-paragraph']}
+          />
+        </div>
+
       </Grid>
 
       <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>

@@ -117,4 +117,18 @@
   .container {
     margin: 0em 0em;
   }
+
+  .tab-panel-text-formatting {
+    padding: 1em 3em !important;
+  }
+}
+
+@media only screen and (max-width: 899px) {
+  .container {
+    margin: 0em 0em;
+  }
+
+  .tab-panel-text-formatting {
+    padding: 1em 2em !important;
+  }
 }
