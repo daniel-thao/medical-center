@@ -1,5 +1,5 @@
-import { Grid } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import { Grid, useMediaQuery } from '@mui/material';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { TextBlock } from '../../../components/globalMolecules/TextBlock/TextBlock';
 
 import css from '../ProviderInfoContainer.module.css';
@@ -10,8 +10,12 @@ export interface PaahouaVangProps {
   pointer: number;
 }
 
-export const PaahouaVang: React.FC<PaahouaVangProps> = (props) => {
+export const PaahouaVang = forwardRef<any, PaahouaVangProps>((props, ref) => {
   const { imageCSSRender, value, pointer } = props;
+
+  const phoneWidth = useMediaQuery('(max-width:450px)');
+  const tabletWidth = useMediaQuery('(max-width:899px)');
+  const laptopWidth = useMediaQuery('(max-width:1250px)')
 
   const [animationClass, setAnimationClass] = useState('');
 
@@ -22,7 +26,7 @@ export const PaahouaVang: React.FC<PaahouaVangProps> = (props) => {
   }, [value, pointer]);
 
   return (
-    <Grid container columnSpacing={6} rowGap={12} className={`${css['provider']} ${value === pointer ? "" : css["hidden"]} ${css[animationClass]}`}>
+    <Grid ref={ref} container columnSpacing={6} rowGap={12} className={`${css['provider']} ${value === pointer ? "" : css["hidden"]} ${css[animationClass]}`}>
       <Grid item xs={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>
@@ -62,4 +66,4 @@ export const PaahouaVang: React.FC<PaahouaVangProps> = (props) => {
       </Grid>
     </Grid>
   );
-};
+});

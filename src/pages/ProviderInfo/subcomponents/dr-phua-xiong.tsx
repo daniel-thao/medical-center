@@ -1,5 +1,5 @@
-import { Grid } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import { Grid, useMediaQuery } from '@mui/material';
+import { forwardRef, useEffect, useState } from 'react';
 import { TextBlock } from '../../../components/globalMolecules/TextBlock/TextBlock';
 
 import css from '../ProviderInfoContainer.module.css';
@@ -10,8 +10,12 @@ export interface DrPhuaXiongProps {
   pointer: number;
 }
 
-export const DrPhuaXiong: React.FC<DrPhuaXiongProps> = (props) => {
+export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
   const { imageCSSRender, value, pointer } = props;
+
+  const phoneWidth = useMediaQuery('(max-width:450px)');
+  const tabletWidth = useMediaQuery('(max-width:899px)');
+  const laptopWidth = useMediaQuery('(max-width:1250px)')
 
   const [animationClass, setAnimationClass] = useState('');
 
@@ -22,12 +26,12 @@ export const DrPhuaXiong: React.FC<DrPhuaXiongProps> = (props) => {
   }, [value, pointer]);
 
   return (
-    <Grid container columnSpacing={6} rowGap={12} className={`${css['provider']} ${value === pointer ? "" : css["hidden"]} ${css[animationClass]}`}>
-      <Grid item xs={6} className={css['photo-container-one']}>
+    <Grid ref={ref} container columnSpacing={6} rowGap={12} className={`${css['provider']} ${value === pointer ? "" : css["hidden"]} ${css[animationClass]}`}>
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>
 
-      <Grid item xs={6} className={css['tab-panel-text-formatting']}>
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['tab-panel-text-formatting']}>
         <TextBlock body={'Dr. Phua Xiong'} classification={'title'} className={css['provider-one']} />
 
         <TextBlock
@@ -54,7 +58,7 @@ export const DrPhuaXiong: React.FC<DrPhuaXiongProps> = (props) => {
         />
       </Grid>
 
-      <Grid item xs={6} className={css['tab-panel-text-formatting']}>
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['tab-panel-text-formatting']}>
         <TextBlock body={'A Servant Leader'} classification={'title'} className={css['provider-one']} />
 
         <TextBlock
@@ -77,15 +81,15 @@ export const DrPhuaXiong: React.FC<DrPhuaXiongProps> = (props) => {
         />
       </Grid>
 
-      <Grid item xs={6} className={css['photo-container-one']}>
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>
 
-      <Grid item xs={6} className={css['photo-container-one']}>
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>
 
-      <Grid item xs={6} className={css['tab-panel-text-formatting']}>
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['tab-panel-text-formatting']}>
         <TextBlock body={'A Giver'} classification={'title'} className={css['provider-one']} />
 
         <TextBlock
@@ -106,4 +110,4 @@ export const DrPhuaXiong: React.FC<DrPhuaXiongProps> = (props) => {
       </Grid>
     </Grid>
   );
-};
+});
