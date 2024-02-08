@@ -7,13 +7,13 @@ import { DrPhuaXiong } from './subcomponents/dr-phua-xiong';
 import { PaahouaVang } from './subcomponents/paahoua-vang';
 import { ShengVang } from './subcomponents/sheng-vang';
 
-export interface ProviderInfoProps { }
+export interface ProviderInfoProps {}
 
 export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   const phoneWidth = useMediaQuery('(max-width:450px)');
   const tabletWidth = useMediaQuery('(max-width:899px)'); // used to match MUI md size on <Grid>
   const dupTabletWidth = useMediaQuery('(max-width:1060px)'); // my actual query that I like
-  const laptopWidth = useMediaQuery('(max-width:1250px)')
+  const laptopWidth = useMediaQuery('(max-width:1250px)');
 
   const imageCSSRender = useMemo(() => {
     if (phoneWidth && tabletWidth) {
@@ -28,12 +28,11 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   }, [phoneWidth, tabletWidth]);
 
   const [whichProviderID, setWhichProviderID] = useState(1);
-  const [offsetHeight, setOffsetHeight] = useState(0)
+  const [offsetHeight, setOffsetHeight] = useState(0);
 
-  const providerOne = useRef<any>(null)
-  const providerTwo = useRef<any>(null)
-  const providerThree = useRef<any>(null)
-
+  const providerOne = useRef<any>(null);
+  const providerTwo = useRef<any>(null);
+  const providerThree = useRef<any>(null);
 
   const handleChange = (value: number) => {
     setWhichProviderID(value);
@@ -42,69 +41,74 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   useEffect(() => {
     switch (whichProviderID) {
       case 1: {
-        return setOffsetHeight(providerOne.current.offsetHeight)
+        return setOffsetHeight(providerOne.current.offsetHeight);
       }
       case 2: {
-        return setOffsetHeight(providerTwo.current.offsetHeight)
+        return setOffsetHeight(providerTwo.current.offsetHeight);
       }
       case 3: {
-        return setOffsetHeight(providerThree.current.offsetHeight)
+        return setOffsetHeight(providerThree.current.offsetHeight);
       }
       default: {
-        return setOffsetHeight(0)
+        return setOffsetHeight(0);
       }
     }
-  }, [providerOne, providerTwo, providerThree, whichProviderID, tabletWidth, phoneWidth, laptopWidth, dupTabletWidth])
+  }, [providerOne, providerTwo, providerThree, whichProviderID, tabletWidth, phoneWidth, laptopWidth, dupTabletWidth]);
 
   return (
     <div className={`global-font ${css['landing-container']}`}>
-
       <Box className={css['container']}>
         <TextBlock classification="title" body="Meet Our Care Team" className={css['title']}></TextBlock>
 
-        {(phoneWidth && tabletWidth) && <Grid container className={css["provider-tab-list"]}>
-          <Grid container item xs={12} sx={{ justifyContent: 'center' }}>
-            <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(1)}>
-              Dr Phua Xiong
-            </Grid>
-            <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(2)}>
-              Paahoua Vang
-            </Grid>
-            <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(3)}>
-              Sheng Vang
+        {phoneWidth && tabletWidth && (
+          <Grid container className={css['provider-tab-list']}>
+            <Grid container item xs={12} sx={{ justifyContent: 'center' }}>
+              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(1)}>
+                Dr Phua Xiong
+              </Grid>
+              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(2)}>
+                Paahoua Vang
+              </Grid>
+              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(3)}>
+                Sheng Vang
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>}
+        )}
 
-        {(!phoneWidth && (dupTabletWidth)) && <Grid container className={css["provider-tab-list"]}>
-          <Grid container item xs={12} sx={{ justifyContent: 'center' }}>
-            <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(1)}>
-              Dr Phua Xiong
-            </Grid>
-            <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(2)}>
-              Paahoua Vang
-            </Grid>
-            <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(3)}>
-              Sheng Vang
+        {!phoneWidth && dupTabletWidth && (
+          <Grid container className={css['provider-tab-list']}>
+            <Grid container item xs={12} sx={{ justifyContent: 'center' }}>
+              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(1)}>
+                Dr Phua Xiong
+              </Grid>
+              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(2)}>
+                Paahoua Vang
+              </Grid>
+              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(3)}>
+                Sheng Vang
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>}
+        )}
 
-        {(!phoneWidth && !dupTabletWidth) && <Grid container className={css["provider-tab-list"]}>
-          <Grid item xs={3}></Grid>
-          <Grid container item xs={6} sx={{ justifyContent: 'center' }}>
-            <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(1)}>
-              Dr Phua Xiong
+        {!phoneWidth && !dupTabletWidth && (
+          <Grid container className={css['provider-tab-list']}>
+            <Grid item xs={2}></Grid>
+            <Grid container item xs={8} sx={{ justifyContent: 'center' }}>
+              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(1)}>
+                Dr Phua Xiong
+              </Grid>
+              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(2)}>
+                Paahoua Vang
+              </Grid>
+              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(3)}>
+                Sheng Vang
+              </Grid>
             </Grid>
-            <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(2)}>
-              Paahoua Vang
-            </Grid>
-            <Grid item xs={4} className={css["provider-choice"]} onClick={(e) => handleChange(3)}>
-              Sheng Vang
-            </Grid>
+            <Grid item xs={2}></Grid>
           </Grid>
-          <Grid item xs={3}></Grid>
-        </Grid>}
+        )}
 
         <Box className={css['provider-container']} sx={{ height: offsetHeight }}>
           <DrPhuaXiong ref={providerOne} imageCSSRender={imageCSSRender} value={1} pointer={whichProviderID}></DrPhuaXiong>

@@ -118,8 +118,12 @@
     margin: 0em 0em;
   }
 
-  .tab-panel-text-formatting {
-    padding: 1em 3em !important;
+  .tab-panel-text-formatting-right {
+    padding: 1em 3em 1em 0em !important;
+  }
+
+  .tab-panel-text-formatting-left {
+    padding: 1em 0em 1em 3em !important;
   }
 }
 
@@ -128,7 +132,31 @@
     margin: 0em 0em;
   }
 
-  .tab-panel-text-formatting {
+  .tab-panel-text-formatting-right {
     padding: 1em 2em !important;
+  }
+
+  .tab-panel-text-formatting-left {
+    padding: 1em 2em !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    margin: 0em 0em;
+  }
+
+  .provider-one {
+    font-size: 1.75em;
+    padding: 0.5em 0em 1em 0em !important;
+    text-align: center;
+  }
+
+  .tab-panel-text-formatting-right {
+    padding: 1em !important;
+  }
+
+  .tab-panel-text-formatting-left {
+    padding: 1em !important;
   }
 }

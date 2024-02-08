@@ -13,15 +13,19 @@
 }
 
 .athena-link-grid-item {
+  display: flex;
+  justify-content: center;
+  width: fit-content !important;
+  /* flex-shrink: 2; */
+}
+
+.athena-link {
+  text-decoration: none;
   background-color: white;
   border: solid #4c2c84 1.5px;
   border-radius: 0.5em;
   margin: 0.5em 0em !important;
   padding: 0.5em;
-}
-
-.athena-link {
-  text-decoration: none;
 }
 
 .athena-item {
@@ -30,7 +34,7 @@
 }
 
 .athena-item > span {
-  font-size: calc(100vw / 25);
+  font-size: calc(100vw / 23.5);
   margin-top: calc(100vw / 800);
   color: #4c2c84;
   /* font-size: 1em; */

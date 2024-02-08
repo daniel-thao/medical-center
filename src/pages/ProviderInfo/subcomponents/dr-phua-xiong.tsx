@@ -15,7 +15,7 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
 
   const phoneWidth = useMediaQuery('(max-width:450px)');
   const tabletWidth = useMediaQuery('(max-width:899px)');
-  const laptopWidth = useMediaQuery('(max-width:1250px)')
+  const laptopWidth = useMediaQuery('(max-width:1250px)');
 
   const [animationClass, setAnimationClass] = useState('');
 
@@ -26,40 +26,48 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
   }, [value, pointer]);
 
   return (
-    <Grid ref={ref} container columnSpacing={6} rowGap={12} className={`${css['provider']} ${value === pointer ? "" : css["hidden"]} ${css[animationClass]}`}>
+    <Grid ref={ref} container columnSpacing={6} rowGap={{ xs: 2, sm: 4, md: 12 }} className={`${css['provider']} ${value === pointer ? '' : css['hidden']} ${css[animationClass]}`}>
       <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>
 
-      <Grid item xs={12} sm={12} md={6} lg={6} className={css['tab-panel-text-formatting']}>
-        <TextBlock body={'Dr. Phua Xiong'} classification={'title'} className={css['provider-one']} />
+      <Grid item xs={12} sm={12} md={6} lg={6}>
+        <div className={css['tab-panel-text-formatting-right']}>
+          <TextBlock body={'Dr. Phua Xiong'} classification={'title'} className={css['provider-one']} />
 
-        <TextBlock
-          body={`Dr Phua Xiong is the medical director and owner of St Paul Family Medical Center, a Hmong
+          <TextBlock
+            body={`Dr Phua Xiong is the medical director and owner of St Paul Family Medical Center, a Hmong
               clinic on the East Side of St. Paul, serving the Hmong community and other underserved
               communities since 2002.`}
-          classification={'paragraph'}
-          className={css['provider-one-paragraph']}
-        />
+            classification={'paragraph'}
+            className={css['provider-one-paragraph']}
+          />
 
-        <TextBlock
-          body={`Dr. Xiong graduated from the U of MN Medical School in 1996 and did her residency
+          <TextBlock
+            body={`Dr. Xiong graduated from the U of MN Medical School in 1996 and did her residency
               training in family medicine at St. Joesph’s Hospital in St. Paul.`}
-          classification={'paragraph'}
-          className={css['provider-one-paragraph']}
-        />
+            classification={'paragraph'}
+            className={css['provider-one-paragraph']}
+          />
 
-        <TextBlock
-          body={`As a child growing up in Philadelphia, Pennsylvania Dr. Xiong always had a passion for
+          <TextBlock
+            body={`As a child growing up in Philadelphia, Pennsylvania Dr. Xiong always had a passion for
               service and a heart of love for the Hmong people. It was her compassion and love for the
               Hmong that brought her to Minnesota in 1992 to study medicine.`}
-          classification={'paragraph'}
-          className={css['provider-one-paragraph']}
-        />
+            classification={'paragraph'}
+            className={css['provider-one-paragraph']}
+          />
+        </div>
       </Grid>
 
+      {phoneWidth && tabletWidth && (
+        <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
+          <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
+        </Grid>
+      )}
+
       <Grid item xs={12} sm={12} md={6} lg={6}>
-        <div className={css['tab-panel-text-formatting']}>
+        <div className={css['tab-panel-text-formatting-left']}>
           <TextBlock body={'A Servant Leader'} classification={'title'} className={css['provider-one']} />
 
           <TextBlock
@@ -81,35 +89,38 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
             className={css['provider-one-paragraph']}
           />
         </div>
-
       </Grid>
+
+      {!phoneWidth && !tabletWidth && (
+        <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
+          <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
+        </Grid>
+      )}
 
       <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>
 
-      <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
-        <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
-      </Grid>
+      <Grid item xs={12} sm={12} md={6} lg={6}>
+        <div className={css['tab-panel-text-formatting-right']}>
+          <TextBlock body={'A Giver'} classification={'title'} className={css['provider-one']} />
 
-      <Grid item xs={12} sm={12} md={6} lg={6} className={css['tab-panel-text-formatting']}>
-        <TextBlock body={'A Giver'} classification={'title'} className={css['provider-one']} />
-
-        <TextBlock
-          body={`She is a co-author of the book “Healing by Heart: : Clinical and Ethical Case Stories of Hmong
+          <TextBlock
+            body={`She is a co-author of the book “Healing by Heart: Clinical and Ethical Case Stories of Hmong
               Families and Western Providers,” which addresses many of the cultural and religious aspects of
               health in the Hmong. This book has been used in academic and health care settings in teaching
               students and health care professionals on cultural competency.`}
-          classification={'paragraph'}
-          className={css['provider-one-paragraph']}
-        />
+            classification={'paragraph'}
+            className={css['provider-one-paragraph']}
+          />
 
-        <TextBlock
-          body={`Dr. Xiong is married and is the mother of five children and continues to encourage young
+          <TextBlock
+            body={`Dr. Xiong is married and is the mother of five children and continues to encourage young
               people, especially women, to pursue their dreams.`}
-          classification={'paragraph'}
-          className={css['provider-one-paragraph']}
-        />
+            classification={'paragraph'}
+            className={css['provider-one-paragraph']}
+          />
+        </div>
       </Grid>
     </Grid>
   );

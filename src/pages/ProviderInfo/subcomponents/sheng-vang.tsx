@@ -15,7 +15,7 @@ export const ShengVang = forwardRef<any, ShengVangProps>((props, ref) => {
 
   const phoneWidth = useMediaQuery('(max-width:450px)');
   const tabletWidth = useMediaQuery('(max-width:899px)');
-  const laptopWidth = useMediaQuery('(max-width:1250px)')
+  const laptopWidth = useMediaQuery('(max-width:1250px)');
 
   const [animationClass, setAnimationClass] = useState('');
 
@@ -26,12 +26,12 @@ export const ShengVang = forwardRef<any, ShengVangProps>((props, ref) => {
   }, [value, pointer]);
 
   return (
-    <Grid ref={ref} container columnSpacing={6} rowGap={12} className={`${css['provider']} ${value === pointer ? "" : css["hidden"]} ${css[animationClass]}`}>
-      <Grid item xs={6} className={css['photo-container-one']}>
+    <Grid ref={ref} container columnSpacing={6} rowGap={{ xs: 2, sm: 4, md: 12 }} className={`${css['provider']} ${value === pointer ? '' : css['hidden']} ${css[animationClass]}`}>
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>
 
-      <Grid item xs={6} className={css['photo-container-one']}>
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <TextBlock body={'Sheng Vang'} classification={'title'} className={css['provider-one']} />
 
         <TextBlock
@@ -41,7 +41,13 @@ export const ShengVang = forwardRef<any, ShengVangProps>((props, ref) => {
         />
       </Grid>
 
-      <Grid item xs={6} className={css['photo-container-one']}>
+      {phoneWidth && tabletWidth && (
+        <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
+          <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
+        </Grid>
+      )}
+
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <TextBlock body={'Your Life, Your Health'} classification={'title'} className={css['provider-one']} />
 
         <TextBlock
@@ -51,15 +57,17 @@ export const ShengVang = forwardRef<any, ShengVangProps>((props, ref) => {
         />
       </Grid>
 
-      <Grid item xs={6} className={css['photo-container-one']}>
+      {!phoneWidth && !tabletWidth && (
+        <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
+          <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
+        </Grid>
+      )}
+
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>
 
-      <Grid item xs={6} className={css['photo-container-one']}>
-        <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
-      </Grid>
-
-      <Grid item xs={6} className={css['photo-container-one']}>
+      <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <TextBlock body={'The North Star'} classification={'title'} className={css['provider-one']} />
 
         <TextBlock body={`I look forward to meeting you and helping you be the best version of yourself.`} classification={'paragraph'} className={css['provider-one-paragraph']} />
