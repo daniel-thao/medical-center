@@ -146,17 +146,17 @@
     margin: 0em 0em;
   }
 
+  .title {
+    font-size: var(--font-size-m) !important;
+  }
+
+  .provider-choice {
+    font-size: var(--font-size-s);
+  }
+
   .provider-one {
-    font-size: 1.75em;
+    font-size: var(--font-size-sm);
     padding: 0.5em 0em 1em 0em !important;
     text-align: center;
-  }
-
-  .tab-panel-text-formatting-right {
-    padding: 1em !important;
-  }
-
-  .tab-panel-text-formatting-left {
-    padding: 1em !important;
   }
 }
