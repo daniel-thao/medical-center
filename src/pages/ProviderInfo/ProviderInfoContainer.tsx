@@ -7,7 +7,7 @@ import { DrPhuaXiong } from './subcomponents/dr-phua-xiong';
 import { PaahouaVang } from './subcomponents/paahoua-vang';
 import { ShengVang } from './subcomponents/sheng-vang';
 
-export interface ProviderInfoProps {}
+export interface ProviderInfoProps { }
 
 export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   const phoneWidth = useMediaQuery('(max-width:450px)');
@@ -53,7 +53,7 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
         return setOffsetHeight(0);
       }
     }
-  }, [providerOne, providerTwo, providerThree, whichProviderID, tabletWidth, phoneWidth, laptopWidth, dupTabletWidth]);
+  }, [providerOne, providerTwo, providerThree, whichProviderID, tabletWidth, phoneWidth, laptopWidth, dupTabletWidth, offsetHeight]);
 
   return (
     <div className={`global-font ${css['landing-container']}`}>
