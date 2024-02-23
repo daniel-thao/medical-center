@@ -34,68 +34,29 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   const providerTwo = useRef<any>(null);
   const providerThree = useRef<any>(null);
 
-  const count = useRef<number>(0)
-
   const handleChange = (value: number) => {
     setWhichProviderID(value);
   };
 
-  // useEffect(() => {
-  //   console.log(offsetHeight)
-  //   switch (whichProviderID) {
-  //     case 1: {
-  //       count.current++
-  //       console.log("Switch case 1", count)
-  //       return setOffsetHeight(providerOne.current.offsetHeight);
-  //     }
-  //     case 2: {
-  //       count.current++
-  //       console.log("Switch case 2", count)
-  //       return setOffsetHeight(providerTwo.current.offsetHeight);
-  //     }
-  //     case 3: {
-  //       count.current++
-  //       console.log("Switch case 3", count)
-  //       return setOffsetHeight(providerThree.current.offsetHeight);
-  //     }
-  //     default: {
-  //       count.current++
-  //       console.log("Switch case 4", count)
-  //       return setOffsetHeight(0);
-  //     }
-  //   }
-  // }, [providerOne, providerTwo, providerThree, whichProviderID, tabletWidth, phoneWidth, laptopWidth, dupTabletWidth, offsetHeight]);
-
   useEffect(() => {
-    const test = setTimeout(() => {
-      console.log("This should only happen once after a lot of renders")
-      console.log(offsetHeight)
-
+    const heightTimer = setTimeout(() => {
       switch (whichProviderID) {
         case 1: {
-          count.current++
-          console.log("Switch case 1", count)
           return setOffsetHeight(providerOne.current.offsetHeight);
         }
         case 2: {
-          count.current++
-          console.log("Switch case 2", count)
           return setOffsetHeight(providerTwo.current.offsetHeight);
         }
         case 3: {
-          count.current++
-          console.log("Switch case 3", count)
           return setOffsetHeight(providerThree.current.offsetHeight);
         }
         default: {
-          count.current++
-          console.log("Switch case 4", count)
           return setOffsetHeight(0);
         }
       }
     }, 500)
 
-    return () => clearTimeout(test)
+    return () => clearTimeout(heightTimer)
   }, [providerOne, providerTwo, providerThree, whichProviderID, tabletWidth, phoneWidth, laptopWidth, dupTabletWidth, offsetHeight]);
 
   return (
