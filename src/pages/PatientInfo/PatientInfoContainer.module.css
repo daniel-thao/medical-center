@@ -5,6 +5,33 @@
 .patient-info-container {
   /* background-color: aqua; */
 }
+
+.list-container {
+  background: linear-gradient(rgb(255, 235, 239), rgb(255, 255, 255));
+}
+
+.list-container > .appbar {
+  background-color: rgb(255, 235, 239);
+}
+
+.list-container > .appbar > .toolbar {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+.appbar > div > h1 {
+  font-size: var(--font-size-lg) !important;
+}
+
+.list-content {
+  margin: 1em 0em;
+}
+
+.list-item {
+  border: solid black 1px;
+  border-radius: 0.4em;
+  padding: 1em;
+}
 /* 
 
 

@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from 'react';
 
 import { Cancel } from '@mui/icons-material';
-import { AppBar, Box, Drawer, List, ListItem, ListItemButton, Divider, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Drawer, List, Toolbar, Typography } from '@mui/material';
 
 import { IResourceCategoryRender } from '../../utils/interfacesTypes';
 import { ResourceItem } from '../resource-item/ResourceItem';
@@ -25,16 +25,16 @@ export const ResourceDataDrawer: React.FC<ResourceDataDrawerProps> = (props) => 
   };
 
   const list = () => (
-    <Box sx={{ width: '100%' }} role="presentation" onClick={toggleDrawer} onKeyDown={toggleDrawer}>
-      <AppBar>
-        <Toolbar className={css['resource-drawer-title']}>
+    <Box className={css["list-container"]} sx={{ width: '100%' }} role="presentation" onClick={toggleDrawer} onKeyDown={toggleDrawer}>
+      <AppBar className={css["appbar"]}>
+        <Toolbar className={css['toolbar']}>
           <Typography variant="h1">{title}</Typography>
           <Cancel onClick={toggleDrawer} />
         </Toolbar>
       </AppBar>
 
       <Toolbar />
-      <List className={css['resource-drawer-list-container']}>
+      <List>
         <ResourceItem whichResourceToShow={whichResourceToShow}></ResourceItem>
       </List>
     </Box>

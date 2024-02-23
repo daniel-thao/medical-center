@@ -35,14 +35,16 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
     const openTimeDataArr = openCloseTimeGenerator(value, value.openTime);
     const closeTimeDataArr = openCloseTimeGenerator(value, value.closeTime);
 
-    const test = (
-      <Box>
+    const renderings = (
+      <Box className={css["list-item"]}>
         <Typography>
           <span className={css['resource-info-prefix']}>Name:</span> {value.clinicName}
         </Typography>
+
         <Typography>
           <span className={css['resource-info-prefix']}>Address:</span> {value.street} {value.city} {value.state} {value.zipcode}
         </Typography>
+
         <Box>
           <Typography>
             <span className={css['resource-info-prefix']}>Phone:</span> {phoneNumArr.length > 0 ? '' : value.phone}
@@ -51,6 +53,7 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
             return element;
           })}
         </Box>
+
         <Box>
           {typeof value.openTime === 'string' ? (
             <Typography>
@@ -65,6 +68,7 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
             return element;
           })}
         </Box>
+
         <Box>
           {typeof value.closeTime === 'string' ? (
             <Typography>
@@ -81,16 +85,16 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
         </Box>
       </Box>
     );
-    allResourcesArr.push(test);
+    allResourcesArr.push(renderings);
   }
 
   return (
     <>
       {allResourcesArr.map((element, index) => (
         <ListItem
-          className={css[`resource-info-container-mobile-tablet`]}
+          className={css[`list-content`]}
           key={`${allResources[index].clinicName}-${allResources[index].zipcode}`}
-          // sx={{ margin: { xs: ".5em .5em" } }}
+        // sx={{ margin: { xs: ".5em .5em" } }}
         >
           {element}
         </ListItem>

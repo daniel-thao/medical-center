@@ -12,7 +12,7 @@ import { vaccineData } from '../utils/vaccineData';
 
 import css from './mobile-view.module.css';
 
-export interface PatientInfoMobileViewProps {}
+export interface PatientInfoMobileViewProps { }
 
 export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
   const [isResourceListOpen, setIsResourceListOpen] = useState<boolean>(false);
@@ -24,25 +24,16 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
     resourceIndex: 0
   });
 
-  const handleResourceList = (resourceListCategory?: string, resourceListIndex?: number, didClickListItem?: boolean): void => {
-    if (resourceListCategory && resourceListIndex !== undefined) {
-      setWhichResourceToShow({
-        resourceCategory: resourceListCategory,
-        resourceIndex: resourceListIndex
-      });
-    }
-
-    if (!isResourceListOpen) setIsResourceListOpen(true);
-    else setIsResourceListOpen(false);
+  const handleResource = (resourceListCategory: string, resourceListIndex: number): void => {
+    setWhichResourceToShow({
+      resourceCategory: resourceListCategory,
+      resourceIndex: resourceListIndex
+    });
 
     setTimeout(() => {
-      if (!isResourceChosen && didClickListItem) {
-        setIsResourceChosen(true);
-      } else if (isResourceChosen && didClickListItem) {
-        setIsResourceChosen(false);
-      }
+      setIsResourceChosen(!isResourceChosen)
     }, 375);
-  };
+  }
 
   const handleVaccineList = (state: boolean, setChosenState: React.Dispatch<SetStateAction<boolean>>) => {
     if (!state) {
@@ -56,8 +47,14 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
         <Box id="mobile-tablet-recommended-resources-container" sx={{ display: { xs: 'block', md: 'none' } }}>
           <TextBlock body="Serving our patients with a compassionate heart and caring hands" classification="quote" className={css['quote-one']} />
 
-          <Accordion className={`${css['recommended-resources-container-mobile-tablet']}`} expanded={isResourceListOpen} onClick={() => handleResourceList()}>
-            <AccordionSummary className={`${isResourceListOpen ? css['resource-list-active'] : css['resource-list-inactive']}`} expandIcon={<ExpandMore />} aria-controls="panel1a-content">
+          <Accordion
+            className={`${css['recommended-resources-container-mobile-tablet']}`}
+          >
+            <AccordionSummary
+              className={`${isResourceListOpen ? css['resource-list-active'] : css['resource-list-inactive']}`}
+              expandIcon={<ExpandMore />}
+              aria-controls="panel1a-content"
+            >
               Recommended Resource List
             </AccordionSummary>
 
@@ -68,7 +65,14 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
                   const resourceCategory = objKey.replaceAll('-', ' ');
 
                   return (
-                    <Grid className={css['list-item-mobile-tablet']} item key={`${resource}-${index}`} onClick={(e) => handleResourceList(objKey, index, true)} xs={6}>
+                    <Grid
+                      id="resource-accordion-choice"
+                      className={css['list-item-mobile-tablet']}
+                      item
+                      key={`${resource}-${index}`}
+                      onClick={(e) => handleResource(objKey, index)}
+                      xs={6}
+                    >
                       {resourceCategory}
                     </Grid>
                   );
@@ -80,88 +84,17 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
           <ResourceDataDrawer whichResourceToShow={whichResourceToShow} isResourceChosen={isResourceChosen} setIsResourceChosen={setIsResourceChosen}></ResourceDataDrawer>
         </Box>
 
-        {/* <Grid
-          container
-          id="laptop-monitor-recommended-resources-container"
-          sx={{ display: { xs: "none", md: "flex" } }}
-        >
-          <Grid
-            container
-            item
-            className={css["list-laptop-monitor"]}
-            md={4}
-            lg={3}
-            xl={2}
-          >
-            {resourceData.map((resource, index) => {
-              const objKey = Object.keys(resource)[0];
-              const resourceCategory = objKey.replaceAll("-", " ");
-
-              if (resourceCategory === "None") {
-                return (
-                  <Grid
-                    className={css["list-item-title-laptop-monitor"]}
-                    item
-                    key={`${resource}-${index}`}
-                    onClick={(e) => handleResourceList(objKey, index)}
-                    md={12}
-                  >
-                    Recommended Resources
-                  </Grid>
-                );
-              }
-
-              // console.log(objKey, resourceCategory, index)
-
-              return (
-                <Grid
-                  className={css["list-item-laptop-monitor"]}
-                  item
-                  key={`${resource}-${index}`}
-                  onClick={(e) => handleResourceList(objKey, index)}
-                  md={12}
-                >
-                  {resourceCategory}
-                </Grid>
-              );
-            })}
-          </Grid>
-          <Grid item md={8} lg={9} xl={10}>
-            {whichResourceToShow.resourceCategory === "None" && (
-              <Box
-                className={css["resource-category-container-laptop-monitor"]}
-              >
-                <Box className={css["resource-category-title-laptop-monitor"]}>
-                  Resources
-                </Box>
-                <Typography>
-                  Choose from multiple recommended clinics and practices that
-                  have a great response and turn around time.
-                </Typography>
-                <br></br>
-                <Typography>
-                  Before choosing to go to one of our recommended resources,
-                  make sure that they are in-network with your insurance and if
-                  they will accept your insurance.
-                </Typography>
-              </Box>
-            )}
-            {renderRecommendedResources(
-              whichResourceToShow,
-              "laptop-monitor",
-              setWhichResourceToShow
-            )}
-          </Grid>
-        </Grid> */}
-
         <Grid container id="mobile-tablet-vaccine-list-container">
           <Grid item xs={12} md={6} xl={3}>
-            <Accordion className={css['recommended-vaccines-container']} expanded={vaccineInfoList} onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)}>
+            <Accordion
+              className={css['recommended-vaccines-container']}
+            >
               <AccordionSummary
                 className={`${vaccineInfoList ? css['resource-list-active'] : css['resource-list-inactive']}`}
                 expandIcon={<ExpandMore />}
                 aria-controls="panel1a-content"
-                id="panel1a-header">
+                id="panel1a-header"
+              >
                 Vaccine Information
               </AccordionSummary>
               <AccordionDetails className={css['vaccines-list']}>
@@ -169,7 +102,13 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
                   {vaccineData.map((eachVaccine, index) => {
                     const { title, keyLink, extraLink } = eachVaccine;
                     return (
-                      <Grid className={css['vaccines-list-item']} item key={`${title}-${keyLink}-${extraLink}`} onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)} xs={12}>
+                      <Grid
+                        className={css['vaccines-list-item']}
+                        item
+                        key={`${title}-${keyLink}-${extraLink}`}
+                        onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)}
+                        xs={12}
+                      >
                         <Link to={`${keyLink}`} target="_blank">
                           {title}
                         </Link>
