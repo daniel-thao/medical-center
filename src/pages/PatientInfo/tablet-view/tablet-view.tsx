@@ -1,5 +1,4 @@
-import React, { useState, SetStateAction } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import { TextBlock, TextBlockClassification } from '../../../components/globalMolecules/TextBlock/TextBlock';
 import { Box, Grid } from '@mui/material';
@@ -9,43 +8,31 @@ import { resourceData } from '../utils/resourceData';
 import { vaccineData } from '../utils/vaccineData';
 
 import css from './tablet-view.module.css';
+import { ResourceDataDrawer } from '../subComponents/resource-data-drawer/ResourceDataDrawer';
 
 export interface PatientInfoMobileViewProps { }
 
 export const TabletView: React.FC<PatientInfoMobileViewProps> = () => {
   const [isResourceListOpen, setIsResourceListOpen] = useState<boolean>(false);
   const [isResourceChosen, setIsResourceChosen] = useState<boolean>(false);
-  const [vaccineInfoList, setVaccineInfoList] = useState<boolean>(false);
 
   const [whichResourceToShow, setWhichResourceToShow] = useState<IResourceCategoryRender>({
     resourceCategory: 'Allergy-and-Asthma',
     resourceIndex: 0
   });
 
-  const handleResourceList = (resourceListCategory?: string, resourceListIndex?: number, didClickListItem?: boolean): void => {
-    if (resourceListCategory && resourceListIndex !== undefined) {
-      setWhichResourceToShow({
-        resourceCategory: resourceListCategory,
-        resourceIndex: resourceListIndex
-      });
-    }
-
-    if (!isResourceListOpen) setIsResourceListOpen(true);
-    else setIsResourceListOpen(false);
+  const handleResource = (resourceListCategory: string, resourceListIndex: number): void => {
+    setWhichResourceToShow({
+      resourceCategory: resourceListCategory,
+      resourceIndex: resourceListIndex
+    });
 
     setTimeout(() => {
-      if (!isResourceChosen && didClickListItem) {
-        setIsResourceChosen(true);
-      } else if (isResourceChosen && didClickListItem) {
-        setIsResourceChosen(false);
-      }
+      setIsResourceChosen(!isResourceChosen)
     }, 375);
-  };
+  }
 
-  const handleVaccineList = (state: boolean, setChosenState: React.Dispatch<SetStateAction<boolean>>, keyLink: string) => {
-    // if (!state) {
-    //   setChosenState(true);
-    // } else setChosenState(false);
+  const handleVaccineList = (keyLink: string) => {
     if (keyLink) {
       window.open(keyLink, "_blank")
     }
@@ -66,7 +53,7 @@ export const TabletView: React.FC<PatientInfoMobileViewProps> = () => {
               const resourceCategory = objKey.replaceAll('-', ' ');
 
               return (
-                <Grid className={css['resource-item']} item key={`${resource}-${index}`} onClick={(e) => handleResourceList(objKey, index, true)} xs={12}>
+                <Grid className={css['resource-item']} item key={`${resource}-${index}`} onClick={(e) => handleResource(objKey, index)} xs={12}>
                   {resourceCategory}
                 </Grid>
               );
@@ -79,16 +66,16 @@ export const TabletView: React.FC<PatientInfoMobileViewProps> = () => {
               const { title, keyLink, extraLink } = eachVaccine;
 
               return (
-                <Grid className={css['vaccine-item']} item key={`${title}-${keyLink}-${extraLink}`} onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList, keyLink)} xs={12}>
-                  {/* <Link to={`${keyLink}`} target="_blank"> */}
+                <Grid className={css['vaccine-item']} item key={`${title}-${keyLink}-${extraLink}`} onClick={() => handleVaccineList(keyLink)} xs={12}>
                   {title}
-                  {/* </Link> */}
                 </Grid>
               );
             })}
           </Grid>
         </Grid>
       </Box>
+
+      <ResourceDataDrawer whichResourceToShow={whichResourceToShow} isResourceChosen={isResourceChosen} setIsResourceChosen={setIsResourceChosen}></ResourceDataDrawer>
 
       <Box className={css['hero-container']}>
         <img
