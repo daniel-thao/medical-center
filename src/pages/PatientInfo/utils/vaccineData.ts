@@ -83,5 +83,30 @@ export const vaccineData = [
     title: 'Typhoid Vaccination',
     keyLink: 'https://www.cdc.gov/typhoid-fever/typhoid-vaccination.html',
     extraLink: 'https://www.cdc.gov/vaccines/vpd/typhoid/index.html'
-  }
+  },
+  {
+    title: '',
+    keyLink: '',
+    extraLink: ''
+  },
+  {
+    title: '',
+    keyLink: '',
+    extraLink: ''
+  },
+  {
+    title: '',
+    keyLink: '',
+    extraLink: ''
+  },
+  {
+    title: '',
+    keyLink: '',
+    extraLink: ''
+  },
+  {
+    title: '',
+    keyLink: '',
+    extraLink: ''
+  },
 ];

@@ -32,16 +32,23 @@
 }
 
 .resource-list {
-  /* border-top: solid 1px black; */
+  border-bottom: solid 1px black;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  margin: 1em 0em 0em 0em;
+  font-size: 2em;
 }
 
-.list-item {
+.resource-item {
   padding: 0.5em 1em;
   cursor: pointer;
   text-decoration: underline;
+  text-align: center;
+  /* background: lightcoral; */
 }
 
-.list-item:hover {
+.resource-item:hover {
   background-color: rgb(236, 236, 236);
 }
 
@@ -111,19 +118,26 @@
 .recommended-vaccines-container {
 }
 
-.vaccines-list {
-  /* border-top: solid 1px black; */
-  /* padding: 0em !important; */
+.vaccine-list {
+  border-bottom: solid 1px black;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  margin: 1em 0em 0em 0em;
+  font-size: 2em;
 }
 
-.vaccines-list-item {
+.vaccine-item {
   padding: 0.5em 1em;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
 }
 
-.vaccines-list-item > a {
+/* .vaccine-item > a {
   text-decoration: underline;
   color: black;
-}
+} */
 
 .hero-container {
   margin: 2em 0em 0em 0em;

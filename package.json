@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/json2mq": "^0.2.2",
     "nodemon": "^2.0.20"
   }

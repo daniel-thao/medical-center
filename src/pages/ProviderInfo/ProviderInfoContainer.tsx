@@ -2,7 +2,7 @@ import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Box, Grid, useMediaQuery } from '@mui/material';
 
 import css from './ProviderInfoContainer.module.css';
-import { TextBlock } from '../../components/globalMolecules/TextBlock/TextBlock';
+import { TextBlock, TextBlockClassification } from '../../components/globalMolecules/TextBlock/TextBlock';
 import { DrPhuaXiong } from './subcomponents/dr-phua-xiong';
 import { PaahouaVang } from './subcomponents/paahoua-vang';
 import { ShengVang } from './subcomponents/sheng-vang';
@@ -11,7 +11,7 @@ export interface ProviderInfoProps { }
 
 export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   const phoneWidth = useMediaQuery('(max-width:450px)');
-  const tabletWidth = useMediaQuery('(max-width:899px)'); // used to match MUI md size on <Grid>
+  const tabletWidth = useMediaQuery('(max-width:767px)'); // used to match MUI md size on <Grid>. Maybe I need to go lower for the other tablets
   const dupTabletWidth = useMediaQuery('(max-width:1060px)'); // my actual query that I like
   const laptopWidth = useMediaQuery('(max-width:1250px)');
 
@@ -62,7 +62,7 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   return (
     <div className={`global-font ${css['landing-container']}`}>
       <Box className={css['container']}>
-        <TextBlock classification="title" body="Meet Our Care Team" className={css['title']}></TextBlock>
+        <TextBlock classification={TextBlockClassification.title} body="Meet Our Care Team" className={css['title']}></TextBlock>
 
         {phoneWidth && tabletWidth && (
           <Grid container className={css['provider-tab-list']}>

@@ -11,24 +11,21 @@ import css from './PatientInfoContainer.module.css';
 export interface PatientInfoContainerProps { }
 
 export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props) => {
-  const phoneWidth = useMediaQuery(
-    json2mq({
-      minWidth: 0,
-      maxWidth: 450
-    })
-  );
+  const phoneWidth = useMediaQuery('(max-width:450px)');
+  const tabletWidth = useMediaQuery('(max-width:1060px)');
 
-  const tabletWidth = useMediaQuery(
-    json2mq({
-      minWidth: 451,
-      maxWidth: 1060
-    })
-  );
+  const display = () => {
+    if (phoneWidth) return <MobileView></MobileView>;
+    if (tabletWidth && !phoneWidth) return <TabletView></TabletView>;
+    // return <TitleAndLogoDesktopView></TitleAndLogoDesktopView>;
+  };
+
 
   return (
     <div className={`global-font ${css['overall-container']}`}>
-      {phoneWidth && <MobileView></MobileView>}
-      {tabletWidth && <TabletView></TabletView>}
+      {display()}
+      {/* {phoneWidth && <MobileView></MobileView>}
+      {tabletWidth && <TabletView></TabletView>} */}
     </div>
   );
 };

@@ -1,18 +1,16 @@
 import React, { useState, SetStateAction } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ResourceDataDrawer } from '../subComponents/resource-data-drawer/ResourceDataDrawer';
-import { TextBlock } from '../../../components/globalMolecules/TextBlock/TextBlock';
-import { Box, Grid, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
-import { ExpandMore } from '@mui/icons-material';
+import { TextBlock, TextBlockClassification } from '../../../components/globalMolecules/TextBlock/TextBlock';
+import { Box, Grid } from '@mui/material';
 
 import { IResourceCategoryRender } from '../utils/interfacesTypes';
 import { resourceData } from '../utils/resourceData';
 import { vaccineData } from '../utils/vaccineData';
 
-import css from '../PatientInfoContainer.module.css';
+import css from './tablet-view.module.css';
 
-export interface PatientInfoMobileViewProps {}
+export interface PatientInfoMobileViewProps { }
 
 export const TabletView: React.FC<PatientInfoMobileViewProps> = () => {
   const [isResourceListOpen, setIsResourceListOpen] = useState<boolean>(false);
@@ -44,141 +42,49 @@ export const TabletView: React.FC<PatientInfoMobileViewProps> = () => {
     }, 375);
   };
 
-  const handleVaccineList = (state: boolean, setChosenState: React.Dispatch<SetStateAction<boolean>>) => {
-    if (!state) {
-      setChosenState(true);
-    } else setChosenState(false);
+  const handleVaccineList = (state: boolean, setChosenState: React.Dispatch<SetStateAction<boolean>>, keyLink: string) => {
+    // if (!state) {
+    //   setChosenState(true);
+    // } else setChosenState(false);
+
+    // window.open(keyLink, "_blank")
   };
 
   return (
     <>
       <Box id="main-container" className={css['patient-info-container']}>
-        <Box id="mobile-tablet-recommended-resources-container" sx={{ display: { xs: 'block', md: 'none' } }}>
-          <TextBlock body="Serving our patients with a compassionate heart and caring hands" classification="quote" className={css['quote-one']} />
-
-          <Accordion className={`${css['recommended-resources-container-mobile-tablet']}`} expanded={isResourceListOpen} onClick={() => handleResourceList()}>
-            <AccordionSummary className={`${isResourceListOpen ? css['resource-list-active'] : css['resource-list-inactive']}`} expandIcon={<ExpandMore />} aria-controls="panel1a-content">
-              Recommended Resource List
-            </AccordionSummary>
-
-            <AccordionDetails className={css['resource-list-mobile-tablet']}>
-              <Grid container>
-                {resourceData.map((resource, index) => {
-                  const objKey = Object.keys(resource)[0];
-                  const resourceCategory = objKey.replaceAll('-', ' ');
-
-                  return (
-                    <Grid className={css['list-item-mobile-tablet']} item key={`${resource}-${index}`} onClick={(e) => handleResourceList(objKey, index, true)} xs={6}>
-                      {resourceCategory}
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            </AccordionDetails>
-          </Accordion>
-
-          <ResourceDataDrawer whichResourceToShow={whichResourceToShow} isResourceChosen={isResourceChosen} setIsResourceChosen={setIsResourceChosen}></ResourceDataDrawer>
+        <Box id="tablet-recommended-resources-container" sx={{ display: { xs: 'block', md: 'none' } }}>
+          <TextBlock body="Serving our patients with a compassionate heart and caring hands" classification={TextBlockClassification.quote} className={css['quote-one']} />
         </Box>
 
-        {/* <Grid
-          container
-          id="laptop-monitor-recommended-resources-container"
-          sx={{ display: { xs: "none", md: "flex" } }}
-        >
-          <Grid
-            container
-            item
-            className={css["list-laptop-monitor"]}
-            md={4}
-            lg={3}
-            xl={2}
-          >
+        <Grid container>
+          <Grid container item xs={6}>
+            <TextBlock className={css["resource-list"]} body="Specialty Clinics" classification={TextBlockClassification.title} />
             {resourceData.map((resource, index) => {
               const objKey = Object.keys(resource)[0];
-              const resourceCategory = objKey.replaceAll("-", " ");
-
-              if (resourceCategory === "None") {
-                return (
-                  <Grid
-                    className={css["list-item-title-laptop-monitor"]}
-                    item
-                    key={`${resource}-${index}`}
-                    onClick={(e) => handleResourceList(objKey, index)}
-                    md={12}
-                  >
-                    Recommended Resources
-                  </Grid>
-                );
-              }
-
-              // console.log(objKey, resourceCategory, index)
+              const resourceCategory = objKey.replaceAll('-', ' ');
 
               return (
-                <Grid
-                  className={css["list-item-laptop-monitor"]}
-                  item
-                  key={`${resource}-${index}`}
-                  onClick={(e) => handleResourceList(objKey, index)}
-                  md={12}
-                >
+                <Grid className={css['resource-item']} item key={`${resource}-${index}`} onClick={(e) => handleResourceList(objKey, index, true)} xs={12}>
                   {resourceCategory}
                 </Grid>
               );
             })}
           </Grid>
-          <Grid item md={8} lg={9} xl={10}>
-            {whichResourceToShow.resourceCategory === "None" && (
-              <Box
-                className={css["resource-category-container-laptop-monitor"]}
-              >
-                <Box className={css["resource-category-title-laptop-monitor"]}>
-                  Resources
-                </Box>
-                <Typography>
-                  Choose from multiple recommended clinics and practices that
-                  have a great response and turn around time.
-                </Typography>
-                <br></br>
-                <Typography>
-                  Before choosing to go to one of our recommended resources,
-                  make sure that they are in-network with your insurance and if
-                  they will accept your insurance.
-                </Typography>
-              </Box>
-            )}
-            {renderRecommendedResources(
-              whichResourceToShow,
-              "laptop-monitor",
-              setWhichResourceToShow
-            )}
-          </Grid>
-        </Grid> */}
 
-        <Grid container id="mobile-tablet-vaccine-list-container">
-          <Grid item xs={12} md={6} xl={3}>
-            <Accordion className={css['recommended-vaccines-container']} expanded={vaccineInfoList} onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)}>
-              <AccordionSummary
-                className={`${vaccineInfoList ? css['resource-list-active'] : css['resource-list-inactive']}`}
-                expandIcon={<ExpandMore />}
-                aria-controls="panel1a-content"
-                id="panel1a-header">
-                Vaccine Information
-              </AccordionSummary>
-              <AccordionDetails className={css['vaccines-list']}>
-                <Grid container>
-                  {vaccineData.map((eachVaccine, index) => {
-                    const { title, keyLink, extraLink } = eachVaccine;
-                    return (
-                      <Grid className={css['vaccines-list-item']} item key={`${title}-${keyLink}-${extraLink}`} onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList)} xs={12}>
-                        <Link to={`${keyLink}`} target="_blank">
-                          {title}
-                        </Link>
-                      </Grid>
-                    );
-                  })}
+          <Grid container item xs={6}>
+            <TextBlock className={css["vaccine-list"]} body="Vaccine Information" classification={TextBlockClassification.title} />
+            {vaccineData.map((eachVaccine, index) => {
+              const { title, keyLink, extraLink } = eachVaccine;
+
+              return (
+                <Grid className={css['vaccine-item']} item key={`${title}-${keyLink}-${extraLink}`} onClick={() => handleVaccineList(vaccineInfoList, setVaccineInfoList, keyLink)} xs={12}>
+                  {/* <Link to={`${keyLink}`} target="_blank"> */}
+                  {title}
+                  {/* </Link> */}
                 </Grid>
-              </AccordionDetails>
-            </Accordion>
+              );
+            })}
           </Grid>
         </Grid>
       </Box>

@@ -5,7 +5,7 @@ import { Box, Grid } from '@mui/material';
 
 import css from '../Main.module.css';
 import font from '../../../../styles/fonts.module.css';
-import { TextBlock } from '../../../globalMolecules/TextBlock/TextBlock';
+import { TextBlock, TextBlockClassification } from '../../../globalMolecules/TextBlock/TextBlock';
 import { IPhotoAndInfo, IPhotoHyperlink } from '../Main';
 
 export interface MainTabletViewProps {
@@ -20,7 +20,7 @@ export const MainTabletView: React.FC<MainTabletViewProps> = ({ photoHyperLinks,
         <img alt={photoAndInfos[0].alt} src={photoAndInfos[0].src} className={css['image-general-format']}></img>
       </Box>
 
-      <TextBlock body={'Serving our patients with a compassionate heart and caring hands'} classification="quote" className={css['landing-page-quote-one']} />
+      <TextBlock body={'Serving our patients with a compassionate heart and caring hands'} classification={TextBlockClassification.quote} className={css['landing-page-quote-one']} />
 
       <TextBlock
         body={`The mission of St. Paul Family Medical Center is to work in conjunction with 
@@ -28,7 +28,7 @@ export const MainTabletView: React.FC<MainTabletViewProps> = ({ photoHyperLinks,
           care in a compassionate, personalized, culturally-responsive, and effective manner 
           which is delivered by a team of superior professionals. We embrace patients and families 
           as care partners in the road to better health and wellness for all.`}
-        classification="paragraph"
+        classification={TextBlockClassification.paragraph}
         className={css['landing-page-paragraph-one']}
       />
 
@@ -36,9 +36,9 @@ export const MainTabletView: React.FC<MainTabletViewProps> = ({ photoHyperLinks,
         <img alt={photoAndInfos[1].alt} src={photoAndInfos[1].src} className={css['image-general-format']}></img>
       </Box>
 
-      <TextBlock body={'Certified HealthCare Home'} classification="quote" className={css['landing-page-certification-one']} />
+      <TextBlock body={'Certified HealthCare Home'} classification={TextBlockClassification.quote} className={css['landing-page-certification-one']} />
 
-      <TextBlock body={'SPFMC is certified by the state of MN as a HealthCare Home.'} classification="paragraph" className={css['landing-page-certification-two']} />
+      <TextBlock body={'SPFMC is certified by the state of MN as a HealthCare Home.'} classification={TextBlockClassification.paragraph} className={css['landing-page-certification-two']} />
 
       <TextBlock
         body={`St. Paul Family Medical Center (SPFMC) was founded in June 2002 by one of the first 
@@ -49,7 +49,7 @@ export const MainTabletView: React.FC<MainTabletViewProps> = ({ photoHyperLinks,
         is family-focused, serving patients of all ages from newborns to the geriatric population. 
         We value culture, faith, and family as well as individual empowerment in our approach to health 
         and medical care.`}
-        classification="paragraph"
+        classification={TextBlockClassification.paragraph}
         className={css['landing-page-paragraph-two']}
       />
 

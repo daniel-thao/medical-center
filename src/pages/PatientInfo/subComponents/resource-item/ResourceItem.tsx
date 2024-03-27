@@ -3,7 +3,7 @@ import React from 'react';
 import { IMappedSingleResource, IResourceMultipleOpenAndCloseTimes, IResourceCategoryRender, ISingleResource } from '../../utils/interfacesTypes';
 import { resourceData } from '../../utils/resourceData';
 
-import { Box, Typography, Grid, ListItem } from '@mui/material';
+import { Box, Typography, ListItem } from '@mui/material';
 
 import css from '../../PatientInfoContainer.module.css';
 

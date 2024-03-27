@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Box } from '@mui/material';
-import { TextBlock } from '../../../globalMolecules/TextBlock/TextBlock';
+import { TextBlock, TextBlockClassification } from '../../../globalMolecules/TextBlock/TextBlock';
 
 import '../../../../global.css';
 import css from './main-desktop-view.module.css';
@@ -23,14 +23,14 @@ export const MainDesktopView: React.FC<MainDesktopViewProps> = ({ photoHyperLink
         </Box>
 
         <Box className={css['text-section-one']}>
-          <TextBlock body={'Serving our patients with a compassionate heart and caring hands'} classification="quote" className={css['quote']} />
+          <TextBlock body={'Serving our patients with a compassionate heart and caring hands'} classification={TextBlockClassification.quote} className={css['quote']} />
           <TextBlock
             body={`The mission of St. Paul Family Medical Center is to work in conjunction with 
                             the patient and family to provide the highest quality patient-centered medical 
                             care in a compassionate, personalized, culturally-responsive, and effective manner 
                             which is delivered by a team of superior professionals. We embrace patients and families 
                             as care partners in the road to better health and wellness for all.`}
-            classification="paragraph"
+            classification={TextBlockClassification.paragraph}
             className={css['paragraph']}
           />
         </Box>
@@ -40,9 +40,9 @@ export const MainDesktopView: React.FC<MainDesktopViewProps> = ({ photoHyperLink
 
       <Box className={css['rowContainer']}>
         <Box className={css['text-section-two']}>
-          <TextBlock body={'Certified HealthCare Home'} classification="quote" className={css['cert-title']} />
+          <TextBlock body={'Certified HealthCare Home'} classification={TextBlockClassification.quote} className={css['cert-title']} />
 
-          <TextBlock body={'SPFMC is certified by the state of MN as a HealthCare Home.'} classification="paragraph" className={css['cert']} />
+          <TextBlock body={'SPFMC is certified by the state of MN as a HealthCare Home.'} classification={TextBlockClassification.paragraph} className={css['cert']} />
 
           <TextBlock
             body={`St. Paul Family Medical Center (SPFMC) was founded in June 2002 by one of the first 
@@ -53,7 +53,7 @@ export const MainDesktopView: React.FC<MainDesktopViewProps> = ({ photoHyperLink
                             is family-focused, serving patients of all ages from newborns to the geriatric population. 
                             We value culture, faith, and family as well as individual empowerment in our approach to health 
                             and medical care.`}
-            classification="paragraph"
+            classification={TextBlockClassification.paragraph}
             className={css['paragraph']}
           />
         </Box>

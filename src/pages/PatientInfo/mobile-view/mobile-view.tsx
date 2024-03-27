@@ -2,7 +2,7 @@ import React, { useState, SetStateAction } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ResourceDataDrawer } from '../subComponents/resource-data-drawer/ResourceDataDrawer';
-import { TextBlock } from '../../../components/globalMolecules/TextBlock/TextBlock';
+import { TextBlock, TextBlockClassification } from '../../../components/globalMolecules/TextBlock/TextBlock';
 import { Box, Grid, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { ExpandMore } from '@mui/icons-material';
 
@@ -44,21 +44,21 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
   return (
     <>
       <Box id="main-container" className={css['patient-info-container']}>
-        <Box id="mobile-tablet-recommended-resources-container" sx={{ display: { xs: 'block', md: 'none' } }}>
-          <TextBlock body="Serving our patients with a compassionate heart and caring hands" classification="quote" className={css['quote-one']} />
+        <Box id="mobile-recommended-resources-container" sx={{ display: { xs: 'block', md: 'none' } }}>
+          <TextBlock body="Serving our patients with a compassionate heart and caring hands" classification={TextBlockClassification.quote} className={css['quote-one']} />
 
           <Accordion
-            className={`${css['recommended-resources-container-mobile-tablet']}`}
+            className={`${css['recommended-resources-container']}`}
           >
             <AccordionSummary
               className={`${isResourceListOpen ? css['resource-list-active'] : css['resource-list-inactive']}`}
               expandIcon={<ExpandMore />}
-              aria-controls="panel1a-content"
+              aria-controls="resource-list-content"
             >
               Recommended Resource List
             </AccordionSummary>
 
-            <AccordionDetails className={css['resource-list-mobile-tablet']}>
+            <AccordionDetails className={css['resource-list']}>
               <Grid container>
                 {resourceData.map((resource, index) => {
                   const objKey = Object.keys(resource)[0];
@@ -67,7 +67,7 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
                   return (
                     <Grid
                       id="resource-accordion-choice"
-                      className={css['list-item-mobile-tablet']}
+                      className={css['list-item']}
                       item
                       key={`${resource}-${index}`}
                       onClick={(e) => handleResource(objKey, index)}
@@ -84,7 +84,7 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
           <ResourceDataDrawer whichResourceToShow={whichResourceToShow} isResourceChosen={isResourceChosen} setIsResourceChosen={setIsResourceChosen}></ResourceDataDrawer>
         </Box>
 
-        <Grid container id="mobile-tablet-vaccine-list-container">
+        <Grid container id="mobile-vaccine-list-container">
           <Grid item xs={12} md={6} xl={3}>
             <Accordion
               className={css['recommended-vaccines-container']}
@@ -92,8 +92,8 @@ export const MobileView: React.FC<PatientInfoMobileViewProps> = () => {
               <AccordionSummary
                 className={`${vaccineInfoList ? css['resource-list-active'] : css['resource-list-inactive']}`}
                 expandIcon={<ExpandMore />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
+                aria-controls="vaccine-list-content"
+                id="vaccine-list-header"
               >
                 Vaccine Information
               </AccordionSummary>

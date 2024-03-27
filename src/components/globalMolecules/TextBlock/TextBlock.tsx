@@ -6,8 +6,14 @@ import { Box } from '@mui/material';
 import { Word } from '../../globalAtoms/Word/Word';
 import { Title } from '../../globalAtoms/Title/Title';
 
+export enum TextBlockClassification {
+  paragraph = "paragraph",
+  quote = "quote",
+  title = "title"
+}
+
 export interface TextBlockProps {
-  classification: string;
+  classification: TextBlockClassification;
   className?: string;
   body: React.ReactNode;
 }

@@ -1,6 +1,6 @@
 import { Grid, useMediaQuery } from '@mui/material';
 import { forwardRef, useEffect, useState } from 'react';
-import { TextBlock } from '../../../components/globalMolecules/TextBlock/TextBlock';
+import { TextBlock, TextBlockClassification } from '../../../components/globalMolecules/TextBlock/TextBlock';
 
 import css from '../ProviderInfoContainer.module.css';
 
@@ -33,20 +33,20 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
 
       <Grid item xs={12} sm={12} md={6} lg={6}>
         <div className={css['tab-panel-text-formatting-right']}>
-          <TextBlock body={'Dr. Phua Xiong'} classification={'title'} className={css['provider-one']} />
+          <TextBlock body={'Dr. Phua Xiong'} classification={TextBlockClassification.title} className={css['provider-one']} />
 
           <TextBlock
             body={`Dr Phua Xiong is the medical director and owner of St Paul Family Medical Center, a Hmong
               clinic on the East Side of St. Paul, serving the Hmong community and other underserved
               communities since 2002.`}
-            classification={'paragraph'}
+            classification={TextBlockClassification.paragraph}
             className={css['provider-one-paragraph']}
           />
 
           <TextBlock
             body={`Dr. Xiong graduated from the U of MN Medical School in 1996 and did her residency
               training in family medicine at St. Joesph’s Hospital in St. Paul.`}
-            classification={'paragraph'}
+            classification={TextBlockClassification.paragraph}
             className={css['provider-one-paragraph']}
           />
 
@@ -54,7 +54,7 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
             body={`As a child growing up in Philadelphia, Pennsylvania Dr. Xiong always had a passion for
               service and a heart of love for the Hmong people. It was her compassion and love for the
               Hmong that brought her to Minnesota in 1992 to study medicine.`}
-            classification={'paragraph'}
+            classification={TextBlockClassification.paragraph}
             className={css['provider-one-paragraph']}
           />
         </div>
@@ -68,7 +68,7 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
 
       <Grid item xs={12} sm={12} md={6} lg={6}>
         <div className={css['tab-panel-text-formatting-left']}>
-          <TextBlock body={'A Servant Leader'} classification={'title'} className={css['provider-one']} />
+          <TextBlock body={'A Servant Leader'} classification={TextBlockClassification.title} className={css['provider-one']} />
 
           <TextBlock
             body={`In her 25 years of serving the Hmong community she continues to be a strong presence in
@@ -76,7 +76,7 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
               organizations including health care organizations such as Ucare MN. She has been a part of
               many health education programs for the Hmong community since graduation from Medical
               School.`}
-            classification={'paragraph'}
+            classification={TextBlockClassification.paragraph}
             className={css['provider-one-paragraph']}
           />
 
@@ -85,7 +85,7 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
               video in Hmong and English called, “Living Healthy Lives,” promoting healthy lifestyles in
               America for the Hmong people. She is a strong advocate for culturally sensitive and
               response health care.`}
-            classification={'paragraph'}
+            classification={TextBlockClassification.paragraph}
             className={css['provider-one-paragraph']}
           />
         </div>
@@ -103,21 +103,21 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
 
       <Grid item xs={12} sm={12} md={6} lg={6}>
         <div className={css['tab-panel-text-formatting-right']}>
-          <TextBlock body={'A Giver'} classification={'title'} className={css['provider-one']} />
+          <TextBlock body={'A Giver'} classification={TextBlockClassification.title} className={css['provider-one']} />
 
           <TextBlock
             body={`She is a co-author of the book “Healing by Heart: Clinical and Ethical Case Stories of Hmong
               Families and Western Providers,” which addresses many of the cultural and religious aspects of
               health in the Hmong. This book has been used in academic and health care settings in teaching
               students and health care professionals on cultural competency.`}
-            classification={'paragraph'}
+            classification={TextBlockClassification.paragraph}
             className={css['provider-one-paragraph']}
           />
 
           <TextBlock
             body={`Dr. Xiong is married and is the mother of five children and continues to encourage young
               people, especially women, to pursue their dreams.`}
-            classification={'paragraph'}
+            classification={TextBlockClassification.paragraph}
             className={css['provider-one-paragraph']}
           />
         </div>
