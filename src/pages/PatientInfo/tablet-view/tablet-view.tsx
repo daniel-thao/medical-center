@@ -46,8 +46,9 @@ export const TabletView: React.FC<PatientInfoMobileViewProps> = () => {
     // if (!state) {
     //   setChosenState(true);
     // } else setChosenState(false);
-
-    // window.open(keyLink, "_blank")
+    if (keyLink) {
+      window.open(keyLink, "_blank")
+    }
   };
 
   return (
