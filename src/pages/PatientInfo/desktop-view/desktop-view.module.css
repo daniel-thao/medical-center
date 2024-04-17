@@ -1,7 +1,11 @@
+.patient-info-container {
+  margin: 0em calc(100% / 10);
+}
+
 /* 
 
 
-****************************** Mobile - Tablet Resource Container ******************************
+****************************** Desktop - Tablet Resource Container ******************************
 
 
 */
@@ -32,16 +36,18 @@
 }
 
 .resource-list {
-  border-bottom: solid 1px black;
-  width: 100%;
-  height: fit-content;
-  text-align: center;
-  margin: 1em 0em 0em 0em;
-  font-size: 2em;
+  color: black !important;
+  /* background-color: black !important; */
+}
+
+.resource-list-active {
+  background: var(--color-brand-darkpink-100) !important;
+  box-shadow: 0px 0px 0px black !important;
+  border-radius: 4px !important;
 }
 
 .resource-item {
-  padding: 0.5em 1em;
+  padding: 1em 1em;
   cursor: pointer;
   text-decoration: underline;
   text-align: center;
@@ -119,16 +125,17 @@
 }
 
 .vaccine-list {
-  border-bottom: solid 1px black;
-  width: 100%;
-  height: fit-content;
-  text-align: center;
-  margin: 1em 0em 0em 0em;
-  font-size: 2em;
+  color: black !important;
+}
+
+.vaccine-list-active {
+  background: var(--color-brand-darkpink-100) !important;
+  box-shadow: 0px 0px 0px black !important;
+  border-radius: 4px !important;
 }
 
 .vaccine-item {
-  padding: 0.5em 1em;
+  padding: 1em 0em;
   cursor: pointer;
   text-decoration: underline;
   text-align: center;
@@ -136,6 +143,8 @@
 
 .vaccine-item:hover {
   background-color: rgb(236, 236, 236);
+  box-shadow: 0px 0px 5px black;
+  scale: 105%;
 }
 
 .hero-container {
@@ -145,4 +154,14 @@
 .image-general-formmat {
   object-fit: contain;
   width: 100vw;
+}
+
+@media only screen and (min-width: 1535px) {
+  .patient-info-container {
+    margin: 0em calc(100% / 5);
+  }
+
+  .vaccine-item {
+    margin: 0.5em 0em;
+  }
 }

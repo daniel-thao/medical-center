@@ -1,8 +1,8 @@
 import React from 'react';
-import json2mq from 'json2mq';
 
 import { MobileView } from './mobile-view/mobile-view';
 import { TabletView } from './tablet-view/tablet-view';
+import { DesktopView } from './desktop-view/desktop-view';
 
 import { useMediaQuery } from '@mui/material';
 
@@ -17,7 +17,7 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props)
   const display = () => {
     if (phoneWidth) return <MobileView></MobileView>;
     if (tabletWidth && !phoneWidth) return <TabletView></TabletView>;
-    // return <TitleAndLogoDesktopView></TitleAndLogoDesktopView>;
+    return <DesktopView></DesktopView>;
   };
 
 
