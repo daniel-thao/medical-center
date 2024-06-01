@@ -1,6 +1,11 @@
 import React from 'react';
 
-import { IMappedSingleResource, IResourceMultipleOpenAndCloseTimes, IResourceCategoryRender, ISingleResource } from '../../utils/interfacesTypes';
+import {
+  IMappedSingleResource,
+  IResourceMultipleOpenAndCloseTimes,
+  IResourceCategoryRender,
+  ISingleResource
+} from '../../utils/interfacesTypes';
 import { resourceData } from '../../utils/resourceData';
 
 import { Box, Typography, ListItem } from '@mui/material';
@@ -16,7 +21,8 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
 
   const allResourcesArr: JSX.Element[] = [];
 
-  const allResources: IMappedSingleResource = resourceData[whichResourceToShow.resourceIndex][whichResourceToShow.resourceCategory];
+  const allResources: IMappedSingleResource =
+    resourceData[whichResourceToShow.resourceIndex][whichResourceToShow.resourceCategory];
 
   for (const [key, value] of Object.entries(allResources)) {
     const hasManyPhoneNums = typeof value.phone === 'object';
@@ -28,7 +34,10 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
 
     if (hasManyPhoneNums) {
       for (const [phoneKey, phoneValue] of Object.entries(value.phone)) {
-        phoneNumArr.push(<Typography key={`${value.clinicName}-phone-numbers-${phoneValue}-${value.zipcode}`}>{`${phoneKey}: ${phoneValue}`}</Typography>);
+        phoneNumArr.push(
+          <Typography
+            key={`${value.clinicName}-phone-numbers-${phoneValue}-${value.zipcode}`}>{`${phoneKey}: ${phoneValue}`}</Typography>
+        );
       }
     }
 
@@ -36,13 +45,14 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
     const closeTimeDataArr = openCloseTimeGenerator(value, value.closeTime);
 
     const renderings = (
-      <Box className={css["list-item"]}>
+      <Box className={css['list-item']}>
         <Typography>
           <span className={css['resource-info-prefix']}>Name:</span> {value.clinicName}
         </Typography>
 
         <Typography>
-          <span className={css['resource-info-prefix']}>Address:</span> {value.street} {value.city} {value.state} {value.zipcode}
+          <span className={css['resource-info-prefix']}>Address:</span> {value.street} {value.city} {value.state}{' '}
+          {value.zipcode}
         </Typography>
 
         <Box>
@@ -57,11 +67,16 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
         <Box>
           {typeof value.openTime === 'string' ? (
             <Typography>
-              <span className={css['resource-info-prefix']}>Open Times:</span> {12 % parseInt(value.openTime) <= 11 ? `${parseInt(value.openTime)}am` : `${parseInt(value.openTime) - 12}pm`}
+              <span className={css['resource-info-prefix']}>Open Times:</span>{' '}
+              {12 % parseInt(value.openTime) <= 11
+                ? `${parseInt(value.openTime)}am`
+                : `${parseInt(value.openTime) - 12}pm`}
             </Typography>
           ) : (
             <Typography>
-              <span className={css['resource-info-prefix']}>{typeof value.closeTime === 'undefined' ? '' : 'Open Times: '}</span>
+              <span className={css['resource-info-prefix']}>
+                {typeof value.closeTime === 'undefined' ? '' : 'Open Times: '}
+              </span>
             </Typography>
           )}
           {openTimeDataArr.map((element) => {
@@ -72,11 +87,16 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
         <Box>
           {typeof value.closeTime === 'string' ? (
             <Typography>
-              <span className={css['resource-info-prefix']}>Close Times:</span> {12 % parseInt(value.closeTime) <= 11 ? `${parseInt(value.closeTime)}am` : `${parseInt(value.closeTime) - 12}pm`}
+              <span className={css['resource-info-prefix']}>Close Times:</span>{' '}
+              {12 % parseInt(value.closeTime) <= 11
+                ? `${parseInt(value.closeTime)}am`
+                : `${parseInt(value.closeTime) - 12}pm`}
             </Typography>
           ) : (
             <Typography>
-              <span className={css['resource-info-prefix']}>{typeof value.closeTime === 'undefined' ? '' : 'Close Times: '}</span>
+              <span className={css['resource-info-prefix']}>
+                {typeof value.closeTime === 'undefined' ? '' : 'Close Times: '}
+              </span>
             </Typography>
           )}
           {closeTimeDataArr.map((element) => {
@@ -94,7 +114,7 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
         <ListItem
           className={css[`list-content`]}
           key={`${allResources[index].clinicName}-${allResources[index].zipcode}`}
-        // sx={{ margin: { xs: ".5em .5em" } }}
+          // sx={{ margin: { xs: ".5em .5em" } }}
         >
           {element}
         </ListItem>
@@ -103,7 +123,10 @@ export const ResourceItem: React.FC<ResourceItemProps> = (props) => {
   );
 };
 
-export const openCloseTimeGenerator = (originalData: ISingleResource, whichTime: undefined | string | IResourceMultipleOpenAndCloseTimes): JSX.Element[] => {
+export const openCloseTimeGenerator = (
+  originalData: ISingleResource,
+  whichTime: undefined | string | IResourceMultipleOpenAndCloseTimes
+): JSX.Element[] => {
   const timeDataArr: JSX.Element[] = [];
 
   if (typeof whichTime === 'object') {

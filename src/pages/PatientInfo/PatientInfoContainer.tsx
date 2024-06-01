@@ -8,7 +8,7 @@ import { useMediaQuery } from '@mui/material';
 
 import css from './PatientInfoContainer.module.css';
 
-export interface PatientInfoContainerProps { }
+export interface PatientInfoContainerProps {}
 
 export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props) => {
   const phoneWidth = useMediaQuery('(max-width:450px)');
@@ -20,12 +20,5 @@ export const PatientInfoContainer: React.FC<PatientInfoContainerProps> = (props)
     return <DesktopView></DesktopView>;
   };
 
-
-  return (
-    <div className={`global-font ${css['overall-container']}`}>
-      {display()}
-      {/* {phoneWidth && <MobileView></MobileView>}
-      {tabletWidth && <TabletView></TabletView>} */}
-    </div>
-  );
+  return <div className={`global-font ${css['overall-container']}`}>{display()}</div>;
 };

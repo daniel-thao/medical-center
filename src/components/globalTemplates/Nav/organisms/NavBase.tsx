@@ -22,7 +22,12 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
     <Box sx={{ display: 'flex' }}>
       <AppBar className={css['nav-app-bar']} component="nav">
         <Toolbar className={css['nav-toolbar']}>
-          <IconButton className={css['nav-hamburger-menu']} aria-label="open drawer" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2, display: { sm: 'flex' } }}>
+          <IconButton
+            className={css['nav-hamburger-menu']}
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'flex' } }}>
             <Menu />
           </IconButton>
 
@@ -30,7 +35,16 @@ export const NavBase: React.FC<NavBaseProps> = (props) => {
             <Search className={css['nav-searchbar-icon']}></Search>
 
             <FormControl fullWidth={true}>
-              <Input id="Searchbar" name="Searchbar" aria-label="Searchbar" aria-describedby="my-helper-text" disableUnderline={true} fullWidth={true} placeholder="Search..." type="text" />
+              <Input
+                id="Searchbar"
+                name="Searchbar"
+                aria-label="Searchbar"
+                aria-describedby="my-helper-text"
+                disableUnderline={true}
+                fullWidth={true}
+                placeholder="Search..."
+                type="text"
+              />
             </FormControl>
           </Box>
 

@@ -1,3 +1,7 @@
+.patient-info-container {
+  margin: 0em calc(100% / 10);
+}
+
 /* 
 
 
@@ -18,8 +22,7 @@
 
 .resource-list-inactive {
   background-color: rgb(255, 249, 250) !important;
-  /* background: linear-gradient(rgb(255, 235, 239), rgb(255, 255, 255)) !important; */
-  /* background: aqua !important; */
+
   transition: all ease 1s;
 }
 
@@ -32,12 +35,13 @@
 }
 
 .resource-list {
-  border-bottom: solid 1px black;
-  width: 100%;
-  height: fit-content;
-  text-align: center;
-  margin: 1em 0em 0em 0em;
-  font-size: 2em;
+  color: black !important;
+}
+
+.resource-list-active {
+  background: var(--color-brand-darkpink-100) !important;
+  box-shadow: 0px 0px 0px black !important;
+  border-radius: 4px !important;
 }
 
 .resource-item {
@@ -45,11 +49,12 @@
   cursor: pointer;
   text-decoration: underline;
   text-align: center;
-  /* background: lightcoral; */
 }
 
 .resource-item:hover {
   background-color: rgb(236, 236, 236);
+  box-shadow: 0px 0px 5px black;
+  scale: 105%;
 }
 
 .list-button {
@@ -63,7 +68,6 @@
 }
 
 .resource-drawer-title {
-  /* background: linear-gradient(0.75turn, rgb(255, 235, 239), rgb(255, 255, 255)); */
   background-color: white;
   color: black;
   display: flex !important;
@@ -119,12 +123,13 @@
 }
 
 .vaccine-list {
-  border-bottom: solid 1px black;
-  width: 100%;
-  height: fit-content;
-  text-align: center;
-  margin: 1em 0em 0em 0em;
-  font-size: 2em;
+  color: black !important;
+}
+
+.vaccine-list-active {
+  background: var(--color-brand-darkpink-100) !important;
+  box-shadow: 0px 0px 0px black !important;
+  border-radius: 4px !important;
 }
 
 .vaccine-item {
@@ -136,6 +141,8 @@
 
 .vaccine-item:hover {
   background-color: rgb(236, 236, 236);
+  box-shadow: 0px 0px 5px black;
+  scale: 105%;
 }
 
 .hero-container {

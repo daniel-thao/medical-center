@@ -113,5 +113,5 @@ export const vaccineData = [
     title: '',
     keyLink: '',
     extraLink: ''
-  },
+  }
 ];

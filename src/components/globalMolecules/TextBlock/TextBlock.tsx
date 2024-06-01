@@ -7,19 +7,20 @@ import { Word } from '../../globalAtoms/Word/Word';
 import { Title } from '../../globalAtoms/Title/Title';
 
 export enum TextBlockClassification {
-  paragraph = "paragraph",
-  quote = "quote",
-  title = "title"
+  paragraph = 'paragraph',
+  quote = 'quote',
+  title = 'title'
 }
 
 export interface TextBlockProps {
+  body: React.ReactNode;
   classification: TextBlockClassification;
   className?: string;
-  body: React.ReactNode;
+  sx?: any;
 }
 
 export const TextBlock: React.FC<TextBlockProps> = (props) => {
-  const { classification, className, body } = props;
+  const { classification, className, body, sx } = props;
 
   const test: { [key: string]: React.ReactElement } = {
     paragraph: <Paragraph>{body}</Paragraph>,
@@ -27,5 +28,9 @@ export const TextBlock: React.FC<TextBlockProps> = (props) => {
     title: <Title>{body}</Title>
   };
 
-  return <Box className={className}>{test[classification]}</Box>;
+  return (
+    <Box className={className} sx={sx}>
+      {test[classification]}
+    </Box>
+  );
 };

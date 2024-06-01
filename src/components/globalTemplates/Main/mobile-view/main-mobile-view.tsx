@@ -20,7 +20,11 @@ export const MainMobileView: React.FC<MainMobileViewProps> = ({ photoHyperLinks,
         <img alt={photoAndInfos[0].alt} src={photoAndInfos[0].src} className={css['image-general-format']}></img>
       </Box>
 
-      <TextBlock body={'Serving our patients with a compassionate heart and caring hands'} classification={TextBlockClassification.quote} className={css['landing-page-quote-one']} />
+      <TextBlock
+        body={'Serving our patients with a compassionate heart and caring hands'}
+        classification={TextBlockClassification.quote}
+        className={css['landing-page-quote-one']}
+      />
 
       <TextBlock
         body={`The mission of St. Paul Family Medical Center is to work in conjunction with 
@@ -36,9 +40,17 @@ export const MainMobileView: React.FC<MainMobileViewProps> = ({ photoHyperLinks,
         <img alt={photoAndInfos[1].alt} src={photoAndInfos[1].src} className={css['image-general-format']}></img>
       </Box>
 
-      <TextBlock body={'Certified HealthCare Home'} classification={TextBlockClassification.quote} className={css['landing-page-certification-one']} />
+      <TextBlock
+        body={'Certified HealthCare Home'}
+        classification={TextBlockClassification.quote}
+        className={css['landing-page-certification-one']}
+      />
 
-      <TextBlock body={'SPFMC is certified by the state of MN as a HealthCare Home.'} classification={TextBlockClassification.paragraph} className={css['landing-page-certification-two']} />
+      <TextBlock
+        body={'SPFMC is certified by the state of MN as a HealthCare Home.'}
+        classification={TextBlockClassification.paragraph}
+        className={css['landing-page-certification-two']}
+      />
 
       <TextBlock
         body={`St. Paul Family Medical Center (SPFMC) was founded in June 2002 by one of the first 

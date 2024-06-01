@@ -13,7 +13,9 @@ export const TitleAndLogoMobileView: React.FC<TitleAndLogoMobileViewLinksProps> 
   const location = useLocation();
 
   return (
-    <Grid container className={`${css['athena-link-grid-container']} ${location.pathname === '/' && css['extra-padding']}`}>
+    <Grid
+      container
+      className={`${css['athena-link-grid-container']} ${location.pathname === '/' && css['extra-padding']}`}>
       <Grid item xs={12} className={css['SPFMC-container']}>
         <Box>
           <Typography variant={'h1'} className={css['SPFMC-title']}>

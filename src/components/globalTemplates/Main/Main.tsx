@@ -64,8 +64,10 @@ export const Main: React.FC<MainProps> = (props) => {
   ];
 
   const display = () => {
-    if (phoneWidth) return <MainMobileView photoHyperLinks={photoHyperLinks} photoAndInfos={photoAndInfos}></MainMobileView>;
-    if (tabletWidth && !phoneWidth) return <MainTabletView photoHyperLinks={photoHyperLinks} photoAndInfos={photoAndInfos}></MainTabletView>;
+    if (phoneWidth)
+      return <MainMobileView photoHyperLinks={photoHyperLinks} photoAndInfos={photoAndInfos}></MainMobileView>;
+    if (tabletWidth && !phoneWidth)
+      return <MainTabletView photoHyperLinks={photoHyperLinks} photoAndInfos={photoAndInfos}></MainTabletView>;
     return <MainDesktopView photoHyperLinks={photoHyperLinks} photoAndInfos={photoAndInfos}></MainDesktopView>;
   };
 

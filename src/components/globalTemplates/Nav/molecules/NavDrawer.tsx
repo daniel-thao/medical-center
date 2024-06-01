@@ -59,7 +59,10 @@ export const NavDrawer: React.FC<NavDrawerProps> = (props) => {
         }}
         sx={{
           display: { xs: 'block' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: { xs: '390px' } }
+          '& .MuiDrawer-paper': {
+            boxSizing: 'border-box',
+            width: { xs: '390px' }
+          }
         }}>
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', width: '100%' }}>
           <Box className={css['nav-hamburger-menu-title']}>
@@ -73,7 +76,11 @@ export const NavDrawer: React.FC<NavDrawerProps> = (props) => {
             {navItems.map((item) => (
               <ListItem key={item.href} disablePadding>
                 <ListItemButton>
-                  <Link className={css['links']} to={generatePath(item.href)} target={item.newWindow} onClick={() => window.scrollTo(0, 0)}>
+                  <Link
+                    className={css['links']}
+                    to={generatePath(item.href)}
+                    target={item.newWindow}
+                    onClick={() => window.scrollTo(0, 0)}>
                     <ListItemText primary={item.display} />
                     <ArrowCircleRight onClick={handleDrawerToggle}></ArrowCircleRight>
                   </Link>

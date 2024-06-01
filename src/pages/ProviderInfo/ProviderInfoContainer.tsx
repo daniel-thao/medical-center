@@ -7,7 +7,7 @@ import { DrPhuaXiong } from './subcomponents/dr-phua-xiong';
 import { PaahouaVang } from './subcomponents/paahoua-vang';
 import { ShengVang } from './subcomponents/sheng-vang';
 
-export interface ProviderInfoProps { }
+export interface ProviderInfoProps {}
 
 export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
   const phoneWidth = useMediaQuery('(max-width:450px)');
@@ -54,26 +54,54 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
           return setOffsetHeight(0);
         }
       }
-    }, 500)
+    }, 500);
 
-    return () => clearTimeout(heightTimer)
-  }, [providerOne, providerTwo, providerThree, whichProviderID, tabletWidth, phoneWidth, laptopWidth, dupTabletWidth, offsetHeight]);
+    return () => clearTimeout(heightTimer);
+  }, [
+    providerOne,
+    providerTwo,
+    providerThree,
+    whichProviderID,
+    tabletWidth,
+    phoneWidth,
+    laptopWidth,
+    dupTabletWidth,
+    offsetHeight
+  ]);
 
   return (
     <div className={`global-font ${css['landing-container']}`}>
       <Box className={css['container']}>
-        <TextBlock classification={TextBlockClassification.title} body="Meet Our Care Team" className={css['title']}></TextBlock>
+        <TextBlock
+          classification={TextBlockClassification.title}
+          body="Meet Our Care Team"
+          className={css['title']}></TextBlock>
 
         {phoneWidth && tabletWidth && (
           <Grid container className={css['provider-tab-list']}>
             <Grid container item xs={12} sx={{ justifyContent: 'center' }}>
-              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(1)} onTouchStart={(e) => handleChange(1)}>
+              <Grid
+                item
+                xs={4}
+                className={css['provider-choice']}
+                onClick={(e) => handleChange(1)}
+                onTouchStart={(e) => handleChange(1)}>
                 Dr Phua Xiong
               </Grid>
-              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(2)} onTouchStart={(e) => handleChange(2)} >
+              <Grid
+                item
+                xs={4}
+                className={css['provider-choice']}
+                onClick={(e) => handleChange(2)}
+                onTouchStart={(e) => handleChange(2)}>
                 Paahoua Vang
               </Grid>
-              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(3)} onTouchStart={(e) => handleChange(3)} >
+              <Grid
+                item
+                xs={4}
+                className={css['provider-choice']}
+                onClick={(e) => handleChange(3)}
+                onTouchStart={(e) => handleChange(3)}>
                 Sheng Vang
               </Grid>
             </Grid>
@@ -83,13 +111,28 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
         {!phoneWidth && dupTabletWidth && (
           <Grid container className={css['provider-tab-list']}>
             <Grid container item xs={12} sx={{ justifyContent: 'center' }}>
-              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(1)} onTouchStart={(e) => handleChange(1)}>
+              <Grid
+                item
+                xs={4}
+                className={css['provider-choice']}
+                onClick={(e) => handleChange(1)}
+                onTouchStart={(e) => handleChange(1)}>
                 Dr Phua Xiong
               </Grid>
-              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(2)} onTouchStart={(e) => handleChange(2)}>
+              <Grid
+                item
+                xs={4}
+                className={css['provider-choice']}
+                onClick={(e) => handleChange(2)}
+                onTouchStart={(e) => handleChange(2)}>
                 Paahoua Vang
               </Grid>
-              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(3)} onTouchStart={(e) => handleChange(3)}>
+              <Grid
+                item
+                xs={4}
+                className={css['provider-choice']}
+                onClick={(e) => handleChange(3)}
+                onTouchStart={(e) => handleChange(3)}>
                 Sheng Vang
               </Grid>
             </Grid>
@@ -100,13 +143,28 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
           <Grid container className={css['provider-tab-list']}>
             <Grid item xs={2}></Grid>
             <Grid container item xs={8} sx={{ justifyContent: 'center' }}>
-              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(1)} onTouchStart={(e) => handleChange(1)}>
+              <Grid
+                item
+                xs={4}
+                className={css['provider-choice']}
+                onClick={(e) => handleChange(1)}
+                onTouchStart={(e) => handleChange(1)}>
                 Dr Phua Xiong
               </Grid>
-              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(2)} onTouchStart={(e) => handleChange(2)}>
+              <Grid
+                item
+                xs={4}
+                className={css['provider-choice']}
+                onClick={(e) => handleChange(2)}
+                onTouchStart={(e) => handleChange(2)}>
                 Paahoua Vang
               </Grid>
-              <Grid item xs={4} className={css['provider-choice']} onClick={(e) => handleChange(3)} onTouchStart={(e) => handleChange(3)}>
+              <Grid
+                item
+                xs={4}
+                className={css['provider-choice']}
+                onClick={(e) => handleChange(3)}
+                onTouchStart={(e) => handleChange(3)}>
                 Sheng Vang
               </Grid>
             </Grid>
@@ -115,9 +173,21 @@ export const ProviderInfoContainer: React.FC<ProviderInfoProps> = () => {
         )}
 
         <Box className={css['provider-container']} sx={{ height: offsetHeight }}>
-          <DrPhuaXiong ref={providerOne} imageCSSRender={imageCSSRender} value={1} pointer={whichProviderID}></DrPhuaXiong>
-          <PaahouaVang ref={providerTwo} imageCSSRender={imageCSSRender} value={2} pointer={whichProviderID}></PaahouaVang>
-          <ShengVang ref={providerThree} imageCSSRender={imageCSSRender} value={3} pointer={whichProviderID}></ShengVang>
+          <DrPhuaXiong
+            ref={providerOne}
+            imageCSSRender={imageCSSRender}
+            value={1}
+            pointer={whichProviderID}></DrPhuaXiong>
+          <PaahouaVang
+            ref={providerTwo}
+            imageCSSRender={imageCSSRender}
+            value={2}
+            pointer={whichProviderID}></PaahouaVang>
+          <ShengVang
+            ref={providerThree}
+            imageCSSRender={imageCSSRender}
+            value={3}
+            pointer={whichProviderID}></ShengVang>
         </Box>
       </Box>
     </div>

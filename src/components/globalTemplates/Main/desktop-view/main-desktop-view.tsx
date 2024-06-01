@@ -23,7 +23,11 @@ export const MainDesktopView: React.FC<MainDesktopViewProps> = ({ photoHyperLink
         </Box>
 
         <Box className={css['text-section-one']}>
-          <TextBlock body={'Serving our patients with a compassionate heart and caring hands'} classification={TextBlockClassification.quote} className={css['quote']} />
+          <TextBlock
+            body={'Serving our patients with a compassionate heart and caring hands'}
+            classification={TextBlockClassification.quote}
+            className={css['quote']}
+          />
           <TextBlock
             body={`The mission of St. Paul Family Medical Center is to work in conjunction with 
                             the patient and family to provide the highest quality patient-centered medical 
@@ -40,9 +44,17 @@ export const MainDesktopView: React.FC<MainDesktopViewProps> = ({ photoHyperLink
 
       <Box className={css['rowContainer']}>
         <Box className={css['text-section-two']}>
-          <TextBlock body={'Certified HealthCare Home'} classification={TextBlockClassification.quote} className={css['cert-title']} />
+          <TextBlock
+            body={'Certified HealthCare Home'}
+            classification={TextBlockClassification.quote}
+            className={css['cert-title']}
+          />
 
-          <TextBlock body={'SPFMC is certified by the state of MN as a HealthCare Home.'} classification={TextBlockClassification.paragraph} className={css['cert']} />
+          <TextBlock
+            body={'SPFMC is certified by the state of MN as a HealthCare Home.'}
+            classification={TextBlockClassification.paragraph}
+            className={css['cert']}
+          />
 
           <TextBlock
             body={`St. Paul Family Medical Center (SPFMC) was founded in June 2002 by one of the first 

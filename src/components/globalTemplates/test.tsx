@@ -69,7 +69,13 @@ export default function NestedGrid() {
             </Item>
           </Grid>
         </Grid>
-        <Grid xs={12} container justifyContent="space-between" alignItems="center" flexDirection={{ xs: 'column', sm: 'row' }} sx={{ fontSize: '12px' }}>
+        <Grid
+          xs={12}
+          container
+          justifyContent="space-between"
+          alignItems="center"
+          flexDirection={{ xs: 'column', sm: 'row' }}
+          sx={{ fontSize: '12px' }}>
           <Grid sx={{ order: { xs: 2, sm: 1 } }}>
             <Item>© Copyright</Item>
           </Grid>

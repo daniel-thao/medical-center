@@ -26,14 +26,23 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
   }, [value, pointer]);
 
   return (
-    <Grid ref={ref} container columnSpacing={6} rowGap={{ xs: 2, sm: 4, md: 12 }} className={`${css['provider']} ${value === pointer ? '' : css['hidden']} ${css[animationClass]}`}>
+    <Grid
+      ref={ref}
+      container
+      columnSpacing={6}
+      rowGap={{ xs: 2, sm: 4, md: 12 }}
+      className={`${css['provider']} ${value === pointer ? '' : css['hidden']} ${css[animationClass]}`}>
       <Grid item xs={12} sm={12} md={6} lg={6} className={css['photo-container-one']}>
         <img alt="provider-01" className={imageCSSRender} src="./_MG_6147.png"></img>
       </Grid>
 
       <Grid item xs={12} sm={12} md={6} lg={6}>
         <div className={css['tab-panel-text-formatting-right']}>
-          <TextBlock body={'Dr. Phua Xiong'} classification={TextBlockClassification.title} className={css['provider-one']} />
+          <TextBlock
+            body={'Dr. Phua Xiong'}
+            classification={TextBlockClassification.title}
+            className={css['provider-one']}
+          />
 
           <TextBlock
             body={`Dr Phua Xiong is the medical director and owner of St Paul Family Medical Center, a Hmong
@@ -68,7 +77,11 @@ export const DrPhuaXiong = forwardRef<any, DrPhuaXiongProps>((props, ref) => {
 
       <Grid item xs={12} sm={12} md={6} lg={6}>
         <div className={css['tab-panel-text-formatting-left']}>
-          <TextBlock body={'A Servant Leader'} classification={TextBlockClassification.title} className={css['provider-one']} />
+          <TextBlock
+            body={'A Servant Leader'}
+            classification={TextBlockClassification.title}
+            className={css['provider-one']}
+          />
 
           <TextBlock
             body={`In her 25 years of serving the Hmong community she continues to be a strong presence in
