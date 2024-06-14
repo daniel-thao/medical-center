@@ -216,7 +216,6 @@ export const ImmigrationInfoContainer: React.FC<ImmigrationInfoProps> = () => {
 
         <Grid item xs={3}></Grid>
       </Grid>
-      <Footer></Footer>
     </div>
   );
 };
