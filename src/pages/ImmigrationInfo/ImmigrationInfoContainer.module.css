@@ -1,0 +1,29 @@
+.init-section {
+  margin: 10em 0em;
+}
+
+.init-title {
+  font-size: var(--font-size-xl);
+  text-align: center;
+  width: 100%;
+  margin: 0em 0em 1em 0em;
+}
+
+.section {
+  font-size: var(--font-size-lg);
+  text-align: center;
+  margin: 0em 0em 1em 0em;
+}
+
+.column-title {
+  font-size: var(--font-size-m);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 0em 0em 0.5em 0em;
+}
+
+.column-body {
+  font-size: var(--font-size-xs);
+  margin: 0em 0em 0.5em 0em;
+}

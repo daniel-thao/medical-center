@@ -46,6 +46,10 @@ const router: any = createBrowserRouter([
         element: <PatientInfoContainer />
       },
       {
+        path: '/immigration-info',
+        element: <ImmigrationInfoContainer />
+      },
+      {
         path: '/providers-info',
         element: (
           <>
@@ -56,10 +60,10 @@ const router: any = createBrowserRouter([
       }
     ]
   },
-  {
-    path: '/immigration-info',
-    element: <ImmigrationInfoContainer />
-  }
+  // {
+  //   path: '/immigration-info',
+  //   element: <ImmigrationInfoContainer />
+  // }
   // {
   //   path: "/providers-info",
   //   element: <ProviderInfoContainer />,
